@@ -1,0 +1,623 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[american,german]{babel}
+\usepackage{verbatim}
+\usepackage{microtype}
+\usepackage[para]{footmisc}
+%
+\usepackage[pdftex,colorlinks=true,citecolor=black,linkcolor=black,anchorcolor=black,urlcolor=dzug,bookmarks=false]{hyperref}
+%
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+\usepackage{smartdiagram} 
+\usesmartdiagramlibrary{additions}
+%
+\usepackage{listings}
+\lstdefinestyle{mystyle}{
+ backgroundcolor=\color{graugans}, 
+ commentstyle=\color{kelp},
+ keywordstyle=\color{altrosa},
+ numberstyle=\tiny\color{olive},
+ stringstyle=\color{crimson},
+ basicstyle=\ttfamily,
+ basicstyle=\footnotesize,
+ breakatwhitespace=false,
+ columns=flexible, 
+ breaklines=true, 
+ captionpos=b, 
+ keepspaces=true, 
+ numbers=left, 
+ numbersep=5pt, 
+ showspaces=false, 
+ showstringspaces=false,
+ showtabs=false, 
+ tabsize=2
+}
+%
+\lstset{literate=%
+ {Ö}{{\"O}}1
+ {Ä}{{\"A}}1
+ {Ü}{{\"U}}1
+ {ß}{{\ss}}1
+ {é}{{\'{e}}}1
+ {ä}{{\"a}}1
+ {ö}{{\"o}}1
+}
+\lstset{style=mystyle}
+%
+\date{}
+%
+\usepackage[style=authoryear-ibid,maxnames=4]{biblatex}
+\bibliography{/Users/mkr/Daten/texte/synapsen}
+%
+\usepackage[scaled]{berasans}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+%
+\newcommand{\anf}[1]{»#1«}
+\newcommand{\inanf}[1]{›#1‹}
+\newcommand{\st}[1]{#1}
+\definecolor{dzug}{HTML}{5E7185} 
+\definecolor{hokkaido}{HTML}{D97D16}
+\definecolor{graugans}{rgb}{0.91401,0.91401,0.8398} % RGB: 234,233,215
+\definecolor{crimson}{HTML}{801019} 
+\definecolor{kelp}{HTML}{82A494} 
+%
+\newcommand{\ueber}[1]{{\color{crimson}[#1]}}
+%
+\newcommand{\pngbild}[4]{\includegraphics[bb = 0 0 #1 #2, width = #4]{#3}}
+\newcommand{\anzeige}{\textbf{\color{hokkaido}\huge{\raisebox{-0.18ex}{$\bullet$}}\color{black}}}
+%
+\RequirePackage[babel,german=guillemets]{csquotes}
+\RequirePackage{setspace}
+\newenvironment{zitat}{
+\begin{spacing}{1}
+\begin{foreigndisplayquote}{german}}%
+{\end{foreigndisplayquote}\end{spacing}}
+%
+%\renewcommand{\abstractname}{\relax}
+%
+%\addtolength{\voffset}{4mm}
+%\addtolength{\textheight}{8mm}
+%
+\setcounter{section}{-1}
+%
+\begin{document}
+%
+% 
+\title{Assistenzsysteme\\
+\normalsize Mimetische Praktiken verteilter\\ 
+Autorschaft zwischen Mensch und Maschine}
+%\title{\inanf{branch}, \inanf{diff}, \inanf{merge}\\
+%\normalsize \st{Geschichte, Theorie und mediale Praktik verteilter Autorschaft}\\ Für eine historische Quellcodekritik}
+\author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[-1mm]
+ver.0.3:2018-04-21}
+\maketitle
+\tableofcontents
+\newpage
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+Dieser Text, der sich mit der Geschichte und den medialen Praktiken von Versionierungssystemen befasst, existiert selbst in drei Versionen, die sich jedoch – ganz wie die historisch zurückzuverfolgenden Funktionen der Versionskontrolle bei der kollaborativen Textproduktion – signifikant voneinander unterscheiden. 
+
+Zwar folgen die drei Versionen einem gemeinsamen Argumentationsgang, sie weichen jedoch in einigen Passagen und Details deutlich voneinander ab, insofern erst in der vorliegenden, dritten Fassung (commit 3fsd57) das Konzept der Assistenzsysteme vorgeschlagen wird, während in der ersten Fassung (commit 6g8wkit9) der Fokus auf den Verfahren und dem Konzept der Quellcodekritik liegt, und in der zweiten Fassung (commit 9gkfur5) die Passagen über die kollektive Autorschaft, insbesondere beim Vorgang des Verschmelzens, grösseren Raum einnehmen. Eine Gesamtsicht der Versionsänderungen lässt sich mit Blick auf die Unterschiede in den jeweiligen Ausgangsdateien (im LaTeX-Format) nachvollziehen. Zur besseren Lesbarkeit liegen die Texte in ihren drei Varianten auf GitHub ebenso als pdf-Dateien vor.
+
+Am Ende: Einbauen den Hinweis auf die Konferenz in Mainz!
+
+Berücksichtigen: Das Listing und die Listen (als Aufzählung von Instruktionen)
+
+Gertrude Stein und ihre minimalen Variationen.
+
+Max Bense: Dame mit Hut...
+
+
+\anf{Assistenzsysteme unterstützen Menschen im beruflichen und privaten Alltag. Sie verwenden vielfältige Sensoren, um Situationen zu erkennen und unterstützend in Handlungsabläufe einzugreifen und nutzen Wissen über die Struktur und die Bedeutung von Handlungen und Situationen. Sie können sowohl Demenzpatienten bei Alltagshandlungen unterstützen als auch Wissenschaftler bei der Auswahl und dem Einsatz von Analysemethoden, Sportler im Training oder Arbeiter bei der Montage. Methodisch setzen Assistenzsysteme vielfältige Techniken aus den Bereichen der Mensch-Maschine-Interaktion, der sensorbasierten Zustandsschätzung und der künstlichen Intelligenz ein.}\footnote{\href{https://www.informatik.uni-rostock.de/forschung/schwerpunkte/intelligente-assistenz/}{\texttt{www.informatik.uni-rostock.de/forschung/schwerpunkte/intelligente-assistenz/}}}
+
+
+Viele Pfade und Pfadabhängigkeiten gilt es zu verfolgen.
+
+dass der . Hier: die Unterschiede, und zwar die Unterschiede in den Texten.
+
+Welche historischen Vergleiche? Die Korrektoren.
+
+Darüber die Brücke zur Auto(r)Korrektur. Hier die Notwendigkeit, mimetischer Praktiken ins Spiel bringen...
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item Ich fange mal mit der Gegenwart und ein paar losen Enden an, die es zu verknüpfen und in eine Textur zu bringen gilt.... [\anzeige]
+
+%Um gleich mit einer visuellen Evidenz einen Eindruck zu verschaffen, möchte ich Ihnen diese Graphik hier nicht vorenthalten:  
+
+%[\anzeige Zoom out aus \verb+Linux_Distribution_Timeline.svg+]
+
+Ihr seht hier zahlreiche lose Enden, die nicht nur die Gegenwart des Schreibens repräsentieren, sondern auch die vielen möglichen Zukünfte von kollektiver Autorschaft darstellen – 2018. Denn was dieses Bild zeigt, ist ein evolutionäres Schema oder ein Wissensbaum, der die verschiedenen Derivate, also Abspaltungen von frei entwickelten Betriebssystemen aus den ursprünglichen GNU/Linux-Distributionen heraus dokumentiert. Jede dieser Linien repräsentiert Tausende, oftmals Millionen Zeilen Code, die allesamt in einem fein abgestimmten, selbst über beinahe 50 Jahre entwickelten Milieu von kollektiver Autorschaft entstanden sind. 
+
+Nicht dass Ihr denkt, dass das schon alles ist: GNU/Linux selbst ist ja nur ein Derivat von Unix, aus dem auch Android, \verb+macOS+ und eigentlich alles andere Wichtige an Betriebssystemen ausser Windows hervorgegangen ist. \anzeige
+
+\item Worum geht's? – Einerseits geht's mir darum, einen längeren historischen Bogen zu schlagen, um die medialen Praktiken der Softwareentwicklung zu historisieren und so einer Art Mediengeschichte der Software-Studies Vorschub zu leisten und auf diese Weise der Geschichtsvergessenheit der \emph{software studies} ein wenig entgegenzuarbeiten, um die gegenwärtige Praktik kollektiver Autorschaft zu ihren historischen Wurzeln und Entwicklungslinien zurück zu verfolgen.%, nicht zuletzt geleitet von dem Anspruch, die informatischen Praktiken nicht einfach als immer schon gegeben hinzunehmen, sondern sie selbst durch eine vorgängige historische Entwicklung zu bereichern. 
+
+\item Andererseits geht's mir darum, die im Folgenden vorzustellenden medialen Praktiken des Verzweigens, Kopierens, Verschmelzens als generische Verfahren zu beschreiben, denen – und das dürfte in unserem Zusammenhang hier wenig überraschen – eine spezifisch produktive oder kreative Komponente eignet.   
+
+\item Dabei möchte ich \emph{en passant} zwei Konzepte entwickeln, zum einen den eher methodischen Begriff der Quellcodekritik, also einen Weg, um Software-Studien um eine historiographische Komponente zu  erweitern, zum anderen den Begriff der Assistenzsysteme, der als ein medienmimetisches Konzept zentral für die hier gewählten Beispiele und Szenarien einzustufen ist und sich als der Zusammenhang erwiesen hat, in dem sich Autor-Lektor-Konstellationen ebenso wiederfinden wie subalterne Sekretärsschriftsätze, aber eben auch kollektive Schreibprozesse, die im Zusammenspiel von Menschen (= Software-Entwickler) und speziellen Schreibumgebungen vollzogen werden, also in und mit IDEs (Integrated Development Environments) und Versionskontrollsystemen wie github, dazu gleich mehr.   
+
+Was versteht man in gängiger Diktion unter Assistenzsystemen? Der Begriff findet derzeit vor allem im Kontext des Individualverkehrs seine Verwendung. Assistenzsysteme überwachen, etwa beim Steuern eines Automobils, dass der Fahrer nicht unverhofft aus der Spur gerät. Oder sie dienen dazu, bei knifflig-kurzen Parklücken, dass ein Einparken ohne Lackschäden auf Knopfdruck und automatisch erfolgt. Assistenzsysteme können – neben der Sorge, nicht aus der Spur zu geraten – sowohl Patienten \anf{bei Alltagshandlungen unterstützen als auch Wissenschaftler bei der Auswahl und dem Einsatz von Analysemethoden, Sportler im Training oder Arbeiter bei der Montage. Methodisch setzen Assistenzsysteme vielfältige Techniken aus den Bereichen der Mensch-Maschine-Interaktion, der sensorbasierten Zustandsschätzung und der künstlichen Intelligenz ein.}\footnote{\href{https://www.informatik.uni-rostock.de/forschung/schwerpunkte/intelligente-assistenz/}{\texttt{www.informatik.uni-rostock.de/forschung/schwerpunkte/intelligente-assistenz/}}} Ich möchte diesen Begriff aufnehmen, um ihn aus der höchst zweifelhaften Beschränkung auf ungelenke Lenksysteme oder die exklusive Verwendung in der Informatik herauszulösen. Vielmehr geht es darum, auch dieser Bezeichnung so etwas wie historische Tiefenschärfe zu verleihen, um nachzuweisen, dass es nicht nur im Verkehrsgeschehen, sondern vor allem in ungleich weiter zurückliegenden, historischen Zusammenhängen, sei es beim Handel, sei es im Haushalt, oder sei es im Kontext literarischer Produktion immer schon auf die \emph{systematischen, das heisst regelgeleiteten Kooperationen zwischen Assistenz und Akteur} angekommen ist. 
+
+% Mein Vortrag wird also versuchen, zweierlei zugleich zu leisten, zum einen den historischen Rückblick auf Praktiken verteilter Autorschaft und zum anderen eine gegenwärtige Bestandsaufnahme von technischen Verfahren, mit denen mitunter komplexe Software-Projekte die grossen und kleinen Beiträge ihrer über die ganze Welt verstreuten Autoren/Code-Entwickler administrieren. In einem dritten Schritt geht es dann mit einem Blick auf die sog. Auto(r)Korrektur noch darum, einen Weg aufzuweisen, wie die historischen Befunde der Kultur- und Literaturgeschichte für die Gegenwart der gemeinsamen Schreibumgebungen produktiv gemacht werden können. 
+\end{itemize}
+
+\newpage
+
+\noindent Die Geschichte verteilter Autorschaft lässt sich unschwer als die lange Genealogie des Schreibens überhaupt identifizieren, steht doch an den Anfängen der Schrift kein Individuum, kein Autor im Sinne seiner goethezeitlichen Ausdifferenzierung zur männlichen Verkörperung einer Genie-Ästhetik, sondern immer schon ein Kollektiv, sei es nun, um den Pentateuch zu verfassen oder das Gilgamesch-Epos, oder sei es, um unter einem mutmasslichen Kollektivsingular wie Homer Verse auf Papyrus zu fixieren. Texte sind \emph{qua definitionem} Verbindungen loser Enden, die von mehr als einer Person bearbeitet werden. Dies gilt umso mehr, wenn man einen die Philologie übersteigenden Textbegriff zugrunde legt, der ebenso operative Schriften, also Code und seine Entwicklung in Softwareprojekten betrachtet, die inzwischen – schon infolge ihrer Komplexität – zumeist von mehr als einer Person vorangetrieben werden. 
+
+Wenn nun aber mehrere, viele, ja tausende Entwickler an ein und demselben Code arbeiten, erfordert es besondere Maßnahmen, um die Konsistenz dieser kollaborativen Autorschaft sicherzustellen. Was ich im Folgenden skizzieren möchte [\anzeige], ist daher zunächst ein Blick hinter die Kulissen, wie grossangelegte kollektive Schreibprojekte mit Hilfe von sog. Versionsverwaltungen und ihren grundlegenden Befehlen wie \emph{branch}, \emph{diff} und \emph{merge} medientechnisch organisiert sind und welchen, wenn man so will, Befehlssätzen und Befehlsketten sie gehorchen, bevor ich etwas allgemeiner das Konzept einer Quellcodekritik vorstellen möchte. Die Beschreibung der gegenwärtigen Quellcodeentwicklung werde ich allerdings anhand eines historischen Szenarios zu verdeutlichen versuchen, um damit gleich eine entsprechende genealogische Linie zu erhalten, die jene Praktiken des Codings auf ihre historischen Vorläufer und Grundlagen zurückführt.
+
+Meine genealogische Rekonstruktion stützt sich zunächst auf einige exemplarische Geschichten oder historische Szenarien, die sich mehr oder minder synchron ereignen, und zwar um 1780, zum einen im Frankreich des Ancien Regime, zum zweiten in der Hauptstadt des Heiligen Römischen Reichs Deutscher Nation, in Wien, und aber natürlich auch hier, in Weimar mit seiner goethezeitlichen Perfektionierung von Autorschaft. Daneben liessen sich aber auch ganz andere Szenarien in London 1916 und anderenorts anführen. 
+
+\enlargethispage{6mm}
+
+Das erste Szenario zielt nun zunächst darauf zu verdeutlichen, was da eigentlich ganz praktisch geschieht, wenn mehrere Autoren gemeinsam an Texten resp. Code schreiben. Dazu versetzen wir uns in das vorrevolutionäre Frankreich und \emph{gleichzeitig} wieder unmittelbar in die Gegenwart des kollektiven Schreibens. Ich versuche, in aller gebotenen Kürze, drei Techniken kollektiver Autorschaft zu erläutern, die wesentlich für die kollaborative Code-Entwicklung sind. Es handelt sich um \emph{branch}, \emph{diff} und \emph{merge}. 
+
+\section{Versionierungen – A Brief Introduction}
+
+Die eigentümlichen Imperative \emph{branch}, \emph{diff}, \emph{merge} sind nicht nur unschuldige (Stamm-)Formen englischer Verben, sondern finden ebenso in einem informatischen Kontext, konkret bei der sogenannten Versionsverwaltung oder zu Englisch der \emph{version control}, Verwendung. Derartige Versionsverwaltungen kommen einerseits im Hintergrund von organisatorischen Maßnahmen auf Betriebssystemen zum Einsatz, also etwa bei der eingebauten Backup-Funktion auf \verb+macOS+ namens \inanf{TimeMachine}. Andererseits bilden sie das Kernstück sowohl für lokale als auch für zentrale oder gar global verteilte Softwareentwicklungsprojekte, wo Entwickler an verteilten Orten gleichzeitig an demselben Code arbeiten, dessen Änderungen demzufolge zeichengenau und auf die Mikrosekunde exakt protokolliert werden und nachvollziehbar bleiben müssen. Das bekannteste Forum dieser Art dürfte derzeit die von Linus Torvalds initiierte Platform \emph{github} sein. 
+
+
+Das Ziel der Kodeentwicklung ist dabei – leicht idealisiert – wie bei einer konventionellen Textproduktion zu verstehen, wo ja am Ende eine Abfolge von Zeichen entsteht, die – bei hinreichendem Interesse möglicher Leser und ausreichender Schreibkunst der Autoren – vom ersten bis zum letzten Zeichen rezipiert wird. Ähnlich akribisch kann man sich im informatischen Kontext als zentrale Entscheidungsgewalt den sog. \emph{compiler} vorstellen, also jene Instanz bei der Programmierung, die den vorbereiteten Code in einer beliebigen (höheren) Programmiersprache in den allein ausführbaren Binärcode der Maschinensprache übersetzt. Auch bei diesem Übersetzungsprozess wird jedes Zeichen, jeder Befehl, jede Schleife, jede Datenstruktur sequentiell, von vorne bis hinten, linear eingelesen, validiert und interpretiert. Man muss sich den \emph{compiler} als einen Meister des \emph{close reading} vorstellen.\footcite[Hier wäre noch auf die kodifizierende Funktion, das Schliessen des Kodes hinzuweisen, die ja auch vom Compiler vorgenommen wird, vgl.][]{krajewski+vismann:2009} Um also einen Programmcode \inanf{lauffähig} zu machen, muss er einmal linearisiert, das heisst jeder der zahlreichen Befehle muss Zeile für Zeile ausgewertet werden. Der \emph{compiler} zieht die Teile des Programmcodes aus unterschiedlichsten Bereichen zusammen, aus entlegenen Programmbibliotheken ebenso wie aus offenen Quellen, die dezentral im Internet vorgehalten werden, um alles in eine lineare Abfolge zu bringen. Nun kann es aber vorkommen, dass über die genaue Abfolge der Befehle, Programm- und Datenstrukturen Uneinigkeit herrscht innerhalb der Gemeinschaft der Codeentwickler eines bestimmten Projekts. Angenommen, ab Codezeile 13'531 stehen folgende Befehle [\anzeige]:
+
+\begin{figure}[ht]
+\begin{lstlisting}[language=Java, firstnumber=13531]
+leseBrief("Cécile Volanges", "Sophie Carnay", 
+	gegeben("Paris",1781-08-03));                           // 1. Brief
+	
+leseBrief("Marquise de Merteuil", "Vicomte de Valmont", 
+	gegeben("Paris",1781-08-04));                           // 2. Brief
+	
+leseBrief("Cécile Volanges", "Sophie Carnay", 
+	gegeben("Paris",1781-08-04));                           // 3. Brief
+	
+leseBrief("Vicomte de Valmont", "Marquise de Merteuil", 
+	gegeben("Schloß Cormatin",1781-08-05));                 // 4. Brief
+	
+leseBrief("Marquise de Merteuil", "Vicomte de Valmont", 
+	gegeben("Paris",1781-08-07));                           // 5. Brief
+
+\end{lstlisting}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+Warum Gefährliche Liebschaften so gut geeignet ist: Relativ in der Zeit, so kommt aber kein Programm durch. Es muss _in_ der Zeit laufen...
+
+Es ist eine Auswahl an Briefen, d.h. es können jederzeit irgendwo noch weitere zwischengeschoben werden... Ein dynamisches Unterfangen.
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Weiter angenommen, dass bezüglich der Codezeile 13'541 eine Diskussion in der weltweiten Entwicklergemeinschaft entbrennt, weil der Entwickler {\color{hokkaido}Egmont} der Meinung ist, hier müsse statt \inanf{Schloß Cormatin} vielmehr \inanf{Schloß Chambord} stehen, da infolge eines Unwetters im Südosten von Paris die Straßen am 6.~August 1781 nach Burgund unwegsam waren, so dass kein Postillion seine Briefe zustellen konnte, was wiederum dazu führte, dass infolge der üblichen Brieflaufzeiten die Antwort der Marquise de Merteuil niemals am 7.~August hätte geschrieben werden können. Das Programm sei also, so {\color{hokkaido}Egmont}, an dieser Stelle fehlerhaft. Der Entwickler {\color{dzug}Richard}, auf den der ursprüngliche Code zurückgeht, kann sich mit diesem Argument allerdings nicht einverstanden erklären und beharrt auf seiner anfänglichen Lokalisierung des Briefs des Vicomte de Valmont auf Schloß Cormatin. Der Konflikt zwischen den beiden Kontrahenten bleibt ungelöst und der Programmcode wird an dieser Stelle kurzerhand verzweigt [\anzeige Abb.~\ref{flowgen}], das heisst mit Hilfe des Befehls \emph{branch} gelingt es, den Code zu duplizieren, um beide Varianten parallel zueinander existieren zu lassen. {\color{hokkaido}Egmont} schert also an dieser Stelle aus dem linearen Ablauf der Befehlskette aus, indem er einfach seine eigene Variante unter dem Etikett eines neuen \emph{branch} (Zweigs) der Allgemeinheit zur Verfügung stellt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+					variierter Code (Richard) ------
+kollektiver Code (Egmont) -| kollektiver Code (Egmont)	    | vermischter Code (Oliva)
+
+\smartdiagramset{
+% uniform color list=gray!80!black for 10 items,
+ uniform color list=suede!80!black for 16 items,
+ arrow tip=stealth,
+ uniform arrow color = true,
+ arrow color=hokkaido,
+ back arrow disabled=true,
+ module minimum width = 20mm,
+ module minimum height = 5mm,
+ text width =36mm,
+ module y sep=1.1,
+ additions={
+ additional item offset=0.95cm,
+ additional item width=20mm,
+ additional item height=5mm,
+additional item text width=36mm,
+additional item shadow= drop shadow,
+ additional item border color=dzug,
+ additional arrow color=dzug,
+ additional arrow tip=stealth,
+ additional arrow line width=1pt,
+ }
+}
+\smartdiagramadd[flow diagram]{%
+Volanges -> Carnay, %
+Merteuil -> Valmont, %
+Volanges -> Carnay, % 
+Valmont -> Merteuil, %
+Merteuil -> Valmont %
+}{%
+right of module4/Cormatin, 
+right of module5/Merteuil -> Valmont%
+} 
+\smartdiagramconnect{to-}{additional-module1/module4}
+%\smartdiagramconnect{to-}{additional-module1/module3}
+%\smartdiagramconnect{<-}{module4/module5}
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% Check: http://www.texample.net/tikz/examples/android/
+% http://www.texample.net/tikz/examples/graph/
+% http://www.texample.net/tikz/examples/diagram-chains/
+
+\begin{figure}[ht]
+\begin{center}
+
+\begin{tikzpicture}
+\tikzset{edge/.style = {->,> = latex'}}
+\tikzset{
+master/.style={circle,draw=black!50,fill=dzug!50},
+branch/.style={circle,draw=black!50,fill=hokkaido!30},
+result/.style={circle,draw=black!50,fill=olive!30},
+label/.style={sloped,above}
+}
+% vertices
+\node[master] (a) at  (0,2) {Original};
+\node[master] (b) at  (3,2) {Original'};
+\node[branch] (d) at  (3,-2) {OriKopie};
+\node[label] (e) at (3,2.9) {\texttt{\inanf{Cormatin}}};
+\node[label] (e) at (3,-3.3) {\texttt{\inanf{Chambord}}};
+%\node[result] (c) at  (6,0) {Schmelz};
+%\node[label] (e) at (6.5,0.7) {\texttt{\inanf{Bussy-Rabutin}}};
+%edges
+\draw[edge] (a) to (b);
+\draw[edge] (a) to (d);
+%\draw[edge] (b) to (c);
+%\draw[edge] (d) to (c);
+\end{tikzpicture}
+
+\end{center}
+\caption{Varianten einer Entwicklung}\label{flowgen}
+\end{figure}
+
+Beide Stränge sind nach wie vor für alle Entwickler sichtbar und nahezu identisch, bis auf die kleine Abweichung von {\color{dzug}Richard}, der seinen \emph{source code} nach den eigenen Vorstellungen abgeändert hat. Um hier den Überblick nicht zu verlieren, kann man mit dem kleinen Hilfsprogramm \emph{diff} den Befehl erteilen, sich die Unterschiede in den beiden Quellcodes anzeigen zu lassen. Das sieht dann so aus [\anzeige Abb.~\ref{abb:orikopie}]: 
+
+% colordiff -u Original.txt Kopie.txt
+
+\begin{figure}[ht]
+\begin{center}
+\pngbild{568}{421}{../bilder/OriginalKopie.png}{1.1\textwidth}\\[-3mm]
+\caption{\emph{diff} von Original und Kopie}\label{abb:orikopie}
+\end{center}
+\end{figure}
+
+\enlargethispage{6mm}
+
+\emph{diff} macht also den kleinen Unterschied sichtbar. Das Programm hebt die Abweichungen zweier in weiten Teilen identischen Dokumente hervor, oder um es – leicht abweichend – mit einem informatischen Begriff zu sagen: \emph{diff} macht die Deltas innerhalb des Codes sichtbar, oder um es – erneut leicht abweichend – mit einem philosophischen Begriff zu sagen: \emph{diff} führt die \emph{différance} zwischen Original und Kopie vor. – Das Programm \emph{diff} wurde in den frühen 70er Jahren von Douglas McIlroy an den Bell Labs in New Jersey geschrieben. Die Denkfigur \emph{différance} wurde in den frühen 70er Jahren von Jacques Derrida an der ENS in Paris entwickelt. 
+
+Nun könnten sich beide Zweige von ein und demselben Programm parallel zueinander weiterentwickeln, sich dabei zunehmend unterscheiden, in mehr als nur einer Zeile voneinander abweichen, so lange bis es zwei ganz unterschiedliche Programme geworden sein werden, also so, wie bei den Linux-Derivaten aus der Anfangsgraphik mit zahlreichen losen Enden. Doch diese auseinanderstrebende Bewegung der beiden Teile wird in unserem Beispiel durch einen neuen Forschungsstand jäh unterbunden. In einem Konvolut im Nachlass von Pierre-Ambroise-François Choderlos de Laclos taucht der Hinweis auf, dass es sich bei dem von ihm in der Druckfassung bewusst als leere Variablen belassenen, mit Auslassungspunkten gekennzeichneten Ortsangaben von Valmonts Aufenthaltsort um das Schloß Bussy-Rabutin gehandelt habe, wie der Nutzer {\color{olive}Oliva} glaubhaft machen kann. Der Konflikt ist damit durch eine neue archivalische Evidenz geschlichtet, die beiden falschen Angaben \inanf{Chambord} und \inanf{Cormatin} gilt es zu ersetzen durch \inanf{Schloß Bussy-Rabutin}, um damit die beiden separaten Stränge wieder zusammenzuführen [Abb.~\ref{abb:merge}\anzeige]. Diese Konvergenzbewegung wird durch den Befehl \emph{merge} erreicht, der die beiden konkurrierenden Darstellungen wieder vereint, indem zunächst einer der beiden Versionen in Programmzeile 13'541 der Vorzug gegeben wird, um den Code dann mit der neuen Erkenntnis und ergänzt um einen Kommentar erneut zu einem einzigen Zweig zu fusionieren. Dieses Verfahren, das auch als \emph{three-way-merge} bezeichnet wird, erfreut sich nicht nur in der theoretischen Informatik der Gegenwart einer regen Forschungstätigkeit, sondern dürfte philologisch Gebildeteten nicht ganz unbekannt vorkommen, stellt es doch eine recht alltägliche Problematik bei der Herstellung historisch-kritischer Editionen dar, wo ebenso zwischen verschiedenen Varianten eines Texts zu differenzieren und anschliessend eine Entscheidung zu fällen ist, welcher Variante der Vorzug zu geben sei.
+
+
+\begin{figure}[hpt]
+\begin{center}
+
+
+\begin{tikzpicture}
+\tikzset{edge/.style = {->,> = latex'}}
+\tikzset{
+master/.style={circle,draw=black!50,fill=dzug!50},
+branch/.style={circle,draw=black!50,fill=hokkaido!30},
+result/.style={circle,draw=black!50,fill=olive!30},
+label/.style={sloped,above}
+}
+% vertices
+\node[master] (a) at  (0,2) {Original};
+\node[master] (b) at  (3,2) {Original'};
+\node[branch] (d) at  (3,-2) {OriKopie};
+\node[label] (e) at (3,2.9) {\texttt{\inanf{Cormatin}}};
+\node[label] (e) at (3,-3.3) {\texttt{\inanf{Chambord}}};
+\node[result] (c) at  (6,0) {Schmelz};
+\node[label] (e) at (6.5,0.7) {\texttt{\inanf{Bussy-Rabutin}}};
+%edges
+\draw[edge] (a) to (b);
+\draw[edge] (a) to (d);
+\draw[edge] (b) to (c);
+\draw[edge] (d) to (c);
+\end{tikzpicture}
+
+
+\end{center}
+\caption{Neue Variante der Varianten}\label{abb:merge}
+\end{figure}
+
+
+Ich möchte nun auf die drei medialen Praktiken \emph{branch}, \emph{diff}, \emph{merge} etwas genauer eingehen, indem ich nun meinerseits in der Zeit etwas zurückgehe, um die Verfahren, wie sie in informatischen Kollaborationen derzeit weltweit Anwendung finden, auf ihre eigene Geschichte hin zu befragen. Denn ein besonderer Vorzug von Versionskontrollsystemen besteht darin, dass ein solches System stets reversibel in der Zeit bleibt, das heisst, man kann nahezu mühelos zwischen unterschiedlichen Zeitpunkten der Codeentwicklung wandern, die Zeitachse also bei Bedarf wie einen Schieber zurück bewegen, um jegliche Änderung am Code wieder ungeschehen zu machen. Hier zeigt sich auch schon eine wichtige Differenz: Weder in der Historiographie von Software noch in der von Kulturtechniken wie dem Kopieren besteht (bedauerlicherweise) diese Möglichkeit einer Rückkehr zum \emph{status quo ante} in dieser Form, weil wir uns stets im Hier und Jetzt befinden. Es sei denn, wir bewegen uns immersiv durch ein spezifisches Medium in andere Welten, womit ganz andere Effekte möglich werden. Was nach \emph{Science Fiction} klingt, erweist sich ganz buchstäblich als der zweite Terminus, denn dieses Medium der Zeitreise ist die Fiktion.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+Von der kurzen Geschichte der Sofware zur langen Geschichte der kollektiven Autorschaft. 
+
+Konfliktlösung
+Vorteil: Das Zurückgehen in der Zeit. 
+
+Graphentheoretische Darstellung. Beispiel. Briefroman Gefährliche Liebschaften
+Source Control. Kontrolle behalten über die Quellen. 
+
+Kurze Erklärung anhand von \verb+https://en.wikipedia.org/wiki/Version_control+
+
+
+Interessant: Statt single und zentralisiert, gibt's das System noch als \verb+https://en.wikipedia.org/wiki/Distributed_version_control+
+
+\verb+https://en.wikipedia.org/wiki/Comparison_of_version_control_software#History_and_adoption+
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Fragestellung: Wie ändern sich tradierte Vorstellungen von Original und Kopie im Lichte von Singularisierungsprozessen? Was sind die Modi einer Ästhetik jenseits der Hierarchisierung von Original und Duplikat in traditionellen und in digitalen Konfigurationen?
+
+\enlargethispage{6mm}
+
+\section{Verzweigen}
+
+Der unscheinbare Befehl \emph{branch} bewirkt nichts weniger, als mit einem einzigen schlichten Kopiervorgang ein Paralleluniversum zu erzeugen. Der gesamte Kosmos des Softwareprojekts [\emph{Gefährliche Liebschaften}] wird mit all seinen Routinen, Nischen, Fehlern, Kommentaren, Besonderheiten und Unzulänglichkeiten leichterhand dupliziert, um sodann lediglich in einem kleinen Detail verändert werden zu können. Der Zeitpunkt der Befehlserteilung \emph{branch} markiert den Bifurkationspunkt, ab dem sich die Welten teilen, um fortan zwei parallele Weltläufte mit zwei \anf{verschiedenen Zukünften}\footcite[169]{borges:1941} zu generieren. Was dem einen als ein \anf{wirrer Haufen widersprüchlicher Entwürfe} erscheint, ist für den anderen ein wohlgeordnetes \anf{Labyrinth aus Symbolen}.\footcite[168]{borges:1941} Oder noch genauer: ein \anf{Labyrinth aus Zeit}.\footcite[168]{borges:1941} Denn diese Struktur aus parallelen Welten mit ihrer unbegrenzten Möglichkeit zur Kontingenz \anf{\emph{erschafft} so verschiedene Zukünfte, verschiedene Zeiten, die ebenfalls auswuchern und sich verzweigen.}\footcite[170]{borges:1941} 
+
+Was manche von Euch vermutlich längst bemerkt haben, obwohl ich die hier notierten Operatoren, also An- und Ausführungszeichen nicht mitlas, ist der Umstand, dass ich meinen Text selbst gerade verzweigt habe, und zwar indem ich einen Teil der charakterisierenden Beschreibung einfach hineinkopiert habe, indem ich aus einer Erzählung von Jorge Luis Borges aus dem Jahre 1941 zitierte. Wie in dem Briefroman von Choderlos de Laclos gibt es in dieser Erzählung eine Rahmenhandlung, in der ein fiktiver Herausgeber dem Leser von einem unverhofft gefundenen Text-Fragment berichtet, das eine zuvor noch rätselhafte Kriegshandlung erhellt. In diesem Fragment wird berichtet, wie der Ich-Erzähler, ein chinesischer Spion, der im Ersten Weltkrieg in England für die Deutschen kundschaftet, den britischen Sinologen – nicht Gleb, sondern: – Stephen Albert aufsucht. Bei diesem Besuch begegnet der Chinese einer besonderen Struktur, und zwar dem von einem seiner Vorfahren entworfenen \anf{Garten der Pfade, die sich verzweigen}, – so der Titel der Erzählung. Dieser labyrinthische Garten erstreckt sich jedoch nicht im Raum, sondern in der Zeit, insofern er aus einem in zahlreichen Versionen durchgespielten Roman besteht, der – wie in Leibniz Theodizee\footnote{Die Konstruktion gleicht in gewisser Weise der Konstellation, die Leibniz in seiner Theodizee-Problematik durchspielt: Die göttliche Ordnung kennt zahlreiche Welten, die nebeneinander bestehen, sich gleichen, aber doch in einigen signifikanten Details unterscheiden. Allerdings sind im Fall der Software keine Qualitätskriterien wie gut und böse ausschlaggebend, sondern eher der Zuspruch und die Nutzung durch andere Entwickler. Zudem führt die Parallelität der beiden Code-Ordnungen (um nicht Kosmoi zu schreiben) vor allem die Kontingenz vor Augen, dass jede artifizielle Welt auch anders sein könnte.} – alle möglichen Begebenheiten in parallelisierten Varianten enthält. Der Autor dieses Romans \anf{glaubte an unendliche Zeitreihen, an ein wachsendes, schwindelerregendes Netz auseinander- und zueinanderstrebender und paralleler Zeiten. Dieses Webmuster aus Zeiten, die sich einander nähern, sich verzweigen, sich scheiden oder einander jahrhundertelang ignorieren, umfaßt alle Möglichkeiten.}\footcite[172]{borges:1941} Wie sich diese Problematik von Unendlichkeit materiell bewerkstelligen lässt, wird in der Erzählung freilich ebenso reflektiert, nämlich entweder zyklisch, so wie es Vladimir Nabokov mit seinem Karteikarten-Roman \emph{Pale Fire} zwei Jahrzehnte später vorführt, oder rekursiv, wie Schehérazade, die an einer bestimmten Stelle in \emph{Tausendundeiner Nacht} aus einer bestimmten Stelle von \emph{Tausendundeiner Nacht} vorliest. Es ist ein \anf{Labyrinth, das die Vergangenheit umfaßte und die Zukunft [\ldots] Zum Beispiel kommen Sie in dieses Haus, aber in einer der möglichen Vergangenheiten sind Sie mein Feind gewesen, in einer anderen mein Freund.}\footcite[166/170]{borges:1941} Und wie die Geschichte dann weiter zeigt, wird er auch beides \emph{zugleich} gewesen sein\ldots % Freund, weil er Albert schon lange bewundert, und zugleich Feind, weil er ihn für einen vermeintlich höheren Zweck erschiesst. 
+
+Es ist eigentlich kaum nötig zu erwähnen, dass diese Charakteristik des unendlichen Romans, die Borges entwirft, eine ziemlich präzise strukturelle Beschreibung dessen ist, was eine Software-Versionsverwaltung bereitstellt: \inanf{ein wachsendes, schwindelerregendes Netz auseinander- und zueinanderstrebender und paralleler Zeiten}. Die Software-Versionsverwaltung agiert hier als ein System, das sich als ziemlich fundamental erweist, sorgt es doch dafür, die temporalen Unterschiede zu verwalten, die Vergangenheit als Archiv genau zu dokumentieren, um aus diesem Archiv heraus die Zukunft zu bahnen. Die Versionsverwaltung gerät zu nichts weniger als der Herrin der Zeit.
+
+Bevor ich nun von der medialen Praktik des Verzweigens meinerseits wieder verzweige auf die Unterschiedsbestimmung mit \emph{diff}, sei noch ein kleiner Unterzweig eingebunden, der so etwas wie die eminente Übertragungsfunktion aller drei Verfahren darstellt. Denn weder \emph{branch} noch \emph{diff} oder \emph{merge} kommt ohne einen Vorgang aus, der die Daten von A nach B schafft, prüft, validiert, transferiert und dupliziert. Es folgt demnach eine kurze Verzweigung zum Kopieren... 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+% Alberts Brief-Lektüre.
+ 
+Für die Coda:
+ 
+Was liegt nun näher als diese abgründige Geschichte über die \anf{Verzweigung in der Zeit}\footcite[169]{borges:1941} als eine Art literarische Präfiguration der informatischen Versionskontrolle einzuordnen. Ja, sicher. 
+
+Borges und die unterschiedlichen Zeitebenen, die in der Fiktion sich anbieten... Dies in Analogie zu unterschiedlichen Entwicklungszeiten bei der Softwareproduktion. 
+
+
+Alternative Entwürfe sichern
+
+Überblick bewahren. Version und Kontrolle. Diese Eigenschaften sind freilich auch bei der klassischen, das heisst philologischen Edition von Texten erforderlich. \anf{Ich habe Hunderte von Handschriften miteinander verglichen, habe die Fehler korrigiert, die sich durch die Nachlässigkeit der Abschreiber eingeschlichen haben; ich habe den Plan dieses Chaos erschossen, habe die ursprüngliche Ordnung wieder hergestellt}.\footcite[172]{borges:1941}
+
+	***
+
+Joethes Delegationen
+
+Ein weiterer Aspekt
+Verzweigen als Delegieren [Dies seinerseits als Abzweigung kennzeichnen...]
+Goethes Verzweigungen: Seine lahme Tintenhand.
+
+Sieben: 185–197.
+
+Einbauen: 
+"Alle Subalternen nehmen in spezifischer Weise eine Eigenart an, die sie ihrem Herrn und Gebieter ähnlicher werden läßt. Johann Georg Paul Götze, der rund 17 Jahre bei Goethen dient, gelingt es beispielsweise,...Der Meister dupliziert sich in seinen Domestiken."
+
+	***
+
+
+Siehe auch Schlagwort \inanf{Verzweigung} in Synapsen...
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Kopieren}
+
+% Wenn die lange Geschichte des (literarischen) Schreibens – wie eingangs schon bemerkt – über weite Strecken und Genealogien keineswegs das Geschäft einer Einzelperson ist, sondern vielmehr Teamwork, das Schreiben also in den überwiegenden Fällen eine kollektive Tätigkeit darstellt, dann kommt dem Abschreiben oder Kopieren dabei eine besondere Funktionsstelle zu. Zum einen, weil das rasche Vervielfältigen von Texten – vor dem Zeitalter der technischen Reproduzierbarkeit durch Photographie oder Photokopie – nicht selten im Modus des Diktierens stattfindet, hier also zwei interagierende Personen schriftliche Artefakte über das Medium der Stimme wieder in schriftliche Artefakte transformieren. Zum anderen, weil selbst beim Abschreiben beispielsweise einer Bibelpassage durch einen einzelnen Mönch im Skriptorium ebenfalls zwei Personen interagieren, insofern die schriftlich fixierte Rede eines Abwesenden das Original darstellt, das durch das Medium des anwesenden Schreibers in Kopie dupliziert wird. 
+
+% Nun mag man einwenden, dass für die massenhafte Vervielfältigung von Texten seit dem 15. Jahrhundert ein Medium bereitsteht, dass diese komplizierten Vergegenwärtigungen von Text über Stimme und Handschrift eigentlich überflüssig macht. Das trifft zweifellos zu auf Kopiervorgänge, bei denen ausreichend Zeit zur Anfertigung der Kopien bereit steht, Matrize, Druckbogen, Winkelhaken und Setzkasteninhalte eingeschlossen. In Situationen allerdings, wo es auf einzelne Minuten ankommt, wo Zeit kritisch, weil knapp, wird oder der Aufwand zur Einrichtung einer Druckvorlage ohnehin viel zu gross wäre, weil es nur einer einzigen Abschrift bedarf, dann findet die bewährte Form der Vervielfältigung durch Diktat oder einzelne Abschrift ihren Einsatz.
+
+Ich möchte im Folgenden den Fokus auf eine ebenso hochprofessionalisierte wie immer schon international arbeitende Institution lenken, wo das Vervielfältigen in Serie, der Akt des Kopierens, des Filterns und ggf. noch des Verschlüsselns zur exklusiven Aufgabe zählte. Die Rede ist von einer Institution, die unter wechselnden Namen wie ›geheimbe Zyffer Weeßen‹, ›Zyffer Scretariat‹, ›Kabinets-Secretariat‹, ›Visitations- und Interceptions-Geschäft‹, ›Geheime Kabinets-Kanzlei‹ oder auf ihren französischen Ursprung unter Ludwig XIV. rekurrierend als \emph{cabinet noir} oder schlicht als \inanf{Schwarzes Kabinett} bezeichnet wird. Dieser auch als \inanf{Brief-Inquisition} bezeichneten Abteilung im Umfeld eines weltlichen Herrschers unterstand es, den gesamten Postverkehr eines Landes, insbesondere in der Residenzstadt zu überwachen, die wichtigen Briefe nicht nur abzufangen, sondern unbemerkt zu entsiegeln, zu öffnen, zu durchmustern, zu lesen, sie ggf. zu entschlüsseln, zu kopieren, zu registrieren, zu verschliessen, endlich sie mit einem gefälschten Siegel zu versehen, um sie daraufhin wieder dem ursprünglich beabsichtigten Postlauf zu übergeben. 
+
+Insbesondere in Wien, der Stadt des Kaisers, legt man viel Wert auf einen geräuschlosen Ablauf im Hintergrund des weitverzweigten Postwesens, das nicht zuletzt von der traditionellen Nähe der Habsburger zur Familie Thurn und Taxis bestimmt wird. In unmittelbarer Nähe zur Macht, vis-à-vis zur Wiener Hofburg, residiert diese Reichszentrale Intelligenz-Agentur, um ihrer eigenen Auffassung von Aufklärung nachzugehen:
+\begin{zitat}
+Abends Schlag 7 Uhr schloß sich die Postanstalt und die Briefwagen schienen abzufahren. Sie begaben sich aber in einen Hof des kaiserlichen Palastes, woselbst schwere Thore sich sogleich hinter ihnen schlossen. Dort befand sich das Schwarze Kabinett, die Stallburg.
+
+Da öffnete man die Briefbeutel, sortirte die Briefe und legte diejenigen bei Seite, welche von Gesandten, Banquiers und einflußreichen Personen kamen. Der Briefwechsel mit dem Auslande zog meist ganz besondere Aufmerksamkeit auf sich. Die Siegel wurden abgelöst, die wichtigsten Stellen kopirt und die Briefe mit teuflischer Geschicklichkeit wieder verschlossen.\footcite[40]{koenig:1875}
+\end{zitat}
+Wenn selbst die wichtigsten Sendschreiben nicht lange verweilen dürfen, um noch in derselben Nacht auf den Weg ihrer eigentlichen Bestimmung gebracht zu werden, ist stets Eile geboten. Zwischen 80-100 Briefe schafft man täglich zu durchmustern bzw. zu perlustrieren – wie es im Fachjargon heisst. Nach einer ersten Sichtung von Adressat und Absender, also einer Registrierung anhand der Meta-Daten, erfolgt bei Schreiben, die weitergehendes Interesse verheissen, eine genauere Autopsie des derart entwendeten Briefes, der \anf{mittels einer sehr dünndochtigen brennenden Kerze mit ›unruhiger‹ Hand aufgelassen und geöffnet [wurde]. Der Manipulant merkte sich schnell die im Kuvert liegenden Bestandteile, die Lage derselben und übergab das Briefpaket dem Subdirektor, der den Brief durchlas und entweder den ganzen Inhalt oder ihn auszugsweise kopieren ließ.}\footcite[138]{stix:1937} Nach einer ersten Übersicht der einzelnen Programmbestandteile, also einer Sichtung ihrer Lage, wird der Code weitergereicht, um zweitens, noch ggf. entschlüsselt und dann interpretiert zu werden, bevor man ihn drittens, erneut arbeitsteilig zu kopieren sich anschickt. – Ich hebe das noch einmal eigens hervor, weil diese drei Schritte ebenso konstitutiv sind für den Vorgang des \emph{branching}, dem sie notwendigerweise vorausgehen. Der eigentliche Kopiervorgang erfolgt sodann unter Einsatz einer medientechnisch verfeinerten \emph{ars dictaminis}: 
+\begin{zitat}
+Die Offiziale waren in der Regel Schnellschreiber. Hin und wieder gab es auch ›short hand-Schreiber‹. Man diktierte, um Zeit zu gewinnen. Zwei Offiziale nahmen einen Bogen und diktierten zwei Schnellschreibern, ja sogar vier Offiziale diktierten zugleich aus einem Bogen auf eine so geschickte Weise vier Kollegen, daß die Schreibenden nicht irre werden konnten. Auf diese Weise konnte ein Bogen in wenigen Minuten abgeschrieben werden. Im Notfalle kopierte das ganze Personal ohne Unterschied, Hofrat und Subdirektor mitinbegriffen.\footcite[139]{stix:1937}
+\end{zitat}
+Der Kabinettsdirektor überprüft anschliessend diese derart im beschleunigten Multitasking oder Parallalprocessing gewonnenen Ergebnisse, filtert sie nach der jeweiligen politischen Interessenslage und reicht sie weiter direkt zum Kaiser bzw. zur Polizei.\footcite[140]{stix:1937} Einen halben Briefbogen pro Minute kennzeichnet eine Datendurchsatzrate, die nicht so viel geringer bleibt als die einer \emph{floppy disk} 200 Jahre später, zumal deren Weiterentwicklung in Form der Festplatte auch mit verteilten Rollen, das heisst mehreren Schreib-Lese-Köpfen zu arbeiten pflegt. Eine allfällige Verschlüsselung beansprucht um 1780 ebenfalls nur etwas mehr Zeit als um 1980. Es kann daher nicht verwundern, wenn den Schwarzen Kabinetten schon im 19. Jahrhundert der Nimbus einer modernen, mit der neusten Medientechnik ihrer Zeit experimentierenden Intelligenzagentur konstatiert wird. \anf{Sie glichen weniger Postämtern, als Laboratorien.}\footcite[40]{koenig:1875}
+
+Eine der entscheidenden Fähigkeiten, die in diesen Laboratorien stets geübt und weiter entwickelt werden, besteht in der Nachahmung der jeweiligen Handschriften. Kopieren bedeutet nämlich nicht nur, den Inhalt buchstabengetreu von einem Blatt auf das andere zu übertragen, sondern ebenso, sich des Stils, der Eigenheiten, der inneren wie der äusseren Form des Anderen im Brief – und nicht selten auch über den Brief hinaus – anzuverwandeln. \anf{Man öffnete die Briefe, schrieb sie ab und unterschob perfide Schreiben, in denen Handschrift, Schreibweise und Überschrift des Absenders mit wunderbarer Kunst nachgeahmt war}, fasst Emil König in seiner Streitschrift gegen die Verletzung des Briefgeheimnisses von 1875 diese Fähigkeit lakonisch zusammen.\footcite[34]{koenig:1875} Den Kopisten selbst schreibt König dabei eine derart exzessive mimetische Kraft zu, dass es nicht selten psychopathologische Züge annehme: \anf{Nicht genug, daß sie die Briefe mit einer ganz erstaunlichen Gewandtheit öffneten und wieder versiegelten, ahmten sie auch die Schriftzüge nach, schrieben falsche Briefe, gaben falsche Rathschläge und betrogen Absender und Empfänger auf das Schändlichste. Ihre Arbeit erforderte übrigens eine so große Anspannung des Geistes, so viel Sorgfalt und Geschwindigkeit, dass mehrere dadurch den Verstand verloren.}\footcite[38]{koenig:1875} 
+
+%\enlargethispage{6mm}
+
+% Man muss nicht zwangsläufig verrückt werden oder in schändlicher Absicht arbeiten, wenn es gilt, sich mit einer spezifischen Form der \emph{high fidelity} eines Anderen anzuverwandeln. Eine zeitgleiche, aber gesündere und ehrenvollere Form mimetischer Angleichung hinsichtlich der Briefkopien soll im Folgenden nicht verschwiegen werden, geleitet von der Frage, wie es eigentlich um Goethes Briefpraxis um 1780 und danach bestellt ist? Wie erfolgt seine Briefproduktion, die ja über die Jahrzehnte rund 20'000 Exemplare erreicht haben soll? 
+
+%\enlargethispage{6mm}
+
+% Wie bestens bekannt ist das Aufschreibesystem 1800 keineswegs nur auf die Ausbildung neuer Dichter [\st{oder den Muttermund}] abgestellt, sondern bedient sich – auch und gerade bei Goethe – eines umfangreichen Apparates von Bedienten, also Sekretären, Schreibern, Kopisten, Kammerdienern und anderen Subalternen aller Art. Dabei ist besonders auffällig, dass alle Subalternen in spezifischer Weise eine Eigenart\index{Eigenart} annehmen, die sie ihrem Herrn und Gebieter ähnlicher werden läßt. Johann Georg Paul Götze\index{Götze, Johann Georg Paul}, der rund 17 Jahre bei Goethen dient, gelingt es etwa, sich die Handschrift\index{Handschrift} seines Meisters zu solcher Perfektion anzueignen\index{Ähnlichkeit}, daß selbst die Experten später bisweilen Mühe haben werden, sie vom Original treffsicher zu unterscheiden. Zudem übt Götze sich noch darin, zu zeichnen wie sein Vorbild.\footcites[S.~100]{schleif:1965}[Mit dem Bestreben, die Handschrift des Herrn nachzuahmen, stehen Goethes Domestiken keineswegs allein. Auch in den Privatlabors im viktorianischen England, wo die Domestiken zu Laborassistenten\index{Labor!-assistent} werden, findet sich diese Tendenz, so bei Sir William Crookes\index{Crookes, William} Diener: \anf{Even Giminghams\index{Gimingham, Charles Henry} handwriting became more like Crooke's.}][S.~330]{gay:1996} Die Diener Geist\index{Geist, Johann Ludwig} und Stadelmann\index{Stadelmann, Carl Wilhelm} laufen dagegen mit einem anderen Wahrnehmungsfilter ihres Herrn durch die Welt, oder genauer: in das Theater und durch Steinbrüche. \anf{Alle Diener Goethes haben, jeder nach seinen Möglichkeiten, Züge des äußeren Gehabens ihres Herrn angenommen, sich seine Handschrift angewöhnt und aus seinen Wissensgebieten ihre Steckenpferde gewählt: Seidel\index{Seidel, Philipp} philosophische, sprachliche und wirtschaftliche Themen, Geist Botanik, Stadelmann Geologie und Mineralogie, Färber\index{Färber, Michael} Osteologie.}\footcite[S.~222]{schleif:1965} Das hohe Maß an mimetischem Verlangen\index{Verlangen, mimetisches}, der ungestillte Wunsch nach Anverwandlung\index{Anverwandlung}, zeigt sich jedoch am prägnantesten bei Philipp Seidel\index{Seidel, Philipp}, Goethes erstem Subalternen, der später dank seiner Verdienste zum Weimarer Kammerkalkulator befördert wird: \anf{Er hatte sich ihm derart angeähnelt, daß sie ihn Goethes \inanf{vidimirte Kopie} nannten}.\footcite[S.~28]{schleif:1965} Seidel versteht sich darauf, den Rededuktus seines Herrn, die Intonation ebenso beiläufig nachzuahmen wie gleich seinem Vorbild\index{Kopie} den Kopf zu schütteln und sogar dessen \anf{Perpendikulargang} so täuschend echt zu imitieren\index{Imitation}, \anf{daß man oft versucht war, ihn von weitem für Goethe selbst zu halten.}\footcite[S.~47]{lyncker:1912} Der Meister dupliziert sich in seinen Domestiken. Es wäre zudem irrig anzunehmen, dass Goethe seine Briefe selbst schreibt. Abgesehen vom in grosser Kanzleischrift geschwungenen G. als Signatur setzt er den schon im Original als Kopie durch die nachahmende Hand der Schreiber verfassten Briefe nichts weiter hinzu als gelegentlich Grüsse oder Addenda.\footcite[40]{schleif:1965} Seidel dient zudem auch als historisches Vorbild für den Briefschreieber Richard in Goethes \emph{Egmont}, der die Briefe seines Herrn in einem Akt exzessiver Mimesis auch inhaltlich für seinen Meister ausfertigt und vor allem: selbständig weiterschreibt.\footcite[Vgl.][253–256]{krajewski:2010} Erst wenn diese eng verflochtene, kollaborative Autorschaft einmal gestört ist, sieht sich G.\ noch genötigt, selbst zur Feder zu greifen, wenn auch nicht ohne Widerwillen. So klagt Goethe, als 1813 sein zusätzlich zum schreibkundigen Domestiken eingestellter Sekretär Ernst Carl Christian John\index{John, Ernst Carl Christian} einmal unpäßlich ist: \anf{Seit vierzehn Tagen hat sich leider meine adoptive rechte Hand kranckheitshalber in's Bette gelegt und meine angebohrne Rechte ist so faul als ungeschickt, dergestalt daß sie immer Entschuldigung zu finden weis wenn ihr ein Briefblatt\index{Brief} vorgelegt wird.}\footcite[][Nachträge: Briefe, Bd.~51, S.~342]{goethe:1887}
+
+% Über Goethes Praxis des Briefeschreibens im Zusammenspiel mit seinen Dienern wäre – auch jenseits von Albrecht Schönes Studie zu Goethe als Briefschreiber – noch eine Menge zu sagen; ich spare das aber aus zugunsten der anderen Kulturtechniken kollektiver Autorschaft. Lassen Sie mich also mit einer allgemeineren Feststellung den Unterzweig zum \emph{copy}-Befehl wieder verlassen: 
+
+Keine Kopie ist authentisch oder fehlerfrei, weder in technischen Medien wie der Photographie, wo sich das Verfahren selbst ins Bild einschreibt, noch in mimetischen Prozessen wie dem Kopieren eines bestimmten Habitus oder einer Handschrift. Erst mit der Möglichkeit digitaler Vervielfältigung wird Kopieren zu einem Akt, der das Artefakt so dupliziert, dass ohne Meta-Daten wie Time-Stamp, Entstehungsdatum, Zeitpunkt letzter Änderung etc. kein Kriterium mehr gegeben ist, um Original und Nachbildung zu unterscheiden. Schon aus diesem Grund ist es wichtig, bei der Versionskontrolle eine Fehlerkorrektur bzw. Validierungsinstanz zu haben, die im Zweifelsfall die Unterschiede zwischen Original und Kopie zu finden verspricht. Und damit komme ich endlich zur zweiten Praktik, dem \emph{diff}-Befehl, den ich vergleichsweise kurz halten werde.
+
+\section{Abweichen}
+
+Es gibt verschiedene Formen der textuellen Abweichung im Kontext kollektiver Autorschaft und Versionskontrolle. So erscheint es manchmal erforderlich, in einem gemeinschaftlich verfassten Text eine Differenz zu markieren.\footcite[Der Luhmann-Schüler Peter Fuchs berichtet in seinem Nachruf auf den Meister von einer solchen Form maximaler Distanznahme: \anf{Ich erinnere mich, daß er – ich war noch Student – mir antrug, mit ihm zusammen ein Buch über Reden und Schweigen zu schreiben. Feuer und Flamme, der ich war, schrieb ich ein mächtiges Exposé, meinte mein Bestes, mein Überzeugendstes zu geben. Er schickte mir eine kurze Notiz: \inanf{Anders als Herr Fuchs optiere ich dafür, einfacher anzufangen\ldots} Und skizzierte das Projekt unvergleichlich einfacher und punktgenauer auf einem Zettel [\ldots] Für mich jedenfalls war dieses \inanf{Anders als Herr Fuchs\ldots} der härteste Denkzettel, den ich erhalten habe. Das war nicht ein \inanf{Anders als Sie\ldots} oder \inanf{Im Gegensatz zu Ihnen\ldots}. Das war Extremdistanzierung.}][13]{fuchs:1998a} Oder es gilt, einen einfachen Ausgangssatz in verschiedensten Stilausprägungen zu variieren, wie es Raymond Queneau 1947 in seinen 100 Varianten der \emph{Exercices de style} vorgeführt hat, um die Kontingenz der unterschiedlichen Stile und rhetorischen Figuren vorzuführen. 
+
+Im Vergleich dazu ist der \emph{diff}-Befehl nachgerade \inanf{dumm} zu nennen, weil er sich weniger zum Aufspüren stilistischer Differenzen eignet als zur tumben Suche nach Fehlern oder anderen Veränderungen. Denn der Algorithmus geht denkbar einfach vor, indem er ein Mapping, ein Übereinanderlegen von zwei Texten vollführt, um dabei die Lücken und jeweils einseitigen Ergänzungen ausfinding zu machen [Abb.~\ref{abb:filemerge}\ \anzeige\ Erläutern!].  
+
+\begin{figure}[ht]
+\begin{center}
+\pngbild{568}{421}{../bilder/FileMerge.png}{1.1\textwidth}\\[-3mm]
+\caption{\emph{diff} von Original und Kopie vor dem \emph{merge}}\label{abb:filemerge}
+\end{center}
+\end{figure}
+
+Wo wäre in der langen Geschichte kollektiver Autorschaft der historische Vorläufer zum \emph{diff} zu verorten? Welche Instanz sorgt sich um etwaige Satz- oder Tippfehler, Zeilen-Unterschiede, Kopierfehler, unmerkliche, wenn nicht infinitesimale Details in der Wort(dar-)stellung? Kurzum, was ist das klassische Pendant zum \emph{diff} und seiner Fixierung der Deltas? Ebenso kurz gesagt: Der Herausgeber oder Bearbeiter einer Edition, derjenige also, der für die Sicherung des Textes, für die Entscheidung, dieser und nicht der anderen Variante den Vorzug zu geben, verantwortlich zeichnet, wobei er freilich – etwa bei historisch-kritischen Editionen – die Kontingenz der Varianten ebenfalls zur Darstellung zu bringen hat. Im \emph{diff} kondensiert – oder mit Blick auf den letzten Abschnitt: schmilzt – also eine lange Theoriegeschichte der Philologie und Editionswissenschaft.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+Man könnte einen Text, der in Ko-Autorschaft entsteht, natürlich auch in seinen Varianten drucken: 
+
+Bewusste Abweichungen inhaltlicher Art vs. Fehlern: diff findet beides. 
+Varianten ausstellen.
+
+Oder einfach nur die Abweichung von der Deckungsgleichheit. Beim Übereinanderlegen oder zeichenweisen Vergleich der Inhalte werden die Unterschiede markiert. 
+
+
+Die Eingabe von Texten im Redundanz-Modus.
+
+Einsatz mit Skriptorien...
+
+Versionieren, mit Indizes versehen.
+
+Mimetisches:
+Wenn einer Als-Ob Auftritt, dann werden vor allem die Differenzen beobachtet...
+
+Scriptorium, Bouvard \& Pecuchet (am Ende)
+Name der Rose
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Verschmelzen}
+
+Die Zeichenzahlvorgabe reicht an dieser Stelle nicht mehr aus, nun noch die dritte Praktik \emph{in extenso} vorzuführen, die grundlegend für die kollektive Autorschaft in der Softwareentwicklung und ihrer Versionsverwaltung bleibt [Abb.~\ref{abb:merge}\anzeige]. 
+
+Ich möchte daher nur kurz skizzieren, was ich detaillierter darzulegen wäre: Und zwar hätte ich Ihnen zu zeigen versucht, wie die Parallelität verschiedener Zeiten, die auswuchernden Zweige und Gabelungen in einzelnen Fällen wieder zusammengeführt werden, um dank der jeweils erfolgten Umwege einen neuen, dritten, synthetisierten Wissensstand zu bündeln. Vorgeführt hätte ich dies gerne – anders als bei Borges und seinem unendlichen Buch als Labyrinth – zwar ebenso mit einer \inanf{prinzipiellen Unendlichkeit} (Luhmann), allerdings in anderer Form, und zwar anhand eines kollektiven Buchs, das seine eigene Abschaffung als Buch vollführt: Ein Buch, das nichts als Bücher verzeichnet, ein Buch, das von vielen Autoren geschrieben ist und noch viel mehr Autoren vereint, weil es deren Metadaten listet. Ein Buch, das sich in seiner Form nur noch als Buch tarnt [\anzeige], obwohl es seine Bestandteile längst schon dissolviert oder herausgelöst hat. Ein Buch über Bücher, das aus nichts als frei verschiebbaren Zetteln besteht. Mit einem Wort, ein Katalog, und zwar nicht irgendeiner, sondern der erste Zettelkatalog der Bibliotheksgeschichte. Dass diese Arbeit an einem derart weit verzweigenden Projekt einer dezidierten Arbeitsteilung unterliegt, mag kaum überraschen. Umso konsequenter erscheint die Kodifizierung dieser Tätigkeit, die kaum zufällig schon in der Wiener Hofbibliothek um 1780 eine algorithmische Struktur annimmt. Vorzuführen gewesen wäre also der \emph{merge}-Algorithmus oder die sog.\ Instruktionen, mit dem aus vielen Büchern ein einziges wird, mit dem viele Autoren zu einer Struktur zusammengebunden werden, die wiederum neue Autoren aufgreifen und produzieren soll. Es wäre zu zeigen, wie aus dieser informationellen Vereinzelung, Fragmentarisierung, Beweglichkeit, Atomisierung der Informationsbausteine wieder ein einziger Strang wird, ein Faden oder Pfad, der mit seinen volatilen Elementen seinerseits und jederzeit neue Verzweigungen oder auch Weiterführungen auf demselben Weg erlaubt.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+Quellenkritik noch an einem anderen Genre vorführen, 
+
+Ein close-reading der Kataloginstruktion. Gegenlesen mit einer Anleitung für git-hub.
+
+Für die (spät-)mittelalterliche Katalogisierungspraxis...
+\cite{schreiber:1927}
+
+Das am \anf{22.~may 1780} begonnene Unternehmen, das späterhin unter der Projektbezeichnung \emph{Josephinischer Katalog} geführt wird und dessen Resultat heute in \anf{205 Kästchen}\footnote{\Citet{vanswieten:1787}, Seite 320.} sein ehrenvolles Dasein in einem von Licht und Luft abgeschlossenen Käm\-mer\-chen der Österreichischen Nationalbibliothek fristet, wird gemeinhin\footnote{Vgl.\ etwa \cite{meinel:1995}, Seite 183, Anm.~57 oder \cite{roloff:1961}, Seite 255 und 257.} und zuweilen stolz\footnote{Vgl.\ \cite{petschar+etal:1999} und dazu \cite{krajewski:1999a}.} als der \emph{erste Zettelkatalog der Bibliotheksgeschichte} bezeichnet. Doch bevor nun gefragt sei, inwiefern und aus welchen Gründen die Attribution zutrifft, soll die Vorgehensweise bei dieser Unternehmung in den bisherigen Kontext gestellt werden, d.h.\ sie mit dem Registermachen seit Konrad Gessner zu konfrontieren. Dazu sollen drei Merkmale als Folie dienen, vor der sich das Projekt \emph{Josephinischer Katalog} gegenüber einer seit der Frühen Neuzeit praktizierten und verfeinerten Verzettelungstechnik abzuheben beginnt: zum einen die schriftliche Instruktion als Befehlssatz an die Adresse der Katalogisierer, desweiteren der anhand vereinbarter Schnittstellen arbeitsteilige Prozeß und schließlich die Dauer der Katalognutzung. Erst der Zusammenfall dieser drei Charakteristika und ihre wechselseitige Abhängigkeit voneinander grenzen die Unternehmung in spezifischer Weise ab von den bisherigen Prozessen, etwa der Verfertigung des Wolfenbütteler Katalogs unter Leibniz' Anleitung oder von Abbé Roziers exzellenter Tabellenkalkulation auf Spielkarten-Basis.
+
+Der großen und stetig steigenden Anzahl der Bände zufolge und um Koordinierungsschwierigkeiten von vornherein zu minimieren, setzt Gottfried van Swieten auf ein genau festgelegtes Verfahren, eine Instruktion, nach deren Anweisungen endlich alle Bücher der Palatina vollständig erfaßt und beschrieben werden sollen. Derartige, schriftlich festgehaltene Bibliotheks-Befehlssätze sind bis zum Ende des 18.~Jahrhunderts keineswegs gängig. Die Katalogisierung erfolgt bislang üblicherweise unter der Aufsicht eines Bibliothekars, der die Skriptoren mündlich instruiert und angehalten ist, auf Mißstände und Korrekturen direkt hinzuweisen.\footnote{Noch bis ins 20.~Jahrhundert sind Katalogisierungen nach mündlicher Tradition in Großbibliotheken durchaus üblich, etwa in Tübingen oder in Darmstadt, vgl.\ \cite{hilsenbeck:1912}, Seite 313ff.} 
+
+Die Instruktion findet ihre Ausarbeitung in zwei Phasen. Der erste, bereits recht detaillierte Entwurf entstammt van Swietens eigener Feder, die \emph{Unterricht und Anweisung für diejenigen, so die Titel und Bücher abschreiben sollen}, erteilt.\footnote{Österreichische Nationalbibliothek, Wien, Akt HB 125/1780.} Diese \anf{Vorschrift worauf die Abschreibung aller Bücher der k.k.~Hofbibliothek gemacht werden solle} umfaßt neben einer Liste der Hilfskräfte samt charakterlicher Beurteilung vor allem sieben Punkte, was bei der Beschreibung der Bücher auf die Zettel zu übernehmen ist.\footnote{Österreichische Nationalbibliothek, Wien, Akt HB 125/1780, 1.~Teil.}
+
+Adam Bartsch, fünfter Skriptor und späterhin wegen seiner außergewöhnlichen Kenntnisse Leiter der Kupferstichsammlung, vervollständigt diesen Entwurf weiter zur endgültigen Instruktion, indem er die notwendigen bibliographischen Anforderungen um eine ausführliche und jedwede Eventualitäten abfangende Verhaltensvorschrift ergänzt.\footnote{Die Bemerkungen folgen einer wohlgeordneten \emph{if-then}-Struktur, vgl.\ \cite{bartsch:1780}, Seite 125f:\\ \anf{I.~Muß [\ldots] Sollte [\ldots] so müßte [\ldots]\\II.~Findet er [\ldots] müssen [\ldots]\\III.~Findet sich [\ldots] so muß [\ldots]\\ IV.~Wenn man [\ldots] so ist [\ldots]}\\ \qquad\vdots\\} Schließlich wird diese noch durch einen Ablaufplan bereichert, der die Reihenfolge und Vorgehensweise regelt.
+
+Den ausgearbeiteten Plan erhält van Swieten mit einer Bemerkung über\-sandt, welche die Absicht der Instruktion, als klares Standardisierungsprogramm zu wirken, nochmals unterstreicht. 
+Das ausgelobte Ziel eines vollständigen, vereinheitlichten und ästhetisch befriedigenden Katalogs lasse sich nur erreichen, wenn man gegen die drohende Diversifikation der Resultate vorgehe, welche durch die nach Belieben abschreibenden Mitarbeitern droht.
+\begin{zitat}
+Dieses sind einige Anmerkungen, die vielleicht in einer aus\-führ\-li\-che\-ren Vorschrift zur Verfertigung eines neuen Katalogs, wenigstens zum Theil, Statt finden dürften, und die mich deswegen  unterfange, EURER FREIHERRL.~GNADEN hiermit gehorsamst zu überweisen. Es kömmt nunmehr auf HOCHDIESELBEN an, selbe zu prüfen und davon Gebrauch zu machen. Eine ähnliche Vorschrift, die jeder Scriptor, der zu Bearbeitung des Katalogs angestellet ist, immer zur Hand haben soll, muß weniger ein Unterricht, wie man einen Katalog, oder die einzelnen Bestandteile desselben schreiben sollen, als eine Richtschnur sein, nach der jeder auf gleiche Weise zu arbeiten hat. Ich wenigstens setze voraus, daß jeder von uns Büchertitel zu schreiben wisse, dennoch würde die Verschiedenheit der Art und Methode, in der sie geschrieben würden, wenn auch jede davon für sich untadelhaft wäre, am Ende eine Ungleichheit im Ganzen hervorbringen, die den Katalog, wo nicht undeutlich machen, aber doch demselben eine Zierde und das Aussehen benehmen würde, daß er nur zu \emph{einem} Zweck, aus \emph{einem} Gesichtspunkt, und nach \emph{einem} System verfertigt worden seie.\footnote{\cite{bartsch:1780}, Seite 125, Hervorhebung im Original.}
+\end{zitat}
+So pendelt der Entwurf vom Entwurf an Seine Freiherrlichen Gnaden zurück, um von diesem nach erneutem Ebenenwechsel der Hierarchiestufe hin initialisiert zu werden: Der Befehlssatz geht im Klartext und ohne weitere Änderungen an seinen eigenen Autor Adam Bartsch, diesmal allerdings als Adressat der vorzunehmenden Arbeit. Ein kurzer Blick auf die Exekutivkräfte, den Personalstand der Palatina im Frühjahr 1780, versichert die großzügige Ausstattung des Prozesses. Neben dem Präfekten Gottfried van Swieten und seinem Direktor beschäftigt die Hofbibliothek zwei Kustoden, fünf Skriptoren und vier Bibliotheksdiener.\footnote{Vgl.\ \cite{petschar:1999}, Seite 24f.} In Anbetracht der auf seine Anweisungen hin angesch(l)ossenen Ströme sieht van Swieten die Unzulänglichkeit der bisherigen Kräfte und stellt demzufolge sieben, zur Realisation des Katalogvorhabens dringend benötigte Hilfskräfte ein. Mit dieser Mannschaft weist die Hofbibliothek, von den üblichen Fluktuationen durch Zu- und Abgänge abgesehen, für einige Zeit jene vorläufig höchste Beschäftigungsquote auf, die sie bis weit ins 19.~Jahrhundert nicht wieder erreichen wird.\footnote{Vgl.\ \cite{mosel:1835}, Seite 177.}
+
+Alle Schreib-/Lese-Köpfe sind damit eingeschaltet und vom Programm der Bartsch'schen Instruktion angehalten, die Befehle von Seiner Freiherrlichen Gnaden zu erwarten. Der Plan ist kodifiziert, nunmehr bi\-blio\-theks\-tech\-nisch kompiliert und mit der Funktion \emph{Bibliothek} verlinkt.\footnote{Gemäß einer heutigen Programmierästhetik \cite[vgl.][Seite 151f]{hagen:1993} gestattet der Arbeitsalgorithmus keine Sprünge. In diesem Sinn ist das Verfahren, die Grundlage für einen vollständigen Bandkatalog auf Zetteln zu schaffen, kaum mehr \emph{basic}.} Noch bleiben allerdings die Daten des hofbibliothekarischen Massenspeichers unaufgerufen. Um der Architektur eines modernen Prozesses zu genügen, wird ein eigens vom üblichen Bibliotheksbetrieb separierter Raum eingerichtet, das Katalogzimmer oder auch Arbeitsspeicher.
+In dieser zentralen Bibliographier-Einheit (englisches Akronym: CBU) verarbeitet das Programm seine über die Pfade beigesteuerten Daten. Allerdings schaltet sich der Datenstrom erst zur Laufzeit zu, indem die Übertragung vom Massen- in den Arbeitsspeicher startet. Die Ausführung kann beginnen: Hereingetragen ins Katalogzimmer werden von den Bibliotheksdienern die Bücher jeweils eines Kastens aus einem Regal im Prunksaal. Zunächst überprüft der Skriptor die Bände auf eine eventuell vorhandene Stellungsnummer, die der bereits erwähnten Adressierung von Denis\footnote{Vgl.\ \cite{denis:1777}, Seite 274f.} folgend nach \textsf{RömischerBuchstabe.LateinischerBuchstabe.ArabischeZiffer} den Büchern ihre Signatur vorschreibt. Sofern die Numerierung Fehler aufweist, werden diese korrigiert und der eigentliche Beschreibungsvorgang setzt an. Alsdann nehmen sich ungeachtet ihrer Positionen in der Bibliothekshierarchie, vom Skriptor über den Bibliotheksdiener\footnote{Bereits 1835 besteht bedauerlicherweise, so Ignaz \cite{mosel:1835}, Seite 177, Anm.~2, das Amt des Bibliotheksdieners nicht mehr, dessen Aufgabe bislang darin bestand, dem Lesenden zu dienen. Vgl.\ zum \anf{Bibliotheksdiener} ausführlich \cite{foerstmann:1886}.} bis hin zu den Hilfskräften, kurzum alle Bedienstete Werk für Werk die Bände vor, um sie nach den üblichen formalen Kategorien wie Titel, Autor (sofern vorhanden), Druckort und Jahreszahl, Name des Druckers, Format und eventuellen Defekten auf einzelnen, vorgefertigten Zetteln beschreibend zu verzeichnen.\footnote{Vgl.\ auch \cite{petschar:1999}, Seite 28.} Anschließend tragen die Bibliotheksdiener die Bücher zurück zu ihrem Kasten im Prunksaal. \anf{Nur erst, wenn alle Bücher auf die angenommene Weise beschrieben worden, läßt sich darauf denken, die Zetteln in Ordnung zu bringen, und abzuschreiben.}\footnote{\cite{bartsch:1780}, Seite 131.} Der nächste Schritt des Verfahrens sieht vor, die Angaben zu normalisieren, besonders hinsichtlich unterschiedlich geschriebener Autorennamen, bevor schließlich die Zettel in extra dazu angefertigten Katalogkapseln\footnote{Deren äußere Form simuliert wiederum den Anblick eines Buchs (vgl.\ Abb.~\ref{abb:kapsel}). So tarnt sich der Zettelkatalog einstweilen mit der konventionellen Erscheinungsweise eines Bandkatalogs. Ein verbergendes Beruhigungsmittel für traditionsverhaftete Bibliothekare, dessen Erfinder sich meinen Recherchen in Wien bislang leider erfolgreich entzog. Vgl.\ zur späteren Verwendung von Kapseln (in Gießen) auch \cite{haupt:1888}.} eingeordnet werden können. Voraussetzung dazu bleibt die eindeutig definierte Schnittstelle, die nichts anderes ist als der Zettel selbst -- auch und nicht zuletzt im Sinn seiner sauberen Kanten im Einheitsformat. Aufgehäuft in unsortierten Stapeln, verschnürt zu einzelnen Paketen und mit einem Zwirnfaden zur weiteren Verwendung gebündelt erwarten die Zettel ihre alphabetische Sortierung.\footnote{Die Sortierung wird vermutlich nicht unähnlich dem etwas später vorgeschlagenen Sort-Algorithmus von \cite{kayser:1790}, Seite 36--42, vorgenommen worden sein, an dem sich wiederum Martin \cite{schrettinger:1808} offensichtlich orientiert hat. Vgl.\ zur Analyse dessen Algorithmus' als rekursive Stapelverarbeitung insb.\ \cite{meynen:1997}, Seite 56--62, und zur Bündelung von Papierstapeln mit Badischen Knoten und preußischer Heftung \cite{vismann:1999}, Seite 295.}
+
+Der Prozeß der Titelspeicherung und Übertragung auf fragmentierte Papiere zeitigt rasche Fortschritte: im Sommer 1780 sind bereits 31.596 Werke in 27.709 Bänden auf Zetteln verzeichnet, bis im Sommer des darauffolgenden Jahres mit weiteren 23.434 Titeln alle Bücher vollständig beschrieben sind. Die Arbeitsleistung eines jeden Skriptors wird dabei fein differenzierend in einer \anf{Liste über die anzahl [\ldots,] welche [\ldots] im Sommer 1780 in der Bibl.\ sind beschrieben worden},\footnote{Österreichische Nationalbibliothek, Wien, HB Akt 126/1780, 2.~Teil.} vom Präfekten persönlich verbucht. Die meisten Bücher verzeichnet laut dieser Zwischenbilanz der Autor der Instruktion, Adam Bartsch selbst, mit 4637 Werken in 5372 Bänden. Schließlich repräsentiert der \emph{Josephinische Katalog}, inklusive eines ausgeprägten Verweissystems, alle Texte der Bibliothek auf ca.~300.000 Zetteln, womit das erste Teilziel, die Titelaufnahme, erfolgreich absolviert wäre.
+
+\subsubsection{Error: Memory Overflow}
+
+Der weitere Katalogisierungsplan sieht vor, die normalisierten und sortierten Zettel als Grundlage für die Abschrift zunächst eines alphabetischen, anschließend eines nach Materien geordneten Bandkatalogs zu verwenden. Allein die Arbeit an diesem Bandkatalog, nicht einmal am alphabetischen, wird jemals aufgenommen. Obwohl das Mißtrauen gegen die lose Anordnung der Zettel, ihre Tendenz, vor jedem Windstoß zu fliehen,\footnote{Albrecht \cite{kayser:1790}, Seite 49, empfiehlt deshalb gegen diese Zufälle: \anf{Je mehr man Repositorien durchgearbeitet hat, desto größer wird natürlich der Haufe von Titelzetteln. So bald der leztere zu sehr anschwillt, ist es rathsam, die Titel Eines Buchstaben von den übrigen abzusondern, so viele Haufen zu machen als das Alphabet Buchstaben hat, und erstere nach der Folge des lezteren auf einen Tisch zu rangiren. Steht der Tisch an einem Orte, wo keine Zugluft oder kein anderer Zufall die Zettel aus ihrer Lage bringen kann, so dünkt mich derselbe dienlicher als ein Schrank zur Aufbewahrung der Buchstabenhaufen. Die Fälle sind zu gemein, wo ich in einem solchen Haufen etwas nachzusehen habe. Auf dem Tische ist mir ieder sogleich bey der Hand. Aus einem Schranke muß ich ihn erst herausnehmen und mich um einen Ort für ihn umsehen wo ich ihn hinlegen und durchsuchen kann. Dies verursachte \emph{Zeitverlust}.} [Meine Hervorhebung]} tief sitzt, formiert sich das Personal der Palatina \emph{nicht} zu einem erneuten Katalogisierungsschritt, dem letztlichen Abschreiben der losen Elemente zum Paradigma der Bibliothekarsarbeit, dem Katalog als gebundenem Buch in Bandform.
+
+\begin{figure}[ht]
+\begin{center}
+\bildschrift{Die Katalogkapsel}\label{abb:kapsel}
+%\pdfbild{12cm}{8.38cm}{../bilder/Kapsel.eps}
+\end{center}
+\end{figure}
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+Merge algorithms[edit]
+Merge algorithms are an area of active research, and consequently there are many different approaches to automatic merging, with subtle differences. The more notable merge algorithms include three-way merge, recursive three-way merge, fuzzy patch application, weave merge, and patch commutation.
+
+Three-way merge[edit]
+Diagram of a three way merge
+C is the origin, A and B are derivatives of C, and D is the new output version
+A three-way merge is performed after an automated difference analysis between a file "A" and a file "B" while also considering the origin, or common ancestor, of both files "C". It is a rough merging method, but widely applicable since it only requires one common ancestor to reconstruct the changes that are to be merged.
+
+The three-way merge looks for sections which are the same in two of the three files. In this case, there are two versions of the section, and the version which is in the common ancestor "C" is discarded, while the version that differs is preserved in the output. If "A" and "B" agree, that is what appears in the output. A section that is the same in "A" and "C" outputs the changed version in "B", and likewise a section that is the same in "B" and "C" outputs the version in "A".
+
+Sections that are different in all three files are marked as a conflict situation and left for the user to resolve.
+
+Three-way merging is implemented by the ubiquitous diff3 program, and was the central innovation that allowed the switch from file-locking based revision control systems to merge-based revision control systems. It is extensively used by the Concurrent Versions System (CVS).
+
+Recursive three-way merge[edit]
+Three-way merge based revision control tools are widespread, but the technique fundamentally depends on finding a common ancestor of the versions to be merged.
+
+There are awkward cases, particularly the "criss-cross merge",[2] where a unique last common ancestor of the modified versions does not exist.
+
+Fortunately, in this case it can be shown that there are at most two possible candidate ancestors, and recursive three-way merge constructs a virtual ancestor by merging the non-unique ancestors first. This merge can itself suffer the same problem, so the algorithm recursively merges them. Since there is a finite number of versions in the history, the process is guaranteed to eventually terminate. This technique is used by the Git revision control tool.
+
+(Git's recursive merge implementation also handles other awkward cases, like a file being modified in one version and renamed in the other, but those are extensions to its three-way merge implementation; not part of the technique for finding three versions to merge.)
+
+Recursive three-way merge can only be used in situations where the tool has knowledge about the total ancestry directed acyclic graph (DAG) of the derivatives to be merged. Consequently, it cannot be used in situations where derivatives or merges do not fully specify their parent(s).
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Aber, alles das jetzt nicht. Sondern statt eines neuen Codes aus dem späten 18. Jahrhundert nur noch, in sechs Minuten, – eine Coda.
+
+\section{Coda: Assistenzsysteme, Quellcodekritik\\ und Auto(r)Korrektur}
+%\addcontentsline{toc}{section}{Assistenzsysteme, Quellcodekritik und Auto(r)Korrektur}
+
+
+Was ich bis jetzt ansatzweise versucht habe zu skizzieren, liesse sich unter dem heuristischen Begriff einer \inanf{Quellcodekritik} fassen, ein Kofferwort aus Quellcode und der guten alten historiographisch-hilfswissenschaftlichen Quellenkritik. Dabei geht es mir in diesem Zuschnitt einer Methodik allerdings nicht so sehr darum, Algorithmen zu kommentieren und den Code einer Software auf seine Stimmigkeit, Effektivität oder Eleganz hin zu lesen – das auch, aber eher mit nachgeordneter Priorität. Vielmehr geht es darum, jenseits des Inhaltlichen und der Funktionalität einer Software die Materialitäten der Kommunikation auch im Virtuellen, in diesem Fall das global verteilte, kollektive Softwareentwickeln – ganz im Sinne einer klassischen Quellenkritik – auf seine medialen Praktiken und archivalischen Strukturen hin zu befragen und um die Perspektive einer historischen Genese zu erweitern. Denn keine Denkfigur oder Praktik innerhalb der Informatik im Allgemeinen und der Softwareentwicklung im Besonderen kommt ohne eine entsprechende, zum Teil weit zurückreichende Genealogie aus. Der Umstand, dass man beim Programmieren immerzu auf \emph{Bibliotheken} zugreift, auch wenn es sich dabei um *.jar, *.zip, *.dylib, *.lib- oder sonstige Programmbibliotheken handelt, bedarf keines weiteren Kommentars. Dass die weitestgehend geschichtsvergessene \emph{computer science} auf die Historizität von Algorithmen, Programmiersprachen, Entwicklungsumgebungen – jenseits von Kompatibilitätsfragen – für gewöhnlich wenig Aufmerksamkeit richtet, mag wohl unabänderlich sein. Dass aber die kulturwissenschaftlich angeleiteten \emph{software studies} hier noch lohnende Desiderate finden können, liegt auf der Hand. Ich möchte daher abschliessend skizzieren, wie eine solche Methodik und Richtung potentieller Forschungsfragen aussehen könnte, um einen Wissenstransfer aus der historischen Analyse in die praktische Codeentwicklung zu leisten. 
+
+\emph{branch}, \emph{copy}, \emph{diff}, \emph{merge} und einige andere Befehle zählen zu den eminenten Funktionen verteilter Code-Autorschaft in der Softwareentwicklung. Wie ich versucht habe zu zeigen, basieren diese Funktionen auf Praktiken, die sich zum einen in der Literaturgeschichte und ihrem Zusammenspiel aus experimenteller Autorschaft und Editionstätigkeit gründen (Borges und \emph{branch}), zum zweiten in der Geschichte der Telekommunikation und im Postverkehr (Schwarze Kabinette, \emph{copy}, \emph{decode}, \emph{diff}) und schließlich auch in den Verwaltungspraktiken des Wissens, konkret in der Katalogarbeit der Aufklärung (Wiener Hofbibliothek und ihre Zettelkatalog, \emph{merge}). Diese historische Konstellierung mag – wenngleich nur schlaglichtartig oder exemplarisch – vor Augen führen, aus welchen Bestandteilen die informatische Versionsverwaltung verfertigt ist, ohne es zu wissen. Die Quellcodekritik zielt aber nicht allein darauf, die aktuelle Funktionsweise der \emph{computer science} historisch nach hinten zu verlängern, sondern ebenso umgekehrt, aus und vor allem \emph{in der Tiefe der Geschichte} nach Denkfiguren und Funktionsweisen, nach medialen Praktiken und historischen Tätigkeiten, nach Fragestellungen und Problemlösungen zu suchen, um diese Erkenntnisse in die Softwareentwicklung hineinzutragen. Wie könnte das aussehen? 
+
+Die Reichweite eines Befehls wie \emph{diff} mag für informatische Zwecke begrenzt und aus historisch-kritischer Perspektive für einen Editor zudem keineswegs neu sein; was aber wäre, wenn es einen Befehl gäbe, der Differenzen auch auf einer inhaltlichen Ebene vorschlagen könnte? Also einen Befehl, der sich an Autoren im Schreibprozeß richtet und sich dabei weniger an Herausgeber-Funktionen orientierte als vielmehr an den Leistungen eines Verlegers oder Lektors, der einem um den guten Ausdruck bemühten Autor mehr anbietet als lediglich \emph{diff}-gleich nur Abweichungen zu markieren? Was wäre, wenn der Algorithmus, statt bloss die unmerklichen bis infinitesimalen Deltas zu verzeichnen, selbst Kreatives leistete? Wenn beim Schreiben in den Officeprogrammen auf Befehl die Routine eines Lektors abzurufen wäre, der die subtilen Stiländerungen souverän erkennt und seinerseits durch feine Vorschläge variieren kann? Gesucht wäre also so etwas wie ein schlauer Diener beim Schreiben, ein Assistenzsystem für die treffende Formulierung, ein Lektorats-Algorithmus, der nicht nur Goethe und Schiller unterscheiden kann in ihrer jeweiligen Stilistik, sondern auch noch Goethe alternative Vorschläge à la Schiller unterbreitet und vice versa, wenn Schiller stockt beim Schreiben die Vorschläge à la Goethen einspeist.
+
+Ein solcher Algorithmus würde folgende Arbeitsschritte umfassen, indem er einerseits eine informatische Stilanalyse verfolgte, andererseits aber auch eine softwareseitige Stilgenese anböte, um überhaupt neue Vorschläge unterbreiten zu können. Mit anderen Worten, dieses Assistenzsystem arbeitet mit den Lehren der Vergangenheit, um künftigen Texten den Weg vorzuspuren. Denn \anf{Assistenzsysteme dienen den Nutzern zur Unterstützung in bestimmten Situationen oder bei bestimmten Handlungen. Die Voraussetzung dafür ist eine Analyse der gegenwärtigen Situation und gegebenenfalls darauf aufbauend eine Vorhersage der zukünftigen Situation. Die Interaktion sollte sich dem natürlichen Handlungsablauf des Menschen anpassen und die Ausgabe sollte komprimiert sein, um den Nutzer nicht zu überlasten.}\footnote{\href{https://dbis.informatik.uni-rostock.de/forschung/schwerpunkte/assistenzsysteme/}{\texttt{dbis.informatik.uni-rostock.de/forschung/schwerpunkte/assistenzsysteme/}}} Kaum notwendig zu erwähnen, dass diese informatische Definition als Gegenüber des Menschen die Maschine setzt, die medienhistorische Perspektivierung hier jedoch ganz allgemein ein Medium identifiziert, das menschlicher wie nicht-menschlicher Provenienz sein kann. Wie sähe eine Modellierung eines solchen Stil-Befehls aus?
+
+\begin{itemize}
+\item Einlesen eines Beispieltexts, eines Text-Korpus, eines ganzen Werks zur Stilanalyse
+\item Diese Art der stilistischen Mimesis oder Originalkopie speist sich aus der \emph{copia verborum}, aus der Fülle der Wörter, also aus einer rhetorischen Funktion, die ohne grösseren Aufwand computertechnisch mit Hilfe von Markov-Ketten, also einer statistischen Auswertung der Übergangswahrscheinlichkeiten von Worten von Worten von Worten, nachgebildet werden kann. 
+% Die Stilistik eines bestimmten Texts müsste dann in einer Profilanalyse zunächst ausgewertet werden, also etwa durch eine Markov-Ketten-Analyse wie diese hier
+%
+%https://github.com/kylevedder/JChains  
+%https://github.com/kle510/markov-chain-text-generator
+%https://github.com/yamori/markovgenerator
+\item Nach einer bestimmten Anlernphase, innerhalb derer sich der Algorithmus den Stil eines bestimmten Textes oder gar Autors aneignet, würde ein Repositorium geschaffen, mit dessen Hilfe beim Formulieren Vorschläge unterbreitet werden können. % Dies leistet dann dasselbe Programm durch seine Funktion einer Markov-Ketten-Synthese.
+%\item Evtl. noch anhand von Trump-Tweeds \ueber{vorführen}. Leichtes Fressen.
+\end{itemize}
+Was also ein solcher Algorithmus auf Basis einer Markov-Ketten-Analyse liefern würde, wäre eine stilistische Anverwandlung einer bestimmten Autorschaft, je nachdem, was man ihm einfüttert, ergeben sich typische Formulierungshilfe: Beim Einlesen des Götz von Berlichingen gäb's einen mittelalterlichen Alltagssound, wo auch mal derbe Worte fallen. Beim Einlesen von Kafkas Prozeß gäbe es kristallklare Prosa als Formulierungshilfe, und beim Einlesen des Autors von \emph{Sein und Zeit} gäbe es einige nur bedingt hilfreiche, weil selbstbezügliche Formulierungsvorschläge, weil die ganze Welt plötzlich zu welten beginnt.
+
+Mit einer solchen Anordnung von \inanf{mimetischen Algorithmen} könnte es demnach gelingen, einerseits Fragen der \emph{software studies} ins 18.~Jahrhundert zu tragen, also auf die \inanf{alten} Praktiken der Exzerpt-, Fragment- und Informationsschnipsel-Verarbeitung im Kontext einer kollektiven Autorschaft zu beziehen. Und umgekehrt eröffnet sich damit ein Weg, durch eine Analyse der Instruktionen und Verfahren, mit denen kollaborative Autorschaft in den unterschiedlichsten Formen und Situationen historisch zur Ausführung gelangten, die komplexen, distribuierten, wolkenbasierten Verfahren verteilter Autorschaft der Gegenwart nicht nur zu verstehen, sondern – historia est magistra codicum – aus der Tiefe der Geschichte heraus weiter zu entwickeln, um so zu einer wechselseitigen Erhellung von Code-Entwicklung und einer historischen Forschung zu gelangen. Doch dazu ist es einstweilen notwendig, noch andere lose Enden aufzunehmen, um sie weniger zu verschmelzen als – und damit leite ich schon über zu Helgas Referat – zu verflechten.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{comment}
+
+mit besonderem Fokus auf Versionierungssystemen (mercurial, github, subversion), wie sie in der Informatik und bei global ausgelegten OpenSource-Code-Entwicklungen zum Einsatz kommen, zu untersuchen.
+
+Man könnte beispielsweise im Detail untersuchen, wie sich die einzelnen Tätigkeiten und Prozessabläufe bei einer historisch-kritischen Edition, die einzelnen Entscheidungen, 
+Die Forschung an den Merge-Algorithmen vergleichen mit der Arbeit an.
+
+Hier ist auch die systematische Stelle, wo Fehler korrigiert werden. Es ist eine Art aufklärerisches, lektorierendes Korrektorat. 
+
+Neue persona
+
+Pseudo-Random!
+
+\end{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\nocite{leeuw:1999}
+
+\printbibliography
+
+\end{document}

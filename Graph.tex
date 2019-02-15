@@ -1,0 +1,54 @@
+\documentclass{standalone}
+\usepackage{macro}
+
+\usepackage{tikz}
+
+\usetikzlibrary{arrows}
+
+
+% TikZ styles
+\tikzset{
+master/.style={circle,draw=black!50,fill=dzug!50},
+branch/.style={circle,draw=black!50,fill=hokkaido!30},
+result/.style={circle,draw=black!50,fill=olive!30},
+label/.style={sloped,above}
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+\tikzset{edge/.style = {->,> = latex'}}
+% vertices
+\node[master] (a) at  (0,2) {Original};
+\node[master] (b) at  (3,2) {Original'};
+\node[branch] (d) at  (3,-2) {OriKopie};
+\node[label] (e) at (3,2.9) {\texttt{\inanf{Cormatin}}};
+\node[label] (e) at (3,-3.3) {\texttt{\inanf{Chambord}}};
+%\node[result] (c) at  (6,0) {Schmelz};
+%\node[label] (e) at (6.5,0.7) {\texttt{\inanf{Bussy-Rabutin}}};
+%edges
+\draw[edge] (a) to (b);
+\draw[edge] (a) to (d);
+%\draw[edge] (b) to (c);
+%\draw[edge] (d) to (c);
+\end{tikzpicture}
+
+\end{document}
+
+
+
+\begin{tikzpicture}
+\node [master] {$R'$}
+    child { node [master] {$R$}
+        edge from parent
+        node[label] {\texttt{master}}
+    }
+    child { node [branch] {$E$}
+        %edge from parent
+        node[label] {\texttt{master}}
+    }
+    child { node [branch] {$O$}
+        edge from parent
+        node[label] {\texttt{new}}
+    };
+\end{tikzpicture}

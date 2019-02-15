@@ -1,0 +1,20 @@
+Dieser Teil ist in beiden Texten, Original.txt wie OriKopie.txt, enthalten
+
+readLetter("Cécile Volanges", "Sophie Carnay",  
+	gegeben("Paris",1781-08-03)); // 1. Brief
+	
+readLetter("Marquise de Merteuil", "Vicomte de Valmont", 
+	gegeben("Paris",1781-08-04)); // 2. Brief
+	
+readLetter("Cécile Volanges", "Sophie Carnay",  
+	gegeben("Paris",1781-08-04)); // 3. Brief
+	
+readLetter("Vicomte de Valmont", "Marquise de Merteuil",  
+	gegeben("Schloß Chambord",1781-08-05)); // 4. Brief 
+	
+readLetter("Marquise de Merteuil", "Vicomte de Valmont", 
+	gegeben("Paris",1781-08-07)); // 5. Brief
+	
+Dieser Teil ist wieder in beiden Texten vorhanden...
+	
+Während dieser Teil hier nur in OriKopie.txt vorhanden ist, womit sich der Dateiname Lügen straft...
