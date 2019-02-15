@@ -118,33 +118,33 @@ Darüber die Brücke zur Auto(r)Korrektur. Hier die Notwendigkeit, mimetischer P
 \noindent 
 
 \begin{abstract}
-Der Beitrag wirft einen Blick hinter die Kulissen, wie grossangelegte kollektive Schreibprojekte medientechnisch organisiert sind und welchen Befehlssätzen und Befehlsketten sie gehorchen. Im Fokus stehen dabei einige historische Szenarien, in denen sich die kulturtechnische Funktionsweise verteilter Autorschaft organisiert. Das Ziel dieser medien- und kulturhistorischen Perspektivierung liegt darin, der Geschichtsvergessenheit der \emph{software studies} ein wenig entgegenzuarbeiten, um die gegenwärtige Praktik kollektiver Autorschaft in der Softwareentwicklung zu ihren historischen Wurzeln und Entwicklungslinien zurück zu verfolgen, nicht zuletzt geleitet von dem Anspruch, die informatischen Praktiken nicht einfach als immer schon gegeben hinzunehmen, sondern sie selbst durch eine vorgängige historische Entwicklung zu ergänzen. Drei exemplarischen Geschichten oder historischen Szenarien gilt dabei eine besondere Aufmerksamkeit. Sie ereignen sich mehr oder minder synchron, und zwar um 1780, zum einen im Frankreich des Ancien Regime, zum zweiten in Wien, der Hauptstadt des Heiligen Römischen Reichs Deutscher Nation, und zum dritten im kleinen Herzogtum Sachsen-Weimar-Eisenach, daneben aber auch in London 1916 und anderenorts. Dieses Verfahren, informatische Strukturen der Gegenwart mit ihren kulturhistorischen Vorläufern und Wegbereitern zu erläutern, wird am Ende dieses Beitrags gebündelt durch das Konzept der Quellcodekritik, das es erlaubt, die in Algorithmen eingekapselten Geschichten ihrerseits lesbar und kritisch nachvollziehbar zu machen. 
+Der Beitrag wirft einen Blick hinter die Kulissen, wie grossangelegte kollektive Schreibprojekte medientechnisch organisiert sind und welchen Befehlssätzen und Befehlsketten sie gehorchen. Im Fokus stehen dabei einige historische Szenarien, in denen sich die kulturtechnische Funktionsweise verteilter Autorschaft präfiguriert. Das Ziel dieser medien- und kulturhistorischen Perspektivierung liegt darin, der Geschichtsvergessenheit der \emph{software studies} ein wenig entgegenzuarbeiten, um die gegenwärtige Praktik kollektiver Autorschaft in der Softwareentwicklung zu ihren historischen Wurzeln und Entwicklungslinien zurück zu verfolgen, nicht zuletzt geleitet von dem Anspruch, die informatischen Praktiken nicht einfach als immer schon gegeben hinzunehmen, sondern sie selbst durch ihre vorgängigen Entwicklungslinien im vorelektronischen Zeitalter zu ergänzen. Drei exemplarischen Geschichten oder historischen Szenarien gilt dabei eine besondere Aufmerksamkeit: Sie ereignen sich nahezu synchron um 1780, zum einen im Frankreich des Ancien Regime, zum zweiten in Wien, der Hauptstadt des Heiligen Römischen Reichs Deutscher Nation, und zum dritten im Herzogtum Sachsen-Weimar-Eisenach, daneben aber auch in London 1916 und anderenorts. Dieses Verfahren, informatische Strukturen der Gegenwart mit ihren kulturhistorischen Vorläufern und Wegbereitern zu erläutern, wird am Ende dieses Beitrags gebündelt durch das Konzept der Quellcodekritik, das es erlaubt, die in Algorithmen eingekapselten Geschichten ihrerseits lesbar und kritisch nachvollziehbar zu machen. 
 \end{abstract}
 
 
 
 \section{Versionierungen – A Brief Introduction}
 
-Die eigentümlichen Imperative \emph{branch}, \emph{diff}, \emph{merge} sind nicht nur unschuldige (Stamm-)Formen englischer Verben, sondern finden ebenso in einem informatischen Kontext Verwendung, konkret bei der sogenannten \emph{version control}. Derartige Versionsverwaltungen kommen einerseits im Hintergrund von organisatorischen Maßnahmen auf Betriebssystemen zum Einsatz, also etwa bei der eingebauten Backup-Funktion auf \verb+macOS+ namens \inanf{TimeMachine}. Andererseits bilden sie das Kernstück sowohl für lokale als auch für zentrale oder gar global verteilte Softwareentwicklungsprojekte, wo Entwickler an verteilten Orten gleichzeitig an demselben Code arbeiten, dessen Änderungen demzufolge zeichengenau protokolliert werden und nachvollziehbar bleiben müssen. Das bekannteste System dieser Art dürfte derzeit die von Linus Torvalds initiierte Platform \emph{github} sein, auf der unter \href{https://github.com/nachsommer/VersionsKontrolle}{github.com/nachsommer/VersionsKontrolle} auch eine digitale Version dieses Texts zu finden ist. 
+Die eigentümlichen Imperative \emph{branch}, \emph{diff}, \emph{merge} sind nicht nur unschuldige (Stamm-)Formen englischer Verben, sondern finden ebenso in einem informatischen Kontext Verwendung, konkret bei der sogenannten \emph{version control}. Derartige Versionsverwaltungen kommen einerseits im Hintergrund von organisatorischen Maßnahmen auf Betriebssystemen zum Einsatz, also etwa bei der eingebauten Backup-Funktion auf \verb+macOS+ namens \inanf{TimeMachine}. Andererseits bilden sie das Kernstück sowohl für lokale als auch für zentrale oder gar global verteilte Softwareentwicklungsprojekte, wo Entwickler an unterschiedlichen Orten gleichzeitig an demselben Code arbeiten, dessen Änderungen demzufolge zeichengenau protokolliert werden und nachvollziehbar bleiben müssen. Das bekannteste System dieser Art dürfte derzeit die von Linus Torvalds initiierte Platform \emph{github} sein, auf der unter \href{https://github.com/nachsommer/VersionsKontrolle}{github.com/nachsommer/VersionsKontrolle} auch eine digitale Version dieses Texts zu finden ist. 
 
-Das Ziel der Codeentwicklung ist dabei – leicht idealisiert – wie bei einer konventionellen Textproduktion zu verstehen, wo ja am Ende eine Abfolge von Zeichen entsteht, die – bei hinreichendem Interesse möglicher Leser und ausreichender Schreibkunst der Autoren – vom ersten bis zum letzten Zeichen rezipiert wird. Ähnlich akribisch kann man sich im informatischen Kontext als zentrale Entscheidungsgewalt den sog. \emph{compiler} vorstellen, also jene Instanz bei der Programmierung, die den vorbereiteten Code in einer beliebigen (höheren) Programmiersprache in den allein ausführbaren Binärcode der Maschinensprache übersetzt. Auch bei diesem Übersetzungsprozess wird jedes Zeichen, jeder Befehl, jede Schleife, jede Datenstruktur sequentiell, von vorne bis hinten, linear eingelesen, validiert und interpretiert. Man muss sich den \emph{compiler} als einen Meister des \emph{close reading} vorstellen.\footcite[Hier wäre noch auf die kodifizierende Funktion, das Schliessen des Kodes hinzuweisen, die ja auch vom Compiler vorgenommen wird, vgl.][]{krajewski+vismann:2009} Um also einen Programmcode \inanf{lauffähig} zu machen, muss er einmal linearisiert, das heisst jeder der zahlreichen Befehle muss Zeile für Zeile ausgewertet werden. Der \emph{compiler} zieht die Teile des Programmcodes aus unterschiedlichsten Bereichen zusammen, aus entlegenen Programmbibliotheken ebenso wie aus offenen Quellen, die dezentral im Internet in entsprechenden Repositorien vorgehalten werden, um alles in eine lineare Abfolge zu bringen. Nun kann es aber vorkommen, dass über die genaue Abfolge der Befehle, Programm- und Datenstrukturen Uneinigkeit herrscht innerhalb der Gemeinschaft der Codeentwickler eines bestimmten Projekts. Angenommen, ab Codezeile 13'531 stehen folgende Befehle [\anzeige]:
+Das Ziel der Codeentwicklung ist dabei – leicht idealisiert – wie bei einer konventionellen Textproduktion zu verstehen, wo ja am Ende eine Abfolge von Zeichen entsteht, die – bei hinreichendem Interesse möglicher Leser und ausreichender Schreibkunst der Autoren – vom ersten bis zum letzten Zeichen rezipiert wird. Ähnlich akribisch kann man sich im informatischen Kontext als zentrale Entscheidungsgewalt den sog. \emph{compiler} vorstellen, also jene Instanz bei der Programmierung, die den vorbereiteten Code in einer beliebigen (höheren) Programmiersprache in den allein ausführbaren Code der Maschinensprache übersetzt. Auch bei diesem Übersetzungsprozess wird jedes Zeichen, jeder Befehl, jede Schleife, jede Datenstruktur sequentiell eingelesen, validiert und interpretiert. Man muss sich den \emph{compiler} als einen Meister des \emph{close reading} vorstellen.\footcite[Hier wäre noch auf die kodifizierende Funktion, das Schliessen des Codes, hinzuweisen, die ja auch vom Compiler vorgenommen wird, vgl.][]{krajewski+vismann:2009} Um also einen Programmcode \inanf{lauffähig} zu machen, muss er einmal linearisiert, das heisst jeder der zahlreichen Befehle muss Zeile für Zeile ausgewertet werden. Der \emph{compiler} zieht die Teile des Programmcodes aus unterschiedlichsten Bereichen zusammen, aus entlegenen Programmbibliotheken ebenso wie aus offenen Quellen, die dezentral im Internet in entsprechenden Repositorien vorgehalten werden, um alles in eine lineare Abfolge zu bringen. 
 
+Nun kann es aber vorkommen, dass über die genaue Abfolge der Befehle, Programm- und Datenstrukturen Uneinigkeit herrscht innerhalb der Gemeinschaft der Codeentwickler eines bestimmten Projekts. Angenommen, ab Codezeile 13'531 stehen folgende Befehle [\anzeige]:
 \begin{lstlisting}[language=Java, firstnumber=13531]
 leseBrief("Cécile Volanges", "Sophie Carnay", 
-	gegeben("Paris",1781-08-03));                           // 1. Brief
+	gegeben("Paris",1781-08-03));                           		// 1. Brief
 	
 leseBrief("Marquise de Merteuil", "Vicomte de Valmont", 
-	gegeben("Paris",1781-08-04));                           // 2. Brief
+	gegeben("Paris",1781-08-04));                           		// 2. Brief
 	
 leseBrief("Cécile Volanges", "Sophie Carnay", 
-	gegeben("Paris",1781-08-04));                           // 3. Brief
+	gegeben("Paris",1781-08-04));                           		// 3. Brief
 	
 leseBrief("Vicomte de Valmont", "Marquise de Merteuil", 
-	gegeben("Schloß Cormatin",1781-08-05));                 // 4. Brief
+	gegeben("Schloß Cormatin",1781-08-05));                 	// 4. Brief
 	
 leseBrief("Marquise de Merteuil", "Vicomte de Valmont", 
-	gegeben("Paris",1781-08-07));                           // 5. Brief
-
+	gegeben("Paris",1781-08-07));                           		// 5. Brief
 \end{lstlisting}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,63 +157,10 @@ Es ist eine Auswahl an Briefen, d.h. es können jederzeit irgendwo noch weitere 
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Weiter angenommen, dass bezüglich der Codezeile 13'541 eine Diskussion in der weltweiten Entwicklergemeinschaft entbrennt, weil der Entwickler {\color{hokkaido}Egmont} der Meinung ist, hier müsse statt \inanf{Schloß Cormatin} vielmehr \inanf{Schloß Chambord} stehen, da infolge eines Unwetters im Südosten von Paris die Straßen am 6.~August 1781 nach Burgund unwegsam waren, so dass kein Postillon seine Briefe zustellen konnte, was wiederum dazu führte, dass infolge der üblichen Brieflaufzeiten die Antwort der Marquise de Merteuil niemals am 7.~August hätte geschrieben werden können. Das Programm sei also, so {\color{hokkaido}Egmont}, an dieser Stelle fehlerhaft. Der Entwickler {\color{dzug}Richard}, auf den der ursprüngliche Code zurückgeht, kann sich mit diesem Argument allerdings nicht einverstanden erklären und beharrt auf seiner anfänglichen Lokalisierung des Briefs des Vicomte de Valmont auf Schloß Cormatin. Der Konflikt bleibt ungelöst und der Programmcode wird an dieser Stelle kurzerhand verzweigt, das heisst mit Hilfe des Befehls \emph{branch} gelingt es, den Code zu duplizieren, um beide Varianten parallel zueinander existieren zu lassen. {\color{hokkaido}Egmont} schert also an dieser Stelle aus dem linearen Ablauf der Befehlskette aus, indem er einfach seine eigene Variante unter dem Etikett eines neuen \emph{branch} (Zweigs) der Allgemeinheit zur Verfügung stellt.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{comment}
-
-					variierter Code (Richard) ------
-kollektiver Code (Egmont) -| kollektiver Code (Egmont)	    | vermischter Code (Oliva)
-
-\smartdiagramset{
-% uniform color list=gray!80!black for 10 items,
- uniform color list=suede!80!black for 16 items,
- arrow tip=stealth,
- uniform arrow color = true,
- arrow color=hokkaido,
- back arrow disabled=true,
- module minimum width = 20mm,
- module minimum height = 5mm,
- text width =36mm,
- module y sep=1.1,
- additions={
- additional item offset=0.95cm,
- additional item width=20mm,
- additional item height=5mm,
-additional item text width=36mm,
-additional item shadow= drop shadow,
- additional item border color=dzug,
- additional arrow color=dzug,
- additional arrow tip=stealth,
- additional arrow line width=1pt,
- }
-}
-\smartdiagramadd[flow diagram]{%
-Volanges -> Carnay, %
-Merteuil -> Valmont, %
-Volanges -> Carnay, % 
-Valmont -> Merteuil, %
-Merteuil -> Valmont %
-}{%
-right of module4/Cormatin, 
-right of module5/Merteuil -> Valmont%
-} 
-\smartdiagramconnect{to-}{additional-module1/module4}
-%\smartdiagramconnect{to-}{additional-module1/module3}
-%\smartdiagramconnect{<-}{module4/module5}
-
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-% Check: http://www.texample.net/tikz/examples/android/
-% http://www.texample.net/tikz/examples/graph/
-% http://www.texample.net/tikz/examples/diagram-chains/
+Weiter angenommen, dass bezüglich der Codezeile 13'541 eine Diskussion in der weltweiten Entwicklergemeinschaft entbrennt, weil der Entwickler {\color{hokkaido}Egmont} der Meinung ist, hier müsse statt \inanf{Schloß Cormatin} vielmehr \inanf{Schloß Chambord} stehen, da infolge eines Unwetters im Südosten von Paris die Straßen am 6.~August 1781 nach Burgund unwegsam waren, so dass kein Postillon seine Briefe zustellen konnte, was wiederum dazu führte, dass infolge der üblichen Brieflaufzeiten die Antwort der Marquise de Merteuil niemals am 7.~August hätte geschrieben werden können. Das Programm sei also, so {\color{hokkaido}Egmont}, an dieser Stelle fehlerhaft. Der Entwickler {\color{dzug}Richard}, auf den der ursprüngliche Code zurückgeht, kann sich mit diesem Argument allerdings nicht einverstanden erklären und beharrt auf seiner anfänglichen Lokalisierung des Briefs des Vicomte de Valmont auf Schloß Cormatin. Der Konflikt bleibt ungelöst und der Programmcode wird an dieser Stelle kurzerhand verzweigt, das heisst mit Hilfe des Befehls \emph{branch} gelingt es, den Code zu duplizieren, um beide Varianten parallel zueinander existieren zu lassen (Abb.~\ref{abb:ori}). {\color{hokkaido}Egmont} schert also an dieser Stelle aus dem linearen Ablauf der Befehlskette aus, indem er einfach seine eigene Variante unter dem Etikett eines neuen \emph{branch} (Zweigs) der Allgemeinheit zur Verfügung stellt.
 
 \begin{figure}[hpt]
 \begin{center}
-
 \begin{tikzpicture}
 \tikzset{edge/.style = {->,> = latex'}}
 \tikzset{
@@ -236,31 +183,27 @@ label/.style={sloped,above}
 %\draw[edge] (b) to (c);
 %\draw[edge] (d) to (c);
 \end{tikzpicture}
-
 \end{center}
-\caption{Varianten einer Entwicklung}\label{flowgen}
+\caption{Varianten einer Entwicklung}\label{abb:ori}
 \end{figure}
 
-Beide Stränge sind nach wie vor für alle Entwickler sichtbar und nahezu identisch, bis auf die kleine Abweichung von {\color{dzug}Richard}, der seinen \emph{source code} nach den eigenen Vorstellungen abgeändert hat. Um hier den Überblick nicht zu verlieren, kann man mit dem kleinen Hilfsprogramm \emph{diff} den Befehl erteilen, sich die Unterschiede in den beiden Quellcodes anzeigen zu lassen. Das sieht dann so aus: 
+Beide Stränge sind nach wie vor für alle Entwickler sichtbar und nahezu identisch, bis auf die kleine Abweichung von {\color{hokkaido}Egmont}, der seinen \emph{source code} gegenüber dem zwischenzeitlich womöglich ebenfalls weiter entwickeltem Original' von {\color{dzug}Richard} nach den eigenen Vorstellungen abgeändert hat. Um hier den Überblick nicht zu verlieren, kann man mit dem kleinen Hilfsprogramm \emph{diff} den Befehl erteilen, sich die Unterschiede in den beiden Quellcodes anzeigen zu lassen (Abb.~\ref{abb:orikopie}).
 
 % colordiff -u Original.txt Kopie.txt
 
 \begin{figure}[ht]
 \begin{center}
-\pngbild{568}{421}{../bilder/OriginalKopie.png}{1.1\textwidth}\\[-3mm]
+\pngbild{433}{176}{../bilder/OriginalKopie.png}{1.1\textwidth}\\[-3mm]
 \caption{\emph{diff} von Original und Kopie}\label{abb:orikopie}
 \end{center}
 \end{figure}
 
 \emph{diff} macht also den kleinen Unterschied sichtbar. Das Programm hebt die Abweichungen zweier in weiten Teilen identischen Dokumente hervor, oder um es – leicht abweichend – mit einem informatischen Begriff zu sagen: \emph{diff} macht die Deltas innerhalb des Codes sichtbar, oder um es – erneut leicht abweichend – mit einem philosophischen Begriff zu sagen: \emph{diff} führt die \emph{différance} zwischen Original und Kopie vor. – Das Programm \emph{diff} wurde in den frühen 70er Jahren von Douglas McIlroy an den Bell Labs in New Jersey geschrieben. Die Denkfigur \emph{différance} wurde in den frühen 70er Jahren von Jacques Derrida an der ENS in Paris entwickelt. 
 
-Nun könnten sich beide Zweige von ein und demselben Programm parallel zueinander weiterentwickeln, sich dabei zunehmend unterscheiden, in mehr als nur einer Zeile voneinander abweichen, so lange bis es zwei ganz unterschiedliche Programme geworden sein werden, also so, wie bei den Linux-Derivaten aus der Anfangsgraphik mit zahlreichen losen Enden. Doch diese auseinanderstrebende Bewegung der beiden Teile wird in unserem Beispiel durch einen neuen Forschungsstand jäh unterbunden. In einem Konvolut im Nachlass von Pierre-Ambroise-François Choderlos de Laclos taucht der Hinweis auf, dass es sich bei dem von ihm in der Druckfassung bewusst als leere Variablen belassenen Ortsangaben von Valmonts Aufenthaltsort um das Schloß Bussy-Rabutin gehandelt habe, wie der Nutzer {\color{olive}Oliva} glaubhaft machen kann. Der Konflikt ist damit durch eine neue archivalische Evidenz geschlichtet, die beiden falschen Angaben \inanf{Chambord} und \inanf{Cormatin} gilt es zu ersetzen durch \inanf{Schloß Bussy-Rabutin}, um damit die beiden separaten Stränge wieder zusammenzuführen [Abb.~\ref{abb:merge}\anzeige]. Diese Konvergenzbewegung wird durch den Befehl \emph{merge} erreicht, der die beiden konkurrierenden Darstellungen wieder vereint, indem zunächst einer der beiden Versionen in Programmzeile 13'541 der Vorzug gegeben wird, um den Code dann mit der neuen Erkenntnis und ergänzt um einen Kommentar erneut zu einem einzigen Zweig zu fusionieren. Dieses Verfahren, das auch als \emph{three-way-merge} bezeichnet wird, erfreut sich nicht nur in der theoretischen Informatik der Gegenwart einer regen Forschungstätigkeit, sondern dürfte philologisch Gebildeteten nicht ganz unbekannt vorkommen, stellt es doch eine recht alltägliche Problematik bei der Herstellung historisch-kritischer Editionen dar, wo ebenso zwischen verschiedenen Varianten eines Texts zu differenzieren und anschliessend eine Entscheidung zu fällen ist, welcher Variante der Vorzug zu geben sei.
-
+Nun könnten sich beide Zweige von ein und demselben Programm parallel zueinander weiterentwickeln, sich dabei zunehmend unterscheiden, in mehr als nur einer Zeile voneinander abweichen, so lange bis es zwei ganz unterschiedliche Programme geworden sein werden. Doch die auseinanderstrebende Bewegung der beiden Teile wird in diesem (fiktiven) Beispiel durch einen neuen Forschungsstand jäh unterbunden: In einem Konvolut im Nachlass von Pierre-Ambroise-François Choderlos de Laclos taucht der Hinweis auf, dass es sich bei dem von ihm in der Druckfassung bewusst als leere Variablen belassenen Ortsangaben von Valmonts Aufenthaltsort um das Schloß Bussy-Rabutin gehandelt habe, wie der Nutzer {\color{olive}Oliva} glaubhaft machen kann. Der Konflikt ist damit durch eine neue archivalische Evidenz geschlichtet, die beiden falschen Angaben \inanf{Chambord} und \inanf{Cormatin} gilt es zu ersetzen durch \inanf{Schloß Bussy-Rabutin}, um damit die beiden separaten Stränge wieder zusammenzuführen (Abb.~\ref{abb:merge}). Diese Konvergenzbewegung wird durch den Befehl \emph{merge} erreicht, der die beiden konkurrierenden Darstellungen wieder vereint, indem zunächst einer der beiden Versionen in Programmzeile 13'541 der Vorzug gegeben wird, um den Code dann mit der neuen Erkenntnis und ergänzt um einen Kommentar erneut zu einem einzigen Zweig zu fusionieren. Dieses Verfahren, das auch als \emph{three-way-merge} bezeichnet wird, erfreut sich nicht nur in der theoretischen Informatik der Gegenwart einer regen Forschungstätigkeit, sondern dürfte philologisch Gebildeteten nicht ganz unbekannt vorkommen. Stellt es doch eine recht alltägliche Problematik bei der Herstellung historisch-kritischer Editionen dar, wo ebenso zwischen verschiedenen Varianten eines Texts zu differenzieren und anschliessend eine Entscheidung zu fällen ist, welcher Variante der Vorzug zu geben sei.
 
 \begin{figure}[hpt]
 \begin{center}
-
-
 \begin{tikzpicture}
 \tikzset{edge/.style = {->,> = latex'}}
 \tikzset{
@@ -283,15 +226,11 @@ label/.style={sloped,above}
 \draw[edge] (b) to (c);
 \draw[edge] (d) to (c);
 \end{tikzpicture}
-
-
 \end{center}
 \caption{Neue Variante der Varianten}\label{abb:merge}
 \end{figure}
 
-
-Lassen Sie mich nun auf die drei medialen Praktiken \emph{branch}, \emph{diff}, \emph{merge} etwas genauer eingehen, indem ich nun meinerseits in der Zeit etwas zurückgehe, um die Verfahren, wie sie in informatischen Kollaborationen derzeit weltweit Anwendung finden, auf ihre eigene Geschichte hin zu befragen. Denn ein besonderer Vorzug von Versionskontrollsystemen besteht darin, dass ein solches System stets reversibel in der Zeit bleibt, das heisst, man kann nahezu mühelos zwischen unterschiedlichen Zeitpunkten der Codeentwicklung wandern, die Zeitachse also bei Bedarf wie einen Schieber zurück bewegen, um jegliche Änderung am Code wieder ungeschehen zu machen. Hier zeigt sich auch schon eine wichtige Differenz: Weder in der Historiographie von Software noch in der von Kulturtechniken wie dem Kopieren besteht (bedauerlicherweise) diese Möglichkeit einer Rückkehr zum \emph{status quo ante} in dieser Form, weil wir uns stets im Hier und Jetzt befinden. Es sei denn, wir bewegen uns immersiv durch ein spezifisches Medium in andere Welten, womit ganz andere Effekte möglich werden. % Und dieses Medium ist die Fiktion.
-
+Auf die drei medialen Praktiken \emph{branch}, \emph{diff}, \emph{merge} sei nun etwas genauer eingegangen, um die Verfahren, wie sie in informatischen Kollaborationen derzeit weltweit Anwendung finden, auf ihre eigene Geschichte hin zu befragen. Denn ein besonderer Vorzug von Versionskontrollsystemen besteht darin, dass ein solches System stets reversibel in der Zeit bleibt, das heisst, man kann nahezu mühelos zwischen unterschiedlichen Zeitpunkten der Codeentwicklung wandern, die Zeitachse also bei Bedarf wie einen Schieber zurück bewegen, um jegliche Änderung am Code wieder ungeschehen zu machen. Hier zeigt sich auch schon eine wichtige Differenz: Weder in der Historiographie von Software noch in der Geschichtsschreibung von Kulturtechniken wie dem Kopieren besteht (bedauerlicherweise) die Möglichkeit einer Rückkehr zum \emph{status quo ante}. Es sei denn, man bewegt sich immersiv durch ein spezifisches Medium in andere Welten. Und dieses Medium ist die Fiktion.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{comment}
