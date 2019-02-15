@@ -86,10 +86,11 @@
 \begin{document}
 %
 % 
-\title{\inanf{branch}, \inanf{diff}, \inanf{merge}\\
-\large Für eine historische Quellcodekritik}
-\author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[-1mm]
-ver.0.7:2019-02-14, \gitVer{}\\
+\title{\huge\inanf{branch}, \inanf{diff}, \inanf{merge}\\
+\normalsize Versionskontrolle und historische Quellcodekritik}
+\author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[3mm]
+local version ver.0.7:2019-02-14,\\
+\href{https://github.com/nachsommer/VersionsKontrolle/tree/master/1.Fassung}{github.com/nachsommer/VersionsKontrolle}: \gitVer{}\\[3mm]
 erscheint in: Jörg Paulus, Andrea Hübener (Hrsg.),\\
 \emph{Abschrift, Ablichtung, CC \& Vice Versa}, tba, 2019}
 \maketitle
@@ -217,7 +218,7 @@ right of module5/Merteuil -> Valmont%
 \tikzset{edge/.style = {->,> = latex'}}
 \tikzset{
 master/.style={circle,draw=black!50,fill=dzug!50},
-branch/.style={circle,draw=black!50,fill=hokkaido!30},
+branch/.style={circle,draw=black!50,fill=hokkaido!60},
 result/.style={circle,draw=black!50,fill=olive!30},
 label/.style={sloped,above}
 }
@@ -225,8 +226,8 @@ label/.style={sloped,above}
 \node[master] (a) at  (0,2) {Original};
 \node[master] (b) at  (3,2) {Original'};
 \node[branch] (d) at  (3,-2) {OriKopie};
-\node[label] (e) at (3,2.9) {\texttt{\inanf{Cormatin}}};
-\node[label] (e) at (3,-3.3) {\texttt{\inanf{Chambord}}};
+\node[label] (e) at (3,3.0) {\texttt{\inanf{Cormatin}}};
+\node[label] (e) at (3,-3.5) {\texttt{\inanf{Chambord}}};
 %\node[result] (c) at  (6,0) {Schmelz};
 %\node[label] (e) at (6.5,0.7) {\texttt{\inanf{Bussy-Rabutin}}};
 %edges
@@ -264,7 +265,7 @@ Nun könnten sich beide Zweige von ein und demselben Programm parallel zueinande
 \tikzset{edge/.style = {->,> = latex'}}
 \tikzset{
 master/.style={circle,draw=black!50,fill=dzug!50},
-branch/.style={circle,draw=black!50,fill=hokkaido!30},
+branch/.style={circle,draw=black!50,fill=hokkaido!60},
 result/.style={circle,draw=black!50,fill=olive!30},
 label/.style={sloped,above}
 }
@@ -272,10 +273,10 @@ label/.style={sloped,above}
 \node[master] (a) at  (0,2) {Original};
 \node[master] (b) at  (3,2) {Original'};
 \node[branch] (d) at  (3,-2) {OriKopie};
-\node[label] (e) at (3,2.9) {\texttt{\inanf{Cormatin}}};
-\node[label] (e) at (3,-3.3) {\texttt{\inanf{Chambord}}};
+\node[label] (e) at (3,3.0) {\texttt{\inanf{Cormatin}}};
+\node[label] (e) at (3,-3.5) {\texttt{\inanf{Chambord}}};
 \node[result] (c) at  (6,0) {Schmelz};
-\node[label] (e) at (6.5,0.7) {\texttt{\inanf{Bussy-Rabutin}}};
+\node[label] (e) at (6.5,0.9) {\texttt{\inanf{Bussy-Rabutin}}};
 %edges
 \draw[edge] (a) to (b);
 \draw[edge] (a) to (d);
