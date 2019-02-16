@@ -46,7 +46,17 @@
 %
 \date{}
 %
-\usepackage[style=authoryear-ibid,maxnames=4]{biblatex}
+%\usepackage[style=authoryear-ibid,maxnames=4]{biblatex}
+\usepackage[authordate,
+    backend=biber,
+    sorting=nyt,
+    backref=false,
+    noibid=true,
+    seconds=true,
+    alldates=iso,
+    cmsdate=on,
+    annotation=true]{biblatex-chicago} % So gelingt die Unterscheidung mit ORIGDATE und DATE
+%\usepackage[backend=biber,style=verbose-ibid]{biblatex}
 \bibliography{/Users/mkr/Daten/texte/synapsen}
 %
 \usepackage[scaled]{berasans}
