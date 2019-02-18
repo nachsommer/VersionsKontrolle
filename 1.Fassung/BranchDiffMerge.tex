@@ -48,7 +48,6 @@
 %
 \date{}
 %
-%\usepackage[style=authoryear-ibid,maxnames=4]{biblatex}
 \usepackage[authordate,
     backend=biber,
     sorting=nyt,
@@ -57,8 +56,7 @@
     seconds=true,
     alldates=iso,
     cmsdate=on,
-    annotation=true]{biblatex-chicago} % So gelingt die Unterscheidung mit ORIGDATE und DATE
-%\usepackage[backend=biber,style=verbose-ibid]{biblatex}
+    annotation=true]{biblatex-chicago} 
 \bibliography{/Users/mkr/Daten/texte/synapsen}
 %
 \usepackage[scaled]{berasans}
@@ -84,10 +82,6 @@
 \begin{foreigndisplayquote}{german}}%
 {\end{foreigndisplayquote}}
 %
-%\renewcommand{\abstractname}{\relax}
-%
-%\addtolength{\voffset}{4mm}
-%\addtolength{\textheight}{8mm}
 %
 \setcounter{section}{-1}
 %
@@ -98,7 +92,7 @@
 \title{\huge\inanf{branch}, \inanf{diff}, \inanf{merge}\\
 \normalsize Versionskontrolle und historische Quellcodekritik}
 \author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[3mm]
-local version 0.7:2019-02-15,\\
+local version 0.74:2019-02-18,\\
 \href{https://github.com/nachsommer/VersionsKontrolle/tree/master/1.Fassung}{github.com/nachsommer/VersionsKontrolle}: \gitVer{}\\[3mm]
 erscheint in: Jörg Paulus, Andrea Hübener (Hrsg.),\\
 \emph{Abschrift, Ablichtung, CC \& Vice Versa}, tba, 2019}
@@ -106,28 +100,8 @@ erscheint in: Jörg Paulus, Andrea Hübener (Hrsg.),\\
 \tableofcontents
 \newpage
 %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{comment}
-
-6 Abbildungen
-
-Alternativ-Version für Konstanz:
-
-"Assistenzsysteme. Mimetische Praktiken kollektiver Autorschaft zwischen Mensch und Maschine"
-
-Neuer Einstieg: Was sind Assistenzsysteme? Sie überwachen. Hier: die Unterschiede, und zwar die Unterschiede in den Texten.
-
-Welche historischen Vergleiche? Die Korrektoren.
-
-Darüber die Brücke zur Auto(r)Korrektur. Hier die Notwendigkeit, mimetischer Praktiken ins Spiel bringen...
-
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\noindent 
-
 \begin{abstract}
-Der Beitrag wirft einen Blick hinter die Kulissen, wie grossangelegte kollektive Schreibprojekte medientechnisch organisiert sind und welchen Befehlssätzen und Befehlsketten sie gehorchen. Im Fokus stehen dabei einige historische Szenarien, in denen sich die kulturtechnische Funktionsweise verteilter Autorschaft präfiguriert. Das Ziel dieser medien- und kulturhistorischen Perspektivierung liegt darin, der Geschichtsvergessenheit der \emph{software studies} ein wenig entgegenzuarbeiten, um die gegenwärtige Praktik kollektiver Autorschaft in der Softwareentwicklung zu ihren historischen Wurzeln und Entwicklungslinien zurück zu verfolgen, nicht zuletzt geleitet von dem Anspruch, die informatischen Praktiken nicht einfach als immer schon gegeben hinzunehmen, sondern sie selbst durch ihre vorgängigen Entwicklungslinien im vorelektronischen Zeitalter zu ergänzen. Drei exemplarischen Geschichten oder historischen Szenarien gilt dabei eine besondere Aufmerksamkeit: Sie ereignen sich nahezu synchron um 1780, zum einen im Frankreich des Ancien Regime, zum zweiten in Wien, der Hauptstadt des Heiligen Römischen Reichs Deutscher Nation, und zum dritten im Herzogtum Sachsen-Weimar-Eisenach, daneben aber auch in London 1916 und anderenorts. Dieses Verfahren, informatische Strukturen der Gegenwart mit ihren kulturhistorischen Vorläufern und Wegbereitern zu erläutern, wird am Ende dieses Beitrags gebündelt durch das Konzept der Quellcodekritik, das es erlaubt, die in Algorithmen eingekapselten Geschichten ihrerseits lesbar und kritisch nachvollziehbar zu machen. 
+\noindent Der Beitrag wirft einen Blick hinter die Kulissen, wie grossangelegte kollektive Schreibprojekte medientechnisch organisiert sind und welchen Befehlssätzen und Befehlsketten sie gehorchen. Im Fokus stehen dabei einige historische Szenarien, in denen sich die kulturtechnische Funktionsweise verteilter Autorschaft präfiguriert. Das Ziel dieser medien- und kulturhistorischen Perspektivierung liegt darin, der Geschichtsvergessenheit der \emph{software studies} ein wenig entgegenzuarbeiten, um die gegenwärtige Praktik kollektiver Autorschaft in der Softwareentwicklung zu ihren historischen Wurzeln und Entwicklungslinien zurück zu verfolgen, nicht zuletzt geleitet von dem Anspruch, die informatischen Praktiken nicht einfach als immer schon gegeben hinzunehmen, sondern sie selbst durch ihre vorgängigen Entwicklungslinien im vorelektronischen Zeitalter zu ergänzen. Drei exemplarischen Geschichten oder historischen Szenarien gilt dabei eine besondere Aufmerksamkeit: Sie ereignen sich nahezu synchron um 1780, zum einen im Frankreich des Ancien Regime, zum zweiten in Wien, der Hauptstadt des Heiligen Römischen Reichs Deutscher Nation, und zum dritten im Herzogtum Sachsen-Weimar-Eisenach, daneben aber auch in London 1916 und anderenorts. Dieses Verfahren, informatische Strukturen der Gegenwart mit ihren kulturhistorischen Vorläufern und Wegbereitern zu erläutern, wird am Ende dieses Beitrags gebündelt durch das Konzept der Quellcodekritik, das es erlaubt, die in Algorithmen eingekapselten Geschichten ihrerseits lesbar und kritisch nachvollziehbar zu machen. 
 \end{abstract}
 
 
@@ -156,16 +130,6 @@ leseBrief("Vicomte de Valmont", "Marquise de Merteuil",
 leseBrief("Marquise de Merteuil", "Vicomte de Valmont", 
 	gegeben("Paris",1781-08-07));                           		// 5. Brief
 \end{lstlisting}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{comment}
-
-Warum Gefährliche Liebschaften so gut geeignet ist: Relativ in der Zeit, so kommt aber kein Programm durch. Es muss _in_ der Zeit laufen...
-
-Es ist eine Auswahl an Briefen, d.h. es können jederzeit irgendwo noch weitere zwischengeschoben werden... Ein dynamisches Unterfangen.
-
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Weiter angenommen, dass bezüglich der Codezeile 13'541 eine Diskussion in der weltweiten Entwicklergemeinschaft entbrennt, weil der Entwickler {\color{hokkaido}Egmont} der Meinung ist, hier müsse statt \inanf{Schloß Cormatin} vielmehr \inanf{Schloß Chambord} stehen, da infolge eines Unwetters im Südosten von Paris die Straßen am 6.~August 1781 nach Burgund unwegsam waren, so dass kein Postillon seine Briefe zustellen konnte, was wiederum dazu führte, dass infolge der üblichen Brieflaufzeiten die Antwort der Marquise de Merteuil niemals am 7.~August hätte geschrieben werden können. Das Programm sei also, so {\color{hokkaido}Egmont}, an dieser Stelle fehlerhaft. Der Entwickler {\color{dzug}Richard}, auf den der ursprüngliche Code zurückgeht, kann sich mit diesem Argument allerdings nicht einverstanden erklären und beharrt auf seiner anfänglichen Lokalisierung des Briefs des Vicomte de Valmont auf Schloß Cormatin. Der Konflikt bleibt ungelöst und der Programmcode wird an dieser Stelle kurzerhand verzweigt, das heisst mit Hilfe des Befehls \emph{branch} gelingt es, den Code zu duplizieren, um beide Varianten parallel zueinander existieren zu lassen (Abb.~\ref{abb:ori}). {\color{hokkaido}Egmont} schert also an dieser Stelle aus dem linearen Ablauf der Befehlskette aus, indem er einfach seine eigene Variante unter dem Etikett eines neuen \emph{branch} (Zweigs) der Allgemeinheit zur Verfügung stellt.
 
@@ -245,7 +209,6 @@ Auf die drei medialen Praktiken \emph{branch}, \emph{diff}, \emph{merge} sei nun
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{comment}
 
-Von der kurzen Geschichte der Sofware zur langen Geschichte der kollektiven Autorschaft. 
 
 Konfliktlösung
 Vorteil: Das Zurückgehen in der Zeit. 
@@ -253,65 +216,18 @@ Vorteil: Das Zurückgehen in der Zeit.
 Graphentheoretische Darstellung. Beispiel. Briefroman Gefährliche Liebschaften
 Source Control. Kontrolle behalten über die Quellen. 
 
-Kurze Erklärung anhand von \verb+https://en.wikipedia.org/wiki/Version_control+
-
-
-Interessant: Statt single und zentralisiert, gibt's das System noch als \verb+https://en.wikipedia.org/wiki/Distributed_version_control+
-
-\verb+https://en.wikipedia.org/wiki/Comparison_of_version_control_software#History_and_adoption+
-
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Fragestellung: Wie ändern sich tradierte Vorstellungen von Original und Kopie im Lichte von Singularisierungsprozessen? Was sind die Modi einer Ästhetik jenseits der Hierarchisierung von Original und Duplikat in traditionellen und in digitalen Konfigurationen?
 
 \section{Verzweigen}
 
 Der unscheinbare Befehl \emph{branch} bewirkt nichts weniger, als mit einem einzigen schlichten Kopiervorgang ein Paralleluniversum zu erzeugen. Der gesamte Kosmos des fiktiven Softwareprojekts [\emph{Gefährliche Liebschaften}] wird mit all seinen Routinen, Nischen, Fehlern, Kommentaren, Besonderheiten und Unzulänglichkeiten leichterhand dupliziert, um sodann in einem kleinen Detail verändert zu werden. Der Zeitpunkt der Befehlserteilung \emph{branch} markiert den Bifurkationspunkt, ab dem sich die Welten teilen, um fortan zwei parallele Weltläufte mit zwei \anf{verschiedenen Zukünften}\footcite[169]{borges:1941} zu generieren. Was dem einen als ein \anf{wirrer Haufen widersprüchlicher Entwürfe} erscheint, ist für den anderen ein wohlgeordnetes \anf{Labyrinth aus Symbolen}.\footcite[168]{borges:1941} Oder noch genauer: ein \anf{Labyrinth aus Zeit}.\footcite[168]{borges:1941} Denn diese Struktur aus parallelen Welten mit ihrer unbegrenzten Möglichkeit zur Kontingenz \anf{\emph{erschafft} so verschiedene Zukünfte, verschiedene Zeiten, die ebenfalls auswuchern und sich verzweigen.}\footcite[170]{borges:1941} 
 
-Die Erzählung von Jorge Luis Borges von 1941, aus der die Zitate im vorangehenden Absatz stammen, entwickelt eine Struktur, die jener eigenartigen textuellen Parallelwelt gleicht, die durch einen \emph{branch}-Befehl erzeugt wird. Wie in dem Briefroman von Choderlos de Laclos gibt es in dieser Erzählung eine Rahmenhandlung, in der ein fiktiver Herausgeber dem Leser von einem unverhofft gefundenen Text-Fragment berichtet, das eine zuvor noch rätselhafte Kriegshandlung erhellt. In diesem Fragment wird berichtet, wie der Ich-Erzähler, ein chinesischer Spion, der im Ersten Weltkrieg in England für die Deutschen kundschaftet, den britischen Sinologen Stephen Albert aufsucht. Bei diesem Besuch begegnet der Chinese einer besonderen Struktur, und zwar dem von einem seiner Vorfahren entworfenen \anf{Garten der Pfade, die sich verzweigen}, – so der Titel der Erzählung. Dieser labyrinthische Garten erstreckt sich jedoch nicht im Raum, sondern in der Zeit, insofern er aus einem in zahlreichen Versionen durchgespielten Roman besteht, der – wie in Leibniz Theodizee\footnote{Die Konstruktion gleicht in gewisser Weise der Konstellation, die Leibniz in seiner Theodizee-Problematik durchspielt: Die göttliche Ordnung kennt zahlreiche Welten, die nebeneinander bestehen, sich gleichen, aber doch in einigen signifikanten Details unterscheiden. Allerdings sind im Fall der Software keine Qualitätskriterien wie gut und böse ausschlaggebend, sondern eher der Zuspruch und die Nutzung durch andere Entwickler. Zudem führt die Parallelität der beiden Code-Ordnungen (um nicht Kosmoi zu schreiben) vor allem die Kontingenz vor Augen, dass jede artifizielle Welt auch anders sein könnte.} – alle möglichen Begebenheiten in parallelisierten Varianten enthält. Der Autor dieses Romans \anf{glaubte an unendliche Zeitreihen, an ein wachsendes, schwindelerregendes Netz auseinander- und zueinanderstrebender und paralleler Zeiten. Dieses Webmuster aus Zeiten, die sich einander nähern, sich verzweigen, sich scheiden oder einander jahrhundertelang ignorieren, umfaßt alle Möglichkeiten.}\footcite[172]{borges:1941} Wie sich diese Problematik von Unendlichkeit materiell bewerkstelligen lässt, wird in der Erzählung freilich ebenso reflektiert, nämlich entweder zyklisch, so wie es Vladimir Nabokov mit seinem Karteikarten-Roman \emph{Pale Fire} zwei Jahrzehnte später vorführt, oder rekursiv, wie Scheherazade, die an einer bestimmten Stelle in \emph{Tausendundeiner Nacht} aus einer bestimmten Stelle von \emph{Tausendundeiner Nacht} vorliest. Es ist ein \anf{Labyrinth, das die Vergangenheit umfaßte und die Zukunft [\ldots] Zum Beispiel kommen Sie in dieses Haus, aber in einer der möglichen Vergangenheiten sind Sie mein Feind gewesen, in einer anderen mein Freund.}\footcite[166/170]{borges:1941} Und wie die Geschichte dann weiter zeigt, wird er auch beides zugleich gewesen sein\ldots % Freund, weil er Albert schon lange bewundert, und zugleich Feind, weil er ihn für einen vermeintlich höheren Zweck erschiesst. 
+Die Erzählung von Jorge Luis Borges von 1941, aus der die Zitate im vorangehenden Absatz stammen, entwickelt eine Struktur, die jener eigenartigen textuellen Parallelwelt entspricht, die durch einen \emph{branch}-Befehl erzeugt wird. Wie in dem Briefroman von Choderlos de Laclos gibt es in dieser Erzählung eine Rahmenhandlung, in der ein fiktiver Herausgeber dem Leser von einem unverhofft gefundenen Text-Fragment berichtet, das eine zuvor noch rätselhafte Kriegshandlung erhellt. In diesem Fragment wird berichtet, wie der Ich-Erzähler, ein chinesischer Spion, der im Ersten Weltkrieg in England für die Deutschen kundschaftet, den britischen Sinologen Stephen Albert aufsucht. Bei diesem Besuch begegnet der Chinese einer besonderen Struktur, und zwar dem von einem seiner Vorfahren entworfenen \anf{Garten der Pfade, die sich verzweigen}, – so der Titel der Erzählung. Dieser labyrinthische Garten erstreckt sich jedoch nicht im Raum, sondern in der Zeit, insofern er aus einem in zahlreichen Versionen durchgespielten Roman besteht, der – wie in Leibniz Theodizee\footnote{Die Konstruktion gleicht in gewisser Weise der Konstellation, die Leibniz in seiner Theodizee-Problematik durchspielt: Die göttliche Ordnung kennt zahlreiche Welten, die nebeneinander bestehen, sich gleichen, aber doch in einigen signifikanten Details unterscheiden. Allerdings sind im Fall der Software keine Qualitätskriterien wie gut und böse ausschlaggebend, sondern eher der Zuspruch und die Nutzung durch andere Entwickler. Zudem führt die Parallelität der beiden Code-Ordnungen (um nicht Kosmoi zu schreiben) vor allem die Kontingenz vor Augen, dass jede artifizielle Welt auch anders sein könnte.} – alle möglichen Begebenheiten in parallelisierten Varianten enthält. Der Autor dieses Romans \anf{glaubte an unendliche Zeitreihen, an ein wachsendes, schwindelerregendes Netz auseinander- und zueinanderstrebender und paralleler Zeiten. Dieses Webmuster aus Zeiten, die sich einander nähern, sich verzweigen, sich scheiden oder einander jahrhundertelang ignorieren, umfaßt alle Möglichkeiten.}\footcite[172]{borges:1941} Wie sich diese Problematik von Unendlichkeit materiell bewerkstelligen lässt, wird in der Erzählung freilich ebenso reflektiert, nämlich entweder zyklisch, so wie es Vladimir Nabokov mit seinem Karteikarten-Roman \emph{Pale Fire} zwei Jahrzehnte später vorführt, oder rekursiv, wie Scheherazade, die an einer bestimmten Stelle in \emph{Tausendundeiner Nacht} aus einer bestimmten Stelle von \emph{Tausendundeiner Nacht} vorliest. Es ist ein \anf{Labyrinth, das die Vergangenheit umfaßte und die Zukunft [\ldots] Zum Beispiel kommen Sie in dieses Haus, aber in einer der möglichen Vergangenheiten sind Sie mein Feind gewesen, in einer anderen mein Freund.}\footcite[166/170]{borges:1941} Und wie die Geschichte dann weiter zeigt, wird er auch beides zugleich gewesen sein – ganz so wie die Version \emph{Original} neben der Version \emph{Original'} existiert. % Freund, weil er Albert schon lange bewundert, und zugleich Feind, weil er ihn für einen vermeintlich höheren Zweck erschiesst. 
 
-Es ist eigentlich kaum nötig zu erwähnen, dass diese Charakteristik des unendlichen Romans, die Borges entwirft, eine ziemlich präzise strukturelle Beschreibung dessen liefert, was eine Software-Versionsverwaltung rund 50 Jahre später bereitstellt: \inanf{ein wachsendes, schwindelerregendes Netz auseinander- und zueinanderstrebender und paralleler Zeiten}.
+Es ist kaum nötig zu erwähnen, dass diese Charakteristik des unendlichen Romans, die Borges entwirft, eine ziemlich präzise strukturelle Beschreibung dessen liefert, was eine Software-Versionsverwaltung rund 50 Jahre später bereitstellt: \inanf{ein wachsendes, schwindelerregendes Netz auseinander- und zueinanderstrebender und paralleler Zeiten}, in dem die verschiedenen Varianten eines Texts nebeneinander, voneinander unabhängig mit jeweils eigenen, offenen Entwicklungshorizonten entstehen. Mit anderen Worten, die vergleichsweise kurze Geschichte der Software und ihren jeweiligen Maßnahmen, Kontrolle über die Quellen zu erlangen oder zu erhalten, korrespondiert – zumindest untergründig – mit der langen Geschichte von literarischer oder gar kollektiver Autorschaft. Man könnte Borges abgründige Geschichte über die \anf{Verzweigung in der Zeit}\footcite[169]{borges:1941} daher als eine Art literarische Präfiguration der informatischen Versionskontrolle verstehen. 
 
-Bevor nun von der medialen Praktik des Verzweigens seinerseits wieder verzweigt wird auf die Unterschiedsbestimmung mit \emph{diff}, sei noch ein kleiner Unterzweig eingebunden, der so etwas wie die fundamentale Übertragungsfunktion aller drei Verfahren darstellt. Denn weder \emph{branch} noch \emph{diff} oder \emph{merge} kommen ohne einen Vorgang aus, der die Daten von A nach B schafft; der sie prüft, validiert, transferiert und dupliziert. Es folgt demnach eine kurze Verzweigung zum Vorgang des Kopierens\ldots
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{comment}
-
-% Alberts Brief-Lektüre.
- 
-Für die Coda:
- 
-Was liegt nun näher als diese abgründige Geschichte über die \anf{Verzweigung in der Zeit}\footcite[169]{borges:1941} als eine Art literarische Präfiguration der informatischen Versionskontrolle einzuordnen. Ja, sicher. 
-
-Borges und die unterschiedlichen Zeitebenen, die in der Fiktion sich anbieten... Dies in Analogie zu unterschiedlichen Entwicklungszeiten bei der Softwareproduktion. 
-
-
-Alternative Entwürfe sichern
-
-Überblick bewahren. Version und Kontrolle. Diese Eigenschaften sind freilich auch bei der klassischen, das heisst philologischen Edition von Texten erforderlich. \anf{Ich habe Hunderte von Handschriften miteinander verglichen, habe die Fehler korrigiert, die sich durch die Nachlässigkeit der Abschreiber eingeschlichen haben; ich habe den Plan dieses Chaos erschossen, habe die ursprüngliche Ordnung wieder hergestellt}.\footcite[172]{borges:1941}
-
-	***
-
-Joethes Delegationen
-
-Ein weiterer Aspekt
-Verzweigen als Delegieren [Dies seinerseits als Abzweigung kennzeichnen...]
-Goethes Verzweigungen: Seine lahme Tintenhand.
-
-Sieben: 185–197.
-
-Einbauen: 
-"Alle Subalternen nehmen in spezifischer Weise eine Eigenart an, die sie ihrem Herrn und Gebieter ähnlicher werden läßt. Johann Georg Paul Götze, der rund 17 Jahre bei Goethen dient, gelingt es beispielsweise,...Der Meister dupliziert sich in seinen Domestiken."
-
-	***
-
-
-Siehe auch Schlagwort \inanf{Verzweigung} in Synapsen...
-
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Bevor nun im weiteren Textverlauf von der medialen Praktik des Verzweigens seinerseits wieder verzweigt wird auf die Unterschiedsbestimmung mit \emph{diff}, sei noch ein kleiner Unterzweig eingebunden, der so etwas wie die fundamentale Übertragungsfunktion aller drei Verfahren darstellt. Denn weder \emph{branch} noch \emph{diff} oder \emph{merge} kommen ohne einen Vorgang aus, der die Daten von A nach B schafft; der sie prüft, validiert, transferiert und dupliziert. Es folgt demnach eine kurze Verzweigung zum Vorgang des Kopierens\ldots
 
 
 \section*{Abzweigung: Kopieren}
@@ -363,6 +279,13 @@ Im Vergleich dazu ist der \emph{diff}-Befehl nachgerade \inanf{dumm} zu nennen, 
 \end{figure}
 
 Wo wäre in der langen Geschichte kollektiver Autorschaft der historische Vorläufer zum \emph{diff} zu verorten? Welche Instanz sorgt sich um etwaige Satz- oder Tippfehler, Zeilen-Unterschiede, Kopierfehler, unmerkliche, wenn nicht infinitesimale Details in der Wort(dar-)stellung? Kurzum, was ist das klassische Pendant zum \emph{diff} und seiner Fixierung der Deltas? Ebenso kurz gesagt: Der Herausgeber oder Bearbeiter einer Edition, derjenige also, der für die Sicherung des Textes, für die Entscheidung, dieser und nicht der anderen Variante den Vorzug zu geben, verantwortlich zeichnet, wobei er freilich – etwa bei historisch-kritischen Editionen – die Kontingenz der Varianten ebenfalls zur Darstellung bringt. Im \emph{diff} kondensiert – oder mit Blick auf den letzten Abschnitt: schmilzt – also eine lange Theoriegeschichte der Philologie und Editionswissenschaft.  
+
+***
+Alternative Entwürfe sichern
+
+Überblick bewahren. Version und Kontrolle. Diese Eigenschaften sind freilich auch bei der klassischen, das heisst philologischen Edition von Texten erforderlich. \anf{Ich habe Hunderte von Handschriften miteinander verglichen, habe die Fehler korrigiert, die sich durch die Nachlässigkeit der Abschreiber eingeschlichen haben; ich habe den Plan dieses Chaos erschossen, habe die ursprüngliche Ordnung wieder hergestellt}.\footcite[172]{borges:1941}
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{comment}
