@@ -2,8 +2,8 @@
 
 Dieser Text, der sich mit der Geschichte und den medialen Praktiken von
 Versionierungssystemen befasst, existiert selbst in drei Versionen, die
-sich jedoch -- ganz wie die historisch zurückzuverfolgenden Funktionen
-der Versionskontrolle bei der kollaborativen Textproduktion --
+sich jedoch – ganz wie die historisch zurückzuverfolgenden Funktionen
+der Versionskontrolle bei der kollaborativen Textproduktion –
 signifikant voneinander unterscheiden.
 
 Zwar folgen die drei Versionen einem gemeinsamen Argumentationsgang, sie
