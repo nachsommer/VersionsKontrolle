@@ -20,4 +20,4 @@ Eine Gesamtsicht der Versionsänderungen lässt sich mit Blick auf die
 Unterschiede in den jeweiligen Ausgangsdateien (im LaTeX-Format)
 nachvollziehen. Zur besseren Lesbarkeit liegen die Texte in ihren drei
 Varianten nicht nur gedruckt und auf einer linearen Zeitachse angeordnet in ihrer jeweiligen Fassung sowohl als
-LaTeX- als auch als pdf-Dateien hier auf GitHub vor, sondern – ähnlich wie von Borges imaginiert – parallel als eine einzige Datei, die sich durch die verschiedenen Daten ihrer Bearbeitung in der Zeitachse vor- und rückverfolgen lässt.
+LaTeX- als auch als pdf-Dateien hier auf GitHub vor, sondern ebenso – ähnlich wie von Borges imaginiert – in einer parallelen, gleichsam temporal geschichteten Version als eine einzige Datei, die sich durch die verschiedenen Momente ihrer Bearbeitung in der Zeitachse vor- und rückverfolgen lässt.
