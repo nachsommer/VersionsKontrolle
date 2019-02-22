@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[american,german]{babel}
 \usepackage{verbatim}
 \usepackage{microtype}
@@ -44,9 +44,19 @@
 }
 \lstset{style=mystyle}
 %
+\usepackage{gitver}
+%
 \date{}
 %
-\usepackage[style=authoryear-ibid,maxnames=4]{biblatex}
+\usepackage[authordate,
+    backend=biber,
+    sorting=nyt,
+    backref=false,
+    noibid=true,
+    seconds=true,
+    alldates=iso,
+    cmsdate=on,
+    annotation=true]{biblatex-chicago} 
 \bibliography{/Users/mkr/Daten/texte/synapsen}
 %
 \usepackage[scaled]{berasans}
@@ -68,16 +78,10 @@
 \newcommand{\anzeige}{\textbf{\color{hokkaido}\huge{\raisebox{-0.18ex}{$\bullet$}}\color{black}}}
 %
 \RequirePackage[babel,german=guillemets]{csquotes}
-\RequirePackage{setspace}
 \newenvironment{zitat}{
-\begin{spacing}{1}
 \begin{foreigndisplayquote}{german}}%
-{\end{foreigndisplayquote}\end{spacing}}
+{\end{foreigndisplayquote}}
 %
-%\renewcommand{\abstractname}{\relax}
-%
-%\addtolength{\voffset}{4mm}
-%\addtolength{\textheight}{8mm}
 %
 \setcounter{section}{-1}
 %
@@ -87,10 +91,11 @@
 \title{Assistenzsysteme\\
 \normalsize Mimetische Praktiken verteilter\\ 
 Autorschaft zwischen Mensch und Maschine}
-%\title{\inanf{branch}, \inanf{diff}, \inanf{merge}\\
-%\normalsize \st{Geschichte, Theorie und mediale Praktik verteilter Autorschaft}\\ Für eine historische Quellcodekritik}
-\author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[-1mm]
-ver.0.3:2018-04-21}
+\author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[3mm]
+local version 0.75:2019-02-15,\\
+\href{https://github.com/nachsommer/VersionsKontrolle/tree/master/3.Fassung}{github.com/nachsommer/VersionsKontrolle}: \gitVer{}\\[3mm]
+erscheint in: Friedrich Balke und Elisa Linseisen (Hrsg.),\\
+\emph{Mimesis Expanded}, Wilhelm Fink Verlag, Paderborn, 2019}
 \maketitle
 \tableofcontents
 \newpage
@@ -100,7 +105,7 @@ ver.0.3:2018-04-21}
 
 Dieser Text, der sich mit der Geschichte und den medialen Praktiken von Versionierungssystemen befasst, existiert selbst in drei Versionen, die sich jedoch – ganz wie die historisch zurückzuverfolgenden Funktionen der Versionskontrolle bei der kollaborativen Textproduktion – signifikant voneinander unterscheiden. 
 
-Zwar folgen die drei Versionen einem gemeinsamen Argumentationsgang, sie weichen jedoch in einigen Passagen und Details deutlich voneinander ab, insofern erst in der vorliegenden, dritten Fassung (commit 3fsd57) das Konzept der Assistenzsysteme vorgeschlagen wird, während in der ersten Fassung (commit 6g8wkit9) der Fokus auf den Verfahren und dem Konzept der Quellcodekritik liegt, und in der zweiten Fassung (commit 9gkfur5) die Passagen über die kollektive Autorschaft, insbesondere beim Vorgang des Verschmelzens, grösseren Raum einnehmen. Eine Gesamtsicht der Versionsänderungen lässt sich mit Blick auf die Unterschiede in den jeweiligen Ausgangsdateien (im LaTeX-Format) nachvollziehen. Zur besseren Lesbarkeit liegen die Texte in ihren drei Varianten auf GitHub ebenso als pdf-Dateien vor.
+Zwar folgen die drei Versionen einem gemeinsamen Argumentationsgang, sie weichen jedoch in einigen Passagen und Details deutlich voneinander ab, insofern erst in der vorliegenden, \href{https://github.com/nachsommer/VersionsKontrolle/tree/master/3.Fassung}{dritten Fassung} (commit 3fsd57) das Konzept der Assistenzsysteme vorgeschlagen wird, während in der \href{https://github.com/nachsommer/VersionsKontrolle/tree/master/1.Fassung}{ersten Fassung} (commit 6g8wkit9) der Fokus auf den Verfahren und dem Konzept der Quellcodekritik liegt, und in der \href{https://github.com/nachsommer/VersionsKontrolle/tree/master/2.Fassung}{zweiten Fassung} (commit 9gkfur5) die Passagen über die kollektive Autorschaft, insbesondere beim Vorgang des Verschmelzens, grösseren Raum einnehmen. Eine Gesamtsicht der Versionsänderungen lässt sich mit Blick auf die Unterschiede in den jeweiligen Ausgangsdateien (im \LaTeX-Format) nachvollziehen. Zur besseren Lesbarkeit liegen die Texte in ihren drei Varianten nicht nur auf einer linearen Zeitachse angeordnet, sondern – wie bei Borges – parallel in drei Fassungen auf GitHub sowohl als \LaTeX- als auch als pdf-Dateien vor.
 
 Am Ende: Einbauen den Hinweis auf die Konferenz in Mainz!
 
