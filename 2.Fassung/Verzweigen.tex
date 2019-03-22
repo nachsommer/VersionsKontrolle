@@ -91,13 +91,16 @@
 %
 \setcounter{section}{-1}
 %
+\usepackage{pdfpages}
+%
+%
 \begin{document}
 %
 % 
 \title{Verzweigen, Kopieren, Verschmelzen\\
 \Large Mediale Praktiken kollektiver Autorschaft}
 \author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[-1mm]
-ver.0.5:2018-03-15\\
+ver.0.6:2018-03-22\\
 erscheint in: Daniel Ehrmann, Thomas Traupmann (Hrsg.),\\
 \emph{Kollektive(s) Schreiben}, Wilhelm Fink Verlag, Paderborn 2019}
 \maketitle
@@ -106,6 +109,9 @@ erscheint in: Daniel Ehrmann, Thomas Traupmann (Hrsg.),\\
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{comment}
+
+Am Ende, nachdem die drei commits eingestellt sind, das gesamte Repositorium auf github mit einer DOI versehen, und zwar über Zenodo:
+https://guides.github.com/activities/citable-code/
 
 In diesem Text den Dreischritt branch, diff, merge, zurückdrängen zugunsten von branch und merge, diff nur als kurze Abzweigung
 
@@ -130,17 +136,20 @@ Darüber die Brücke zur Auto(r)Korrektur. Hier die Notwendigkeit, mimetischer P
 \end{comment}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\noindent Die Geschichte verteilter Autorschaft lässt sich unschwer als die lange Genealogie des Schreibens überhaupt identifizieren, steht doch an den Anfängen der Schrift kein Individuum, kein Autor im Sinne seiner goethezeitlichen Ausdifferenzierung zur männlichen Verkörperung einer Genie-Ästhetik, sondern immer schon ein Kollektiv, sei es nun, um den Pentateuch zu verfassen oder das Gilgamesch-Epos, oder sei es, um unter einem mutmasslichen Kollektivsingular wie Homer Verse auf Papyrus zu fixieren. Texte sind \emph{qua definitionem} Verbindungen loser Enden, die von mehr als einer Person bearbeitet werden. Dies gilt umso mehr, wenn man einen die Philologie übersteigenden Textbegriff zugrunde legt, der ebenso operative Schriften, also Code und seine Entwicklung in Softwareprojekten betrachtet, die inzwischen – schon infolge ihrer Komplexität – zumeist von mehr als einer Person vorangetrieben werden. Um gleich mit einer visuellen Evidenz einen Eindruck zu verschaffen, möchte ich Ihnen diese Graphik hier nicht vorenthalten:  
+\noindent Die Geschichte verteilter Autorschaft lässt sich unschwer als die lange Genealogie des Schreibens überhaupt identifizieren, steht doch an den Anfängen der Schrift kein Individuum, kein Autor im Sinne seiner goethezeitlichen Ausdifferenzierung zur männlichen Verkörperung einer Genie-Ästhetik, sondern immer schon ein Kollektiv, sei es nun, um den Pentateuch zu verfassen oder das Gilgamesch-Epos, sei es, um unter einem mutmasslichen Kollektivsingular wie Homer nachträglich dessen gesungene Verse auf Papyrus zu fixieren. Texte sind \emph{qua definitionem} Verbindungen loser Fäden, die von mehr als einer Person bearbeitet werden. Dies gilt umso mehr, wenn man einen die Philologie übersteigenden Textbegriff zugrunde legt, der ebenso operative Schriften, also Code und seine Entwicklung in Softwareprojekten, betrachtet, die inzwischen – schon infolge ihrer Komplexität – zumeist von mehr als einer Person vorangetrieben werden. 
 
-[\anzeige Zoom out aus \verb+Linux_Distribution_Timeline.svg+]
+Zu den aufwendigsten und komplexesten Software-Projekten zählt die Entwicklung von Betriebssystemen, die sowohl im kommerziellen Kontext (Windows, macOS) als auch bei freier Software (Unix, Linux) eine Vielzahl von Mitarbeitern und deren unterschiedlichste Beiträge zu koordinieren haben. Dass die Entwicklung eines derart umfassenden Projekts keineswegs nur linear erfolgt, dass also auf Version 10.11 erwartungsgemäss 10.12 folgt, wird unmittelbar einsichtig, wenn man etwa die Genealogie von verschiedenen Unix-Derivaten verfolgt, wo aus dem \anf{Unnamed PDP-7 operating system} von 1969 so unterschiedliche Systeme wie Solaris, BSD, HP-UX, macOS oder eben Linux hervorgegangen sind (Abb.~\ref{abb:unix}) 
 
-Sie sehen hier zahlreiche lose Enden, die nicht nur die Gegenwart des Schreibens repräsentieren, sondern auch die vielen möglichen Zukünfte der kollektiven Autorschaft darstellen – 2018. Denn was dieses Bild zeigt, ist ein evolutionäres Schema oder ein Wissensbaum, der die verschiedenen Derivate, also Abspaltungen von frei entwickelten Betriebssystemen aus den ursprünglichen GNU/Linux-Distributionen heraus dokumentiert. [Nicht dass Sie denken, dass das schon alles ist: GNU/Linux selbst ist ja nur ein Derivat von Unix, aus dem auch Android, \verb+macOS+ und eigentlich alles andere Wichtige an Betriebssystemen ausser Windows hervorgegangen ist. \anzeige] Jede dieser Linien repräsentiert Tausende, oftmals Millionen Zeilen Code, die allesamt in einem fein abgestimmten, selbst über beinahe 50 Jahre entwickelten Milieu von kollektiver Autorschaft entstanden sind. 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=1.2\textwidth,clip]{../bilder/Unix_history-simple.pdf}\\[-3mm]
+\caption{Genealogie diverser Unix-Derivate}\label{abb:unix}
+\end{center}
+\end{figure}
 
-Wenn nun aber mehrere, viele, ja tausende Entwickler an ein und demselben Code arbeiten, erfordert es besondere Maßnahmen, um die Konsistenz dieser kollaborativen Autorschaft sicherzustellen. Was ich im Folgenden skizzieren möchte [\anzeige], ist daher zunächst ein Blick hinter die Kulissen, wie grossangelegte kollektive Schreibprojekte mit Hilfe von sog. Versionsverwaltungen und ihren grundlegenden Befehlen wie \emph{branch}, \emph{diff} und \emph{merge} medientechnisch organisiert sind und welchen, wenn man so will, Befehlssätzen und Befehlsketten sie gehorchen, bevor ich etwas allgemeiner das Konzept einer Quellcodekritik vorstellen möchte. 
+Eine ähnliche, in sich jedoch noch ungleich verzwicktere, gelegentlich auch mehrere Zweige verschmelzende Entwicklung zeigt sich, wenn man allein die interne Entwicklung von Linux betrachtet (vgl.~Abb.~\ref{abb:unix}, links, zweite grüne Säule). Diese erweist sich als beinahe schon darwinistisches, von zahlreichen Bifurkationen geprägtes evolutionäres Schema.  (Abb.~\ref{abb:gnu} auf S.~\pageref{toc:gnu}). Jede dieser zur Gegenwart strebenden Linien repräsentiert Tausende, oftmals Millionen Zeilen Code, die allesamt in einem fein abgestimmten, seinerseits über rund 50 Jahre entwickelten Milieu von kollektiver Autorschaft entstanden sind. Abb.~\ref{abb:gnu} stellt damit einen regelrechten Wissensbaum dar, der die verschiedenen Derivate, also Abspaltungen von frei entwickelten Betriebssystemen bzw. Paketzusammenstellungen (Distributionen) aus den ursprünglichen, von Richard Stallmann seit 1983 entwickelten GNU-Distribution heraus dokumentiert. Aus Stallmanns Projekt gingen später weitere bekannte Erweiterungen und Neuansätze hervor, wie etwa das 1992 von Linus Torvalds veröffentlichte Linux, das wiederum selbst in zahlreichen unterschiedlichen Distributionen angeboten wird, von denen Debian, Slackware oder Red Hat nur die bekanntesten sind; als vergleichsweise junge Entwicklung zählt auch Android samt seiner Derivate dazu (ab 2007, in Abb.~\ref{abb:gnu} am unteren Bildrand). Manche der Zweige (ver-)enden zu einem gewissen Zeitpunkt. Andere gehen in einem weiteren Projekte auf (gestrichelte Linien, etwa von Solus OS zu Evolve OS). Die zahlreiche lose Enden am rechten Rand des Diagramms repräsentieren dabei jedoch nicht nur die Gegenwart des Schreibens, sondern auch die vielen möglichen Zukünfte von kollektiver Autorschaft. Denn sobald mehrere, wenn nicht gar tausende Entwickler parallel an ein und demselben Code arbeiten, erfordert es besonderer Maßnahmen, um die Konsistenz dieser kollaborativen Autorschaft sicherzustellen. 
 
-Worum es mir dabei geht, ist einerseits aus der Geschichte verteilter Autorschaft ein paar Szenarien herauszugreifen, um einen Blick auf die kulturtechnische Funktionsweise kollaborativen Schreibens zu werfen. Andererseits geht es mir aber auch darum, der Geschichtsvergessenheit der \emph{software studies} ein wenig entgegenzuarbeiten, um die gegenwärtige Praktik kollektiver Autorschaft zu ihren historischen Wurzeln und Entwicklungslinien zurück zu verfolgen, nicht zuletzt geleitet von dem Anspruch, die informatischen Praktiken nicht einfach als immer schon gegeben hinzunehmen, sondern sie selbst durch eine vorgängige historische Entwicklung zu bereichern. Dazu später mehr. Die genealogische Rekonstruktion stützt sich zunächst auf einige exemplarische Geschichten oder historische Szenarien, die sich mehr oder minder synchron ereignen, und zwar um 1780, zum einen im Frankreich des Ancien Regime, zum zweiten in der Hauptstadt des Heiligen Römischen Reichs Deutscher Nation, in Wien, und zum dritten, in Weimar mit seiner goethezeitlichen Perfektionierung von Autorschaft, daneben liessen sich aber auch ganz andere Szenarien in London 1916 und anderenorts anführen. 
-
-\enlargethispage{7mm}
+Im Folgenden soll zunächst ein Blick darauf geworfen werden, wie grossangelegte kollektive Schreibprojekte mit Hilfe von sog.\ Versionsverwaltungen und ihren grundlegenden Befehlen wie etwa \emph{branch} und \emph{merge} medientechnisch organisiert sind. Dabei geht es nicht allein darum zu sehen, welchen Befehlssätzen und Befehlsketten die Autoren und ihre Codezeilen dabei gehorchen. Vielmehr geht es ebenso darum diese informatischen Routinen auf ihre historischen Grundlagen hin zu lesen, um mit diesem Blick auf die Geschichte verteilter Autorschaft die kulturtechnische Funktionsweise kollaborativen Schreibens herauszuarbeiten. Mithin geht es darum, der Geschichtsvergessenheit der \emph{software studies} entgegenzuarbeiten, um die gegenwärtige Praktik kollektiver Autorschaft ihrerseits in ihren  Entwicklungslinien zurück zu verfolgen, nicht zuletzt geleitet von dem Anspruch, die informatischen Praktiken nicht einfach als immer schon gegeben hinzunehmen, sondern sie selbst durch eine vorgängige historische Entwicklung zu bereichern. Diese Rekonstruktion stützt sich dabei zunächst auf einige exemplarische Geschichten beziehungsweise historische Szenarien, die sich mehr oder minder synchron ereignen, und zwar um 1780, zum einen im Frankreich des Ancien Regime, zum zweiten in der Hauptstadt des Heiligen Römischen Reichs Deutscher Nation, in Wien, und zum dritten, in Weimar mit seiner goethezeitlichen Perfektionierung von Autorschaft, wobei sich freilich immer auch ganz andere Szenarien, etwa in London 1916 und anderenorts, anführen liessen. 
 
 Im Zentrum dieser – bei genauerer Betrachtung doch recht – heterogenen Verfahren möchte ich gleichwohl eine gemeinsame Struktur platzieren, die unter dem Begriff des \anf{Assistenzsystems} zu fassen wäre. Was versteht man nun unter Assistenzsystemen? Der Begriff findet derzeit vor allem im Kontext des Individualverkehrs seine Verwendung. Assistenzsysteme überwachen, etwa beim Steuern eines Automobils, dass der Fahrer nicht unverhofft aus der Spur gerät. Oder sie dienen dazu, bei knifflig-kurzen Parklücken, dass ein Einparken ohne Lackschäden auf Knopfdruck und automatisch erfolgt. Assistenzsysteme können – neben der Sorge, nicht aus der Spur zu geraten – sowohl Patienten \anf{bei Alltagshandlungen unterstützen als auch Wissenschaftler bei der Auswahl und dem Einsatz von Analysemethoden, Sportler im Training oder Arbeiter bei der Montage. Methodisch setzen Assistenzsysteme vielfältige Techniken aus den Bereichen der Mensch-Maschine-Interaktion, der sensorbasierten Zustandsschätzung und der künstlichen Intelligenz ein.}\footnote{\href{https://www.informatik.uni-rostock.de/forschung/schwerpunkte/intelligente-assistenz/}{\texttt{www.informatik.uni-rostock.de/forschung/schwerpunkte/intelligente-assistenz/}}}
 
@@ -276,7 +285,7 @@ Beide Stränge sind nach wie vor für alle Entwickler sichtbar und nahezu identi
 
 \begin{figure}[ht]
 \begin{center}
-\pngbild{568}{421}{../bilder/OriginalKopie.png}{1.1\textwidth}\\[-3mm]
+\pngbild{568}{421}{../bilder/Abb-2.png}{1.1\textwidth}\\[-3mm]
 \caption{\emph{diff} von Original und Kopie}\label{abb:orikopie}
 \end{center}
 \end{figure}
@@ -441,7 +450,7 @@ Im Vergleich dazu ist der \emph{diff}-Befehl nachgerade \inanf{dumm} zu nennen, 
 
 \begin{figure}[ht]
 \begin{center}
-\pngbild{568}{421}{../bilder/FileMerge.png}{1.1\textwidth}\\[-3mm]
+\pngbild{568}{421}{../bilder/Abb-4.png}{1.1\textwidth}\\[-3mm]
 \caption{\emph{diff} von Original und Kopie vor dem \emph{merge}}\label{abb:filemerge}
 \end{center}
 \end{figure}
@@ -611,5 +620,7 @@ Pseudo-Random!
 \nocite{leeuw:1999}
 
 \printbibliography
+
+\includepdf[addtotoc={1,section,4,Anhang: Zeitleiste der Linux-Distributionen,toc:gnu},addtolist={1,figure,section,abb:gnu},frame=false,fitpaper=true]{../bilder/LinuxDistributionTimeline3.pdf}
 
 \end{document}
