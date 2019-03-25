@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[american,german]{babel}
 \usepackage{verbatim}
 \usepackage{microtype}
@@ -44,9 +44,10 @@
 }
 \lstset{style=mystyle}
 %
+\usepackage{gitver}
+%
 \date{}
 %
-%\usepackage[style=authoryear-ibid,maxnames=4]{biblatex}
 \usepackage[authordate,
     backend=biber,
     sorting=nyt,
@@ -55,8 +56,7 @@
     seconds=true,
     alldates=iso,
     cmsdate=on,
-    annotation=true]{biblatex-chicago} % So gelingt die Unterscheidung mit ORIGDATE und DATE
-%\usepackage[backend=biber,style=verbose-ibid]{biblatex}
+    annotation=true]{biblatex-chicago} 
 \bibliography{/Users/mkr/Daten/texte/synapsen}
 %
 \usepackage[scaled]{berasans}
@@ -78,18 +78,10 @@
 \newcommand{\anzeige}{\textbf{\color{hokkaido}\huge{\raisebox{-0.18ex}{$\bullet$}}\color{black}}}
 %
 \RequirePackage[babel,german=guillemets]{csquotes}
-\RequirePackage{setspace}
 \newenvironment{zitat}{
-\begin{spacing}{1}
 \begin{foreigndisplayquote}{german}}%
-{\end{foreigndisplayquote}\end{spacing}}
+{\end{foreigndisplayquote}}
 %
-%\renewcommand{\abstractname}{\relax}
-%
-%\addtolength{\voffset}{4mm}
-%\addtolength{\textheight}{8mm}
-%
-\setcounter{section}{-1}
 %
 \usepackage{pdfpages}
 %
@@ -99,8 +91,9 @@
 % 
 \title{Verzweigen, Kopieren, Verschmelzen\\
 \Large Mediale Praktiken kollektiver Autorschaft}
-\author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[-1mm]
-ver.0.6:2018-03-22\\
+\author{\href{http://gtm.mewi.unibas.ch}{Markus Krajewski, Universität Basel},\\[3mm]
+local version 0.6:2019-03-22,\\
+\href{https://github.com/nachsommer/VersionsKontrolle/tree/master/1.Fassung}{github.com/nachsommer/VersionsKontrolle}: \gitVer{}\\[3mm]
 erscheint in: Daniel Ehrmann, Thomas Traupmann (Hrsg.),\\
 \emph{Kollektive(s) Schreiben}, Wilhelm Fink Verlag, Paderborn 2019}
 \maketitle
@@ -292,84 +285,37 @@ Wie hinlänglich bekannt ist das Aufschreibesystem 1800 keineswegs nur auf die A
 
 Es wäre irrig anzunehmen, dass Goethe seine Briefe selbst schreibt. Abgesehen vom in grosser Kanzleischrift geschwungenen G. als Signatur setzt er den schon im Original als Kopie durch die nachahmende Hand der Schreiber verfassten Briefe nichts weiter hinzu als gelegentliche Grüsse oder allfällige Addenda.\footcite[40]{schleif:1965} Seidel dient zudem auch als historisches Vorbild für den Briefeschreiber Richard in Goethes \emph{Egmont}, der die Briefe seines Herrn in einem Akt exzessiver Mimesis auch inhaltlich für seinen Meister ausfertigt.\footcite[Vgl.][253–256]{krajewski:2010} Erst wenn diese eng verflochtene, kollaborative Autorschaft einmal gestört ist, sieht sich G.\ noch genötigt, selbst zur Feder zu greifen, wenn auch nicht ohne Widerwillen. So klagt Goethe, als 1813 sein zusätzlich zum schreibkundigen Domestiken eingestellter Sekretär Ernst Carl Christian John einmal unpäßlich ist: \anf{Seit vierzehn Tagen hat sich leider meine adoptive rechte Hand kranckheitshalber in's Bette gelegt und meine angebohrne Rechte ist so faul als ungeschickt, dergestalt daß sie immer Entschuldigung zu finden weis wenn ihr ein Briefblatt  vorgelegt wird.}\footcite[][Nachträge: Briefe, Bd.~51, S.~342]{goethe:1887}
 
-Über Goethes Praxis des Briefeschreibens und die rekursiven Bezugnahmen, wechselnden Autorschaften und unterschiedlichen Befehlsebenen im Zusammenspiel mit seinen Dienern gäbe es noch viel zu sagen.\footcites[Vgl.][]{krajewski:2010}[sowie][]{schoene:2015} An dieser Stelle sei der Unterzweig zum grundlegenden \emph{copy}-Befehl jedoch schon wieder verlassen zugunsten der zweiten heuristischen Praktik der Versionskontrolle, dem Abweichen. Denn keine Kopie vor dem digitalen Zeitalter ist authentisch im Sinne allerhöchster Originaltreue oder gar fehlerfrei, weder in technischen Medien wie der Photographie, wo sich das Verfahren selbst ins Bild einschreibt, noch in mimetischen Prozessen wie der Imitation eines bestimmten Habitus oder einer Handschrift. Erst mit der Möglichkeit digitaler Vervielfältigung wird Kopieren zu einem Akt, der das Artefakt so dupliziert, dass ohne Meta-Daten wie Time-Stamp, Entstehungsdatum, Zeitpunkt letzter Änderung etc.\ kein Kriterium mehr gegeben ist, um Original und Nachbildung zu unterscheiden. Unter Einbezug dieser Meta-Daten lassen sich jedoch auch Texte, die einstmals auseinander hervorgingen und zwischenzeitlich einseitig verändert wurden, wieder zu einer neuen Version verschmelzen. Diese Funktion ruft eine Tradition gelehrter Wissenspraktiken auf, die im folgenden Abschnitt historisch eingeordnet wird.  
-
+Über Goethes Praxis des Briefeschreibens und die rekursiven Bezugnahmen, wechselnden Autorschaften und unterschiedlichen Befehlsebenen im Zusammenspiel mit seinen Dienern gäbe es noch viel zu sagen.\footcites[Vgl.][]{krajewski:2010}[sowie][]{schoene:2015} An dieser Stelle sei der Unterzweig zum grundlegenden \emph{copy}-Befehl jedoch schon wieder verlassen zugunsten der zweiten heuristischen Praktik der Versionskontrolle, dem Verschmelzen. Sie behandelt jene Texte, die einstmals auseinander hervorgingen und zwischenzeitlich einseitig verändert wurden, um sie wieder zu einer neuen Version zu fusionieren. 
 
 \section{Verschmelzen}
 
-
-
-... wie die Parallelität verschiedener Zeiten, die auswuchernden Zweige und Gabelungen in einzelnen Fällen wieder zusammengeführt werden, um dank der jeweils erfolgten Umwege einen neuen, dritten, synthetisierten Wissensstand zu bündeln. Vorgeführt hätte ich dies gerne – anders als bei Borges und seinem unendlichen Buch als Labyrinth – zwar ebenso mit einer \inanf{prinzipiellen Unendlichkeit} (Luhmann), allerdings in anderer Form, und zwar anhand eines kollektiven Buchs, das seine eigene Abschaffung als Buch vollführt: Ein Buch, das nichts als Bücher verzeichnet, ein Buch, das von vielen Autoren geschrieben ist und noch viel mehr Autoren vereint, weil es deren Metadaten listet. Ein Buch, das sich in seiner Form nur noch als Buch tarnt [\anzeige], obwohl es seine Bestandteile längst schon dissolviert oder herausgelöst hat. Ein Buch über Bücher, das aus nichts als frei verschiebbaren Zetteln besteht. Mit einem Wort, ein Katalog, und zwar nicht irgendeiner, sondern der erste Zettelkatalog der Bibliotheksgeschichte. Dass diese Arbeit an einem derart weit verzweigenden Projekt einer dezidierten Arbeitsteilung unterliegt, mag kaum überraschen. Umso konsequenter erscheint die Kodifizierung dieser Tätigkeit, die kaum zufällig schon in der Wiener Hofbibliothek um 1780 eine algorithmische Struktur annimmt. Vorzuführen gewesen wäre also der \emph{merge}-Algorithmus, mit dem aus vielen Büchern ein einziges wird, mit dem viele Autoren zu einer Struktur zusammengebunden werden, die wiederum neue Autoren aufgreifen und produzieren soll. Es wäre zu zeigen, wie aus dieser informationellen Vereinzelung, Fragmentarisierung, Beweglichkeit, Atomisierung der Informationsbausteine wieder ein einziger Strang wird, ein Faden oder Pfad, der mit seinen volatilen Elementen seinerseits und jederzeit neue Verzweigungen oder auch Weiterführungen auf demselben Weg erlaubt.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{comment}
-
-Quellenkritik noch an einem anderen Genre vorführen, 
-
-Ein close-reading der Kataloginstruktion. Gegenlesen mit einer Anleitung für git-hub.
-
-Für die (spät-)mittelalterliche Katalogisierungspraxis...
-\cite{schreiber:1927}
-
-Das am \anf{22.~may 1780} begonnene Unternehmen, das späterhin unter der Projektbezeichnung \emph{Josephinischer Katalog} geführt wird und dessen Resultat heute in \anf{205 Kästchen}\footnote{\Citet{vanswieten:1787}, Seite 320.} sein ehrenvolles Dasein in einem von Licht und Luft abgeschlossenen Käm\-mer\-chen der Österreichischen Nationalbibliothek fristet, wird gemeinhin\footnote{Vgl.\ etwa \cite{meinel:1995}, Seite 183, Anm.~57 oder \cite{roloff:1961}, Seite 255 und 257.} und zuweilen stolz\footnote{Vgl.\ \cite{petschar+etal:1999} und dazu \cite{krajewski:1999a}.} als der \emph{erste Zettelkatalog der Bibliotheksgeschichte} bezeichnet. Doch bevor nun gefragt sei, inwiefern und aus welchen Gründen die Attribution zutrifft, soll die Vorgehensweise bei dieser Unternehmung in den bisherigen Kontext gestellt werden, d.h.\ sie mit dem Registermachen seit Konrad Gessner zu konfrontieren. Dazu sollen drei Merkmale als Folie dienen, vor der sich das Projekt \emph{Josephinischer Katalog} gegenüber einer seit der Frühen Neuzeit praktizierten und verfeinerten Verzettelungstechnik abzuheben beginnt: zum einen die schriftliche Instruktion als Befehlssatz an die Adresse der Katalogisierer, desweiteren der anhand vereinbarter Schnittstellen arbeitsteilige Prozeß und schließlich die Dauer der Katalognutzung. Erst der Zusammenfall dieser drei Charakteristika und ihre wechselseitige Abhängigkeit voneinander grenzen die Unternehmung in spezifischer Weise ab von den bisherigen Prozessen, etwa der Verfertigung des Wolfenbütteler Katalogs unter Leibniz' Anleitung oder von Abbé Roziers exzellenter Tabellenkalkulation auf Spielkarten-Basis.
-
-Der großen und stetig steigenden Anzahl der Bände zufolge und um Koordinierungsschwierigkeiten von vornherein zu minimieren, setzt Gottfried van Swieten auf ein genau festgelegtes Verfahren, eine Instruktion, nach deren Anweisungen endlich alle Bücher der Palatina vollständig erfaßt und beschrieben werden sollen. Derartige, schriftlich festgehaltene Bibliotheks-Befehlssätze sind bis zum Ende des 18.~Jahrhunderts keineswegs gängig. Die Katalogisierung erfolgt bislang üblicherweise unter der Aufsicht eines Bibliothekars, der die Skriptoren mündlich instruiert und angehalten ist, auf Mißstände und Korrekturen direkt hinzuweisen.\footnote{Noch bis ins 20.~Jahrhundert sind Katalogisierungen nach mündlicher Tradition in Großbibliotheken durchaus üblich, etwa in Tübingen oder in Darmstadt, vgl.\ \cite{hilsenbeck:1912}, Seite 313ff.} 
-
-Die Instruktion findet ihre Ausarbeitung in zwei Phasen. Der erste, bereits recht detaillierte Entwurf entstammt van Swietens eigener Feder, die \emph{Unterricht und Anweisung für diejenigen, so die Titel und Bücher abschreiben sollen}, erteilt.\footnote{Österreichische Nationalbibliothek, Wien, Akt HB 125/1780.} Diese \anf{Vorschrift worauf die Abschreibung aller Bücher der k.k.~Hofbibliothek gemacht werden solle} umfaßt neben einer Liste der Hilfskräfte samt charakterlicher Beurteilung vor allem sieben Punkte, was bei der Beschreibung der Bücher auf die Zettel zu übernehmen ist.\footnote{Österreichische Nationalbibliothek, Wien, Akt HB 125/1780, 1.~Teil.}
-
-Adam Bartsch, fünfter Skriptor und späterhin wegen seiner außergewöhnlichen Kenntnisse Leiter der Kupferstichsammlung, vervollständigt diesen Entwurf weiter zur endgültigen Instruktion, indem er die notwendigen bibliographischen Anforderungen um eine ausführliche und jedwede Eventualitäten abfangende Verhaltensvorschrift ergänzt.\footnote{Die Bemerkungen folgen einer wohlgeordneten \emph{if-then}-Struktur, vgl.\ \cite{bartsch:1780}, Seite 125f:\\ \anf{I.~Muß [\ldots] Sollte [\ldots] so müßte [\ldots]\\II.~Findet er [\ldots] müssen [\ldots]\\III.~Findet sich [\ldots] so muß [\ldots]\\ IV.~Wenn man [\ldots] so ist [\ldots]}\\ \qquad\vdots\\} Schließlich wird diese noch durch einen Ablaufplan bereichert, der die Reihenfolge und Vorgehensweise regelt.
-
-Den ausgearbeiteten Plan erhält van Swieten mit einer Bemerkung über\-sandt, welche die Absicht der Instruktion, als klares Standardisierungsprogramm zu wirken, nochmals unterstreicht. 
-Das ausgelobte Ziel eines vollständigen, vereinheitlichten und ästhetisch befriedigenden Katalogs lasse sich nur erreichen, wenn man gegen die drohende Diversifikation der Resultate vorgehe, welche durch die nach Belieben abschreibenden Mitarbeitern droht.
-\begin{zitat}
-Dieses sind einige Anmerkungen, die vielleicht in einer aus\-führ\-li\-che\-ren Vorschrift zur Verfertigung eines neuen Katalogs, wenigstens zum Theil, Statt finden dürften, und die mich deswegen  unterfange, EURER FREIHERRL.~GNADEN hiermit gehorsamst zu überweisen. Es kömmt nunmehr auf HOCHDIESELBEN an, selbe zu prüfen und davon Gebrauch zu machen. Eine ähnliche Vorschrift, die jeder Scriptor, der zu Bearbeitung des Katalogs angestellet ist, immer zur Hand haben soll, muß weniger ein Unterricht, wie man einen Katalog, oder die einzelnen Bestandteile desselben schreiben sollen, als eine Richtschnur sein, nach der jeder auf gleiche Weise zu arbeiten hat. Ich wenigstens setze voraus, daß jeder von uns Büchertitel zu schreiben wisse, dennoch würde die Verschiedenheit der Art und Methode, in der sie geschrieben würden, wenn auch jede davon für sich untadelhaft wäre, am Ende eine Ungleichheit im Ganzen hervorbringen, die den Katalog, wo nicht undeutlich machen, aber doch demselben eine Zierde und das Aussehen benehmen würde, daß er nur zu \emph{einem} Zweck, aus \emph{einem} Gesichtspunkt, und nach \emph{einem} System verfertigt worden seie.\footnote{\cite{bartsch:1780}, Seite 125, Hervorhebung im Original.}
-\end{zitat}
-So pendelt der Entwurf vom Entwurf an Seine Freiherrlichen Gnaden zurück, um von diesem nach erneutem Ebenenwechsel der Hierarchiestufe hin initialisiert zu werden: Der Befehlssatz geht im Klartext und ohne weitere Änderungen an seinen eigenen Autor Adam Bartsch, diesmal allerdings als Adressat der vorzunehmenden Arbeit. Ein kurzer Blick auf die Exekutivkräfte, den Personalstand der Palatina im Frühjahr 1780, versichert die großzügige Ausstattung des Prozesses. Neben dem Präfekten Gottfried van Swieten und seinem Direktor beschäftigt die Hofbibliothek zwei Kustoden, fünf Skriptoren und vier Bibliotheksdiener.\footnote{Vgl.\ \cite{petschar:1999}, Seite 24f.} In Anbetracht der auf seine Anweisungen hin angesch(l)ossenen Ströme sieht van Swieten die Unzulänglichkeit der bisherigen Kräfte und stellt demzufolge sieben, zur Realisation des Katalogvorhabens dringend benötigte Hilfskräfte ein. Mit dieser Mannschaft weist die Hofbibliothek, von den üblichen Fluktuationen durch Zu- und Abgänge abgesehen, für einige Zeit jene vorläufig höchste Beschäftigungsquote auf, die sie bis weit ins 19.~Jahrhundert nicht wieder erreichen wird.\footnote{Vgl.\ \cite{mosel:1835}, Seite 177.}
-
-Alle Schreib-/Lese-Köpfe sind damit eingeschaltet und vom Programm der Bartsch'schen Instruktion angehalten, die Befehle von Seiner Freiherrlichen Gnaden zu erwarten. Der Plan ist kodifiziert, nunmehr bi\-blio\-theks\-tech\-nisch kompiliert und mit der Funktion \emph{Bibliothek} verlinkt.\footnote{Gemäß einer heutigen Programmierästhetik \cite[vgl.][Seite 151f]{hagen:1993} gestattet der Arbeitsalgorithmus keine Sprünge. In diesem Sinn ist das Verfahren, die Grundlage für einen vollständigen Bandkatalog auf Zetteln zu schaffen, kaum mehr \emph{basic}.} Noch bleiben allerdings die Daten des hofbibliothekarischen Massenspeichers unaufgerufen. Um der Architektur eines modernen Prozesses zu genügen, wird ein eigens vom üblichen Bibliotheksbetrieb separierter Raum eingerichtet, das Katalogzimmer oder auch Arbeitsspeicher.
-In dieser zentralen Bibliographier-Einheit (englisches Akronym: CBU) verarbeitet das Programm seine über die Pfade beigesteuerten Daten. Allerdings schaltet sich der Datenstrom erst zur Laufzeit zu, indem die Übertragung vom Massen- in den Arbeitsspeicher startet. Die Ausführung kann beginnen: Hereingetragen ins Katalogzimmer werden von den Bibliotheksdienern die Bücher jeweils eines Kastens aus einem Regal im Prunksaal. Zunächst überprüft der Skriptor die Bände auf eine eventuell vorhandene Stellungsnummer, die der bereits erwähnten Adressierung von Denis\footnote{Vgl.\ \cite{denis:1777}, Seite 274f.} folgend nach \textsf{RömischerBuchstabe.LateinischerBuchstabe.ArabischeZiffer} den Büchern ihre Signatur vorschreibt. Sofern die Numerierung Fehler aufweist, werden diese korrigiert und der eigentliche Beschreibungsvorgang setzt an. Alsdann nehmen sich ungeachtet ihrer Positionen in der Bibliothekshierarchie, vom Skriptor über den Bibliotheksdiener\footnote{Bereits 1835 besteht bedauerlicherweise, so Ignaz \cite{mosel:1835}, Seite 177, Anm.~2, das Amt des Bibliotheksdieners nicht mehr, dessen Aufgabe bislang darin bestand, dem Lesenden zu dienen. Vgl.\ zum \anf{Bibliotheksdiener} ausführlich \cite{foerstmann:1886}.} bis hin zu den Hilfskräften, kurzum alle Bedienstete Werk für Werk die Bände vor, um sie nach den üblichen formalen Kategorien wie Titel, Autor (sofern vorhanden), Druckort und Jahreszahl, Name des Druckers, Format und eventuellen Defekten auf einzelnen, vorgefertigten Zetteln beschreibend zu verzeichnen.\footnote{Vgl.\ auch \cite{petschar:1999}, Seite 28.} Anschließend tragen die Bibliotheksdiener die Bücher zurück zu ihrem Kasten im Prunksaal. \anf{Nur erst, wenn alle Bücher auf die angenommene Weise beschrieben worden, läßt sich darauf denken, die Zetteln in Ordnung zu bringen, und abzuschreiben.}\footnote{\cite{bartsch:1780}, Seite 131.} Der nächste Schritt des Verfahrens sieht vor, die Angaben zu normalisieren, besonders hinsichtlich unterschiedlich geschriebener Autorennamen, bevor schließlich die Zettel in extra dazu angefertigten Katalogkapseln\footnote{Deren äußere Form simuliert wiederum den Anblick eines Buchs (vgl.\ Abb.~\ref{abb:kapsel}). So tarnt sich der Zettelkatalog einstweilen mit der konventionellen Erscheinungsweise eines Bandkatalogs. Ein verbergendes Beruhigungsmittel für traditionsverhaftete Bibliothekare, dessen Erfinder sich meinen Recherchen in Wien bislang leider erfolgreich entzog. Vgl.\ zur späteren Verwendung von Kapseln (in Gießen) auch \cite{haupt:1888}.} eingeordnet werden können. Voraussetzung dazu bleibt die eindeutig definierte Schnittstelle, die nichts anderes ist als der Zettel selbst -- auch und nicht zuletzt im Sinn seiner sauberen Kanten im Einheitsformat. Aufgehäuft in unsortierten Stapeln, verschnürt zu einzelnen Paketen und mit einem Zwirnfaden zur weiteren Verwendung gebündelt erwarten die Zettel ihre alphabetische Sortierung.\footnote{Die Sortierung wird vermutlich nicht unähnlich dem etwas später vorgeschlagenen Sort-Algorithmus von \cite{kayser:1790}, Seite 36--42, vorgenommen worden sein, an dem sich wiederum Martin \cite{schrettinger:1808} offensichtlich orientiert hat. Vgl.\ zur Analyse dessen Algorithmus' als rekursive Stapelverarbeitung insb.\ \cite{meynen:1997}, Seite 56--62, und zur Bündelung von Papierstapeln mit Badischen Knoten und preußischer Heftung \cite{vismann:1999}, Seite 295.}
-
-Der Prozeß der Titelspeicherung und Übertragung auf fragmentierte Papiere zeitigt rasche Fortschritte: im Sommer 1780 sind bereits 31.596 Werke in 27.709 Bänden auf Zetteln verzeichnet, bis im Sommer des darauffolgenden Jahres mit weiteren 23.434 Titeln alle Bücher vollständig beschrieben sind. Die Arbeitsleistung eines jeden Skriptors wird dabei fein differenzierend in einer \anf{Liste über die anzahl [\ldots,] welche [\ldots] im Sommer 1780 in der Bibl.\ sind beschrieben worden},\footnote{Österreichische Nationalbibliothek, Wien, HB Akt 126/1780, 2.~Teil.} vom Präfekten persönlich verbucht. Die meisten Bücher verzeichnet laut dieser Zwischenbilanz der Autor der Instruktion, Adam Bartsch selbst, mit 4637 Werken in 5372 Bänden. Schließlich repräsentiert der \emph{Josephinische Katalog}, inklusive eines ausgeprägten Verweissystems, alle Texte der Bibliothek auf ca.~300.000 Zetteln, womit das erste Teilziel, die Titelaufnahme, erfolgreich absolviert wäre.
-
-\subsubsection{Error: Memory Overflow}
-
-Der weitere Katalogisierungsplan sieht vor, die normalisierten und sortierten Zettel als Grundlage für die Abschrift zunächst eines alphabetischen, anschließend eines nach Materien geordneten Bandkatalogs zu verwenden. Allein die Arbeit an diesem Bandkatalog, nicht einmal am alphabetischen, wird jemals aufgenommen. Obwohl das Mißtrauen gegen die lose Anordnung der Zettel, ihre Tendenz, vor jedem Windstoß zu fliehen,\footnote{Albrecht \cite{kayser:1790}, Seite 49, empfiehlt deshalb gegen diese Zufälle: \anf{Je mehr man Repositorien durchgearbeitet hat, desto größer wird natürlich der Haufe von Titelzetteln. So bald der leztere zu sehr anschwillt, ist es rathsam, die Titel Eines Buchstaben von den übrigen abzusondern, so viele Haufen zu machen als das Alphabet Buchstaben hat, und erstere nach der Folge des lezteren auf einen Tisch zu rangiren. Steht der Tisch an einem Orte, wo keine Zugluft oder kein anderer Zufall die Zettel aus ihrer Lage bringen kann, so dünkt mich derselbe dienlicher als ein Schrank zur Aufbewahrung der Buchstabenhaufen. Die Fälle sind zu gemein, wo ich in einem solchen Haufen etwas nachzusehen habe. Auf dem Tische ist mir ieder sogleich bey der Hand. Aus einem Schranke muß ich ihn erst herausnehmen und mich um einen Ort für ihn umsehen wo ich ihn hinlegen und durchsuchen kann. Dies verursachte \emph{Zeitverlust}.} [Meine Hervorhebung]} tief sitzt, formiert sich das Personal der Palatina \emph{nicht} zu einem erneuten Katalogisierungsschritt, dem letztlichen Abschreiben der losen Elemente zum Paradigma der Bibliothekarsarbeit, dem Katalog als gebundenem Buch in Bandform.
+Ein Buch ist eine Einheit, der immer schon die Zerlegung droht. Schliesslich bezeichnet ein analytischer Umgang mit dem enthaltenen Text nichts anderes, als diese Einheit wieder zu zerteilen, in seine Bestandteile wie etwa in ein zentrales Argument, das Dekorum, einzelne Gedanken, Thesen, Vermutungen, Exempla, weiterführende Literatur usw. aufzuspalten. % Jeder Text wartet nach Vilém Flusser darauf, an seinen losen Enden aufgenommen und weitergeführt zu werden.\footcite[??]{flusser:1987} 
+Mit den so gewonnen Fragmenten oder derart ausgelösten Textelementen lässt sich dann weiterarbeiten, sei es mit direkten Zitaten oder indirekten Paraphrasen, in Form von Exzerpten für die eigene Textproduktion oder von allgemeinen Lektürenotaten für den späteren Gebrauch, sei es schlicht durch die Erinnerung an inspierende Textstellen oder systematisch durch eine Übernahme der Metadaten des Texts, also seine bibliographischen Angaben, zur Katalogisierung des neu gewonnenen Wissens. 
+ 
+Ein Buch ist aber auch eine Einheit, die ihrerseits immer schon aus Fragmenten aufgebaut ist.\footcite[Zur Übersicht einer historischen Genese des Fragments als ästhetische Produktivkraft vgl.][]{fetscher:2001} Fliessen doch selbst in den kohärentesten, für sich stehenden Text immer schon vorgängige Bausteine ein wie bestimmte Formulierungen, Erzählmuster oder theoretische Begriffe, implizite Bezugnahmen oder unausgewiesene Inspirationen, explizit übernommene Denkfiguren oder wörtliche Zitate, die ein Text (re-)kombiniert und zusammen zu etwas Neuem fusioniert. 
+ 
+Auf formaler Ebene zeigt sich diese Fusion von Textbausteinen insbesondere an einem Buch, dessen Hauptzweck darin besteht, andere Bücher in sich aufzunehmen und durch systematische Bearbeitung deren Inhalte zu etwas Neuem zu verschalten. Es ist kollektives Buch, das seine eigene Abschaffung als Buch vollführt: Ein Buch, das nichts als Bücher verzeichnet, ein Buch, das von vielen Autoren geschrieben ist und noch viel mehr Autoren vereint, weil es deren bibliographische Metadaten listet. Ein Buch, das sich nur in seiner äusserlichen Form noch als Buch tarnt (Abb.~\ref{abb:kapsel}), obwohl es seine Bestandteile längst schon dissolviert oder herausgelöst hat. Es handelt sich um ein Buch über Bücher, das aus nichts als frei verschiebbaren Zetteln besteht: Ein Katalog, und zwar der erste dauerhafte Zettelkatalog der Bibliotheksgeschichte, der den gesamten Bestand der kaiserlichen Bibliothek verzeichnete. Dass diese Arbeit an einem derart weit verzweigenden Projekt einer dezidierten Arbeitsteilung unterliegt, mag kaum überraschen. Umso konsequenter erscheint die Kodifizierung dieser Tätigkeit, die kaum zufällig schon in derselben Zeit, in der Goethe sein delegierendes Briefdiktatsystem oder die Schwarzen Kabinette ihr Abschreibesystem etablieren, eine algorithmische Struktur annimmt. Die Formierung dieses Verschmelzungs-Algorithmus ereignet sich einmal mehr in Wien um 1780, diesmal allerdings nicht in der Stallburg mit ihrer professionalisierten Postkontrolle, sondern gleich vis-à-vis in der Hofbibliothek.
 
 \begin{figure}[ht]
 \begin{center}
-\bildschrift{Die Katalogkapsel}\label{abb:kapsel}
-%\pdfbild{12cm}{8.38cm}{../bilder/Kapsel.eps}
+\pngbild{1335}{982}{../bilder/Kapsel.png}{0.8\textwidth}\\[-3mm]
+\caption{Das Buch der Bücher, nur noch äusserlich als Einheit, innerlich immer schon fragmentiert}\label{abb:kapsel}
 \end{center}
 \end{figure}
 
-Merge algorithms[edit]
-Merge algorithms are an area of active research, and consequently there are many different approaches to automatic merging, with subtle differences. The more notable merge algorithms include three-way merge, recursive three-way merge, fuzzy patch application, weave merge, and patch commutation.
+Während sowohl für mittelalterliche als auch für die überwiegende Zahl der frühneuzeitlichen Bibliotheken die Aufgabe, ein Verzeichnis der Bestände zu erstellen, in den Hoheitsbereich des zumeist alleinigen Bibliothekars fällt,\footcite[Vgl. für die mittelalterliche Katalogpraxis etwa][]{schreiber:1927} zeigt sich diese individuelle Vorgehensweise im Fall der Bestandsaufnahme der Wiener Hofbibliothek zur Regierungszeit von Joseph II. als unpraktikabel. Infolge von politischen Maßnahmen wie etwa der Auflösung der Jesuitenklöster samt ihrer Bibliotheken findet sich die kaiserliche Bibliothek in Wien unversehens mit einer Welle von Neuzugängen an Büchern konfrontiert, die nicht nur den Bestand innert kürzester Zeit anschwellen lassen, sondern auch die organisatorischen Maßnahmen in Frage stellen, wie neue Bücher erschlossen und in den ebensowenig vollständig bekannten Altbestand eingepasst werden sollen.   
+  
+Angesichts der schieren Menge nicht nur an neuen Büchern setzt der Vorsteher der Bibliothek, Präfekt Gottfried van Swieten, auf ein minutiöses, arbeitsteiliges Verfahren, eine Instruktion, nach deren Anweisungen endlich alle Bücher der Hofbibliothek vollständig erfasst, beschrieben und eingeordnet werden sollen. Schriftliche Instruktionen zur Katalogisierung sind bis zum Ende des 18.~Jahrhunderts keineswegs gängig. Erfolgt die Bestandsbeschreibung doch üblicherweise nur unter der Aufsicht eines Bibliothekars, der die Skriptoren und Hilfskräfte mündlich instruiert, um sodann Ablauf und Ergebnis zu kontrollieren. Van Swietens \anf{Vorschrift worauf die Abschreibung aller Bücher der k.k.~Hofbibliothek gemacht werden solle} umfaßt dagegen sieben Punkte, was bei der Beschreibung der Bücher zu beachten sei, ergänzt um einen Ablaufplan sowie eine ausführliche und jedwede Eventualitäten berücksichtigende Verhaltensvorschrift, die – und das ist besonders bemerkenswert – einer \emph{if-then}-Struktur, mit anderen Worten: einer algorithmischen Logik, folgt:
+\begin{verse}
+I.~Muß [\ldots] Sollte [\ldots] so müßte [\ldots]\\
+II.~Findet er [\ldots] müssen [\ldots]\\
+III.~Findet sich [\ldots] so muß [\ldots]\\ 
+IV.~Wenn man [\ldots] so ist [\ldots]\footcite[125 f.]{bartsch:1780}\\
+\qquad\vdots\\ % Ein close-reading der Kataloginstruktion steht noch aus... Gegenlesen mit einer Anleitung für git-hub.
+\end{verse}
+Dank dieses derart kodifizierten Plans gelingt es den exekutiven Kräften, namentlich den Skriptoren und Bibliotheksdienern, ab dem Frühjahr 1780 nunmehr alle Texte der Bibliothek auf ca.~300'000 Zetteln zu beschreiben, die Angaben zu standardisieren und die Papierträger schliesslich in extra dazu angefertigten Katalogkapseln zu bündeln (Abb.~\ref{abb:kapsel}). Ausgehend von diesen losen und doch geordneten Stapeln, dem sog. \inanf{Josephinischen Katalog}, lassen sich neue Ordnungen anfertigen, seien dies alphabetische, systematische oder chronologische. Die lose in Buchform eingefassten Textfragmente sollen auf diese Weise wieder in echte Buchform überführt werden.
 
-Three-way merge[edit]
-Diagram of a three way merge
-C is the origin, A and B are derivatives of C, and D is the new output version
-A three-way merge is performed after an automated difference analysis between a file "A" and a file "B" while also considering the origin, or common ancestor, of both files "C". It is a rough merging method, but widely applicable since it only requires one common ancestor to reconstruct the changes that are to be merged.
-
-The three-way merge looks for sections which are the same in two of the three files. In this case, there are two versions of the section, and the version which is in the common ancestor "C" is discarded, while the version that differs is preserved in the output. If "A" and "B" agree, that is what appears in the output. A section that is the same in "A" and "C" outputs the changed version in "B", and likewise a section that is the same in "B" and "C" outputs the version in "A".
-
-Sections that are different in all three files are marked as a conflict situation and left for the user to resolve.
-
-Three-way merging is implemented by the ubiquitous diff3 program, and was the central innovation that allowed the switch from file-locking based revision control systems to merge-based revision control systems. It is extensively used by the Concurrent Versions System (CVS).
-
-Recursive three-way merge[edit]
-Three-way merge based revision control tools are widespread, but the technique fundamentally depends on finding a common ancestor of the versions to be merged.
-
-There are awkward cases, particularly the "criss-cross merge",[2] where a unique last common ancestor of the modified versions does not exist.
-
-Fortunately, in this case it can be shown that there are at most two possible candidate ancestors, and recursive three-way merge constructs a virtual ancestor by merging the non-unique ancestors first. This merge can itself suffer the same problem, so the algorithm recursively merges them. Since there is a finite number of versions in the history, the process is guaranteed to eventually terminate. This technique is used by the Git revision control tool.
-
-(Git's recursive merge implementation also handles other awkward cases, like a file being modified in one version and renamed in the other, but those are extensions to its three-way merge implementation; not part of the technique for finding three versions to merge.)
-
-Recursive three-way merge can only be used in situations where the tool has knowledge about the total ancestry directed acyclic graph (DAG) of the derivatives to be merged. Consequently, it cannot be used in situations where derivatives or merges do not fully specify their parent(s).
-
-\end{comment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+Mit der Parallelität verschiedener Zeiten eines jeden Buchs werden deren auswuchernde Zweige und Gabelungen zusammengeführt und verschmolzen zu neuer Form, um dank dieser neuen Ordnung einen neuen, dritten, synthetisierten Wissensstand herzustellen. Der  \emph{merge}-Algorithmus generiert aus den vielen Büchern einer Bibliothek ein einziges: ihren eigenen Katalog, mit dem viele Autoren zu einer Struktur zusammengebunden werden, die wiederum neue Autoren aufzugreifen und zu produzieren vermag. Aus der Synthese der informationellen Vereinzelungen von Einträgen, die ihrerseits einen immer schon fragmentierten Text repräsentieren wird wieder ein einziger Strang produziert, ein Faden oder Pfad, der mit seinen volatilen Elementen seinerseits und jederzeit neue Verzweigungen oder auch Weiterführungen auf demselben Weg erlaubt.
 
 
 \section*{Coda: Auto(r)Korrektur}
