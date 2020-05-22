@@ -12,7 +12,7 @@ insofern erst in der [dritten Fassung](https://github.com/nachsommer/VersionsKon
 (commit 634e4c4, erscheint in: Friedrich Balke und Elisa Linseisen (Hrsg.),
 *Mimesis Expanded*, Wilhelm Fink Verlag, Paderborn, 2019) das Konzept der Assistenzsysteme entwickelt wird,
 während in der [ersten Fassung](https://github.com/nachsommer/VersionsKontrolle/tree/master/1.Fassung)
-(commit 6g8wkit9, erscheint in: Jörg Paulus, Andrea Hübener (Hrsg.), *Abschrift, Ablichtung, CC & Vice Versa*, tba, 2019) der Fokus auf den Verfahren und dem Konzept der Quellcodekritik liegt, und in der [zweiten
+(commit 6g8wkit9, ist erschienen in: Jörg Paulus, Andrea Hübener und Fabian Winter (Hrsg.), *Duplikat, Abschrift & Kopie. Kulturtechniken der Vervielfältigung*, Böhlau Verlag, Köln, 2020, S. 21-40) der Fokus auf den Verfahren und dem Konzept der Quellcodekritik liegt, und in der [zweiten
 Fassung](https://github.com/nachsommer/VersionsKontrolle/tree/master/2.Fassung)
 (commit 9gkfur5, erscheint in: Daniel Ehrmann, Thomas Traupmann (Hrsg.), *Kollektive(s) Schreiben*, Wilhelm Fink Verlag, Paderborn 2019) die Passagen über die kollektive Autorschaft,
 insbesondere beim Vorgang des Verschmelzens, grösseren Raum einnehmen.
