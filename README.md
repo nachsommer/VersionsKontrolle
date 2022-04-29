@@ -10,11 +10,11 @@ Zwar folgen die drei Versionen einem gemeinsamen Argumentationsgang, sie
 weichen jedoch in bestimmten Abschnitten, Passagen und Details deutlich voneinander ab,
 insofern erst in der [dritten Fassung](https://github.com/nachsommer/VersionsKontrolle/tree/master/3.Fassung)
 (commit 634e4c4, erscheint in: Friedrich Balke und Elisa Linseisen (Hrsg.),
-*Mimesis Expanded*, Wilhelm Fink Verlag, Paderborn, 2020) das Konzept der Assistenzsysteme entwickelt wird,
+*Mimesis Expanded*, Wilhelm Fink Verlag, Paderborn, 2022) das Konzept der Assistenzsysteme entwickelt wird,
 während in der [ersten Fassung](https://github.com/nachsommer/VersionsKontrolle/tree/master/1.Fassung)
 (commit 0651369, erschienen in: Jörg Paulus, Andrea Hübener und Fabian Winter (Hrsg.), *Duplikat, Abschrift & Kopie. Kulturtechniken der Vervielfältigung*, Böhlau Verlag, Köln, 2020, S. 21-40) der Fokus auf den Verfahren und dem Konzept der Quellcodekritik liegt, und in der [zweiten
 Fassung](https://github.com/nachsommer/VersionsKontrolle/tree/master/2.Fassung)
-(commit 9gkfur5, erscheint in: Daniel Ehrmann, Thomas Traupmann (Hrsg.), *Kollektive(s) Schreiben*, Wilhelm Fink Verlag, Paderborn 2020) die Passagen über die kollektive Autorschaft,
+(commit 9gkfur5, erschienen in: Daniel Ehrmann, Thomas Traupmann (Hrsg.), *Kollektive(s) Schreiben*, Wilhelm Fink Verlag, Paderborn 2022) die Passagen über die kollektive Autorschaft,
 insbesondere beim Vorgang des Verschmelzens, grösseren Raum einnehmen.
 Eine Gesamtsicht der Versionsänderungen lässt sich mit Blick auf die
 Unterschiede in den jeweiligen Ausgangsdateien (im LaTeX-Format)
